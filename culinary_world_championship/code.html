@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Culinary World Championship</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6bfe9c",
+                    "outline": "#897365",
+                    "on-secondary-container": "#00743a",
+                    "on-surface": "#1a1c1c",
+                    "primary-container": "#e67e22",
+                    "on-background": "#1a1c1c",
+                    "on-primary-fixed": "#301400",
+                    "surface-variant": "#e2e2e2",
+                    "secondary": "#006d37",
+                    "secondary-fixed-dim": "#4ae183",
+                    "on-tertiary-container": "#1d3347",
+                    "background": "#f9f9f9",
+                    "primary": "#944a00",
+                    "tertiary-container": "#869bb3",
+                    "outline-variant": "#dcc1b1",
+                    "on-tertiary-fixed-variant": "#34495e",
+                    "surface": "#f9f9f9",
+                    "tertiary": "#4b6076",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffb783",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-container-high": "#e8e8e8",
+                    "primary-fixed": "#ffdcc5",
+                    "on-secondary-fixed": "#00210c",
+                    "surface-container": "#eeeeee",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#713700",
+                    "tertiary-fixed": "#cfe5ff",
+                    "on-surface-variant": "#564337",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#944a00",
+                    "on-primary-container": "#502600",
+                    "tertiary-fixed-dim": "#b3c9e2",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-fixed": "#051d30",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "inverse-primary": "#ffb783",
+                    "secondary-fixed": "#6bfe9c",
+                    "inverse-surface": "#2f3131",
+                    "surface-dim": "#dadada",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#005228",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-padding": "20px",
+                    "section-gap": "48px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "beVietnamPro"
+                    ],
+                    "headline-lg-mobile": [
+                            "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                    ],
+                    "body-md": [
+                            "beVietnamPro"
+                    ],
+                    "headline-lg": [
+                            "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                    ],
+                    "label-sm": [
+                            "beVietnamPro"
+                    ],
+                    "headline-md": [
+                            "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                    ],
+                    "headline-xl": [
+                            "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "40px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap');
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-32 md:pb-0">
+<!-- TopAppBar (Web) -->
+<header class="hidden md:flex bg-surface/70 backdrop-blur-md shadow-sm fixed top-0 w-full z-50 justify-between items-center px-container-margin py-base max-w-7xl mx-auto left-1/2 -translate-x-1/2">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-200" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Culinary World Championship</h1>
+</div>
+<nav class="flex gap-8">
+<a class="text-primary font-bold hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full active:scale-95 duration-200 font-label-sm text-label-sm" href="#">Home</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full active:scale-95 duration-200 font-label-sm text-label-sm" href="#">Challenges</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full active:scale-95 duration-200 font-label-sm text-label-sm" href="#">Leaderboard</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-colors px-4 py-2 rounded-full active:scale-95 duration-200 font-label-sm text-label-sm" href="#">Passport</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden cursor-pointer shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<img class="w-full h-full object-cover" data-alt="A detailed headshot profile picture of an elegant user with a gold medal badge overlaid in the corner. Professional studio lighting with a warm inviting smile, set against a pristine white background. High-quality corporate portrait photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOUlm8rZWhZntTUPMO0l9yFan9M6tsLzP--s5VwI5rXs1UIKiNgTETiBs8Q1g3IxJr8CnEFqZLdD9iDgiptPhHDIvswENooIoYNzuEoioGyIE56L6Avieqxycbr_Zi7M2AlVDbM9JaDXLCYAOj2hAp01zmfFFueD2ZzU2bw6d_m8ei71gckao3DxpgqZvqEe8dUNfIgAYNW2p26BAtQcdHnJPWEM1w76nFl9zCnfhVJ-Uu7lMq39bBWQ"/>
+</div>
+</header>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden bg-surface/70 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-200" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary truncate mx-4">Culinary World Championship</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A detailed headshot profile picture of an elegant user with a gold medal badge overlaid in the corner. Professional studio lighting with a warm inviting smile, set against a pristine white background. High-quality corporate portrait photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw7mFtyueMqyd30uDbRUSsEJbbIxrzhAyPOTJiKRzMnI9w2omL29RV5yp7zqfIolJ5lCBXuvRxgwgn0W3Omsz8xfzaMVzAl8Wu1c52BrSNM-EghwUC0QN0TfGSVB_iX7oCbtXYJI0ewLH84HtmUuAQl64BuwDaZUkd-1_6ugrxs34bDL53juj14Zhh8llYt_94uyAXPcuqEaVEnN9O1B65N3PdiZbpoE0YqWBO-TZwVORkiUUA40Mntw"/>
+</div>
+</div>
+</header>
+<main class="pt-24 md:pt-32 px-container-margin max-w-7xl mx-auto grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<!-- Hero Section -->
+<section class="col-span-4 md:col-span-12 mb-section-gap">
+<div class="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-[0_12px_30px_rgba(230,126,34,0.08)] group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A breathtaking, vibrant overhead view of a massive Mediterranean feast spread on a rustic wooden table. Features rich terracotta tagines, colorful vibrant salads, fresh warm pita bread, and drizzled olive oil reflecting sunlight. The scene is bathed in warm, natural sunlight typical of a high-end food magazine editorial. A deep orange and warm minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMMMR_jVvghongRb55fkVXnLzMeM2-ShjzR1xara1HuOrN5fBxcBO_PvcHqNtdI-ItIlzCPd-ltJgWq2L9xEPbvnEJhtHTmP7_nh54ny3y2UxLrqVuXvhHuF6V2jCjhfdn4qjyVu_MOiZ5eDwN14Q0tpElpnnL8xtbFT8U4qZ8-124PWzqC4oczF3kwesqYRDvekn5bo2zJpFW0IPqovKjkSUP9F2kJGI8cUgbQoXV5DPpvwn_o6Sm_Q')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-container-margin">
+<span class="inline-block bg-primary-container/90 text-on-primary-container font-label-sm text-label-sm px-4 py-1 rounded-full mb-2 backdrop-blur-sm">موسم جديد</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-secondary mb-2">نكهات المتوسط</h2>
+<p class="font-body-lg text-body-md md:text-body-lg text-on-secondary/90 max-w-2xl">اكتشف سحر الطهي المتوسطي في هذا الموسم الحصري.</p>
+</div>
+</div>
+</section>
+<!-- Current Challenge -->
+<section class="col-span-4 md:col-span-8 mb-section-gap">
+<h3 class="font-headline-lg text-headline-md-mobile md:text-headline-lg text-on-background mb-6">التحدي الحالي</h3>
+<div class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col md:flex-row gap-6 items-center">
+<div class="w-full md:w-1/3 h-48 rounded-lg overflow-hidden shrink-0 relative">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full" data-alt="A close-up, highly detailed shot of a steaming Mediterranean vegetable tagine in a traditional clay pot. The dish features brightly colored carrots, zucchini, and olives simmered in a rich tomato sauce, garnished with fresh cilantro. Soft, warm directional lighting highlighting the textures. High-end food photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZY1_pHJsG2jdhJqqf13dJsoEBm6ptRjhXVbil_eNE2rUNRW9Xu7wchitxGyt6w3ya-rR-_SIHre0pGEDIygXtHVVLw7QhzRZY3WHEcJ5LqIZsDnRfBfqSe7fHTxPHHSCKRT8mt4FvEfimjr5_FuvhqCkpxEf9JOVh6eI0FQq5LkchlVPHkdbL9P0Xpd0rfjdwcayu6wLJkk7c4ScTSZXaUeTFI2hDfJmrPf5-x5rJPLVIJUszwo9VPA')"></div>
+<div class="absolute top-2 left-2 bg-secondary/90 text-on-secondary font-label-sm text-label-sm px-3 py-1 rounded-full backdrop-blur-sm">صعب</div>
+</div>
+<div class="flex-1 flex flex-col w-full">
+<h4 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface mb-2">تحدي 5 مكونات: طاجين متوسطي</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">استخدم 5 مكونات أساسية فقط لإعداد طاجين يعكس روح البحر الأبيض المتوسط.</p>
+<div class="flex flex-wrap gap-4 mb-6">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">18,492 مشاركاً</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="timer">timer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">باقي 5 أيام</span>
+</div>
+</div>
+<button class="bg-primary-container text-white font-label-sm text-label-sm px-8 py-3 rounded-full hover:bg-primary transition-colors shadow-[0_4px_20px_rgba(230,126,34,0.2)] active:scale-95 self-start w-full md:w-auto">شارك الآن</button>
+</div>
+</div>
+</section>
+<!-- Sidebar Widgets -->
+<section class="col-span-4 md:col-span-4 flex flex-col gap-6 mb-section-gap">
+<h3 class="font-headline-lg text-headline-md-mobile md:text-headline-lg text-on-background mb-0 md:mb-0 hidden md:block opacity-0">Widgets</h3>
+<div class="bg-surface-container-low rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<h4 class="font-headline-md text-headline-md-mobile text-on-surface mb-4">نكهات الموسم</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary/10 text-on-secondary-container font-label-sm text-label-sm px-4 py-2 rounded-full border border-secondary/20">زيت زيتون بكر</span>
+<span class="bg-secondary/10 text-on-secondary-container font-label-sm text-label-sm px-4 py-2 rounded-full border border-secondary/20">زعتر بري</span>
+<span class="bg-secondary/10 text-on-secondary-container font-label-sm text-label-sm px-4 py-2 rounded-full border border-secondary/20">ليمون مخلل</span>
+<span class="bg-secondary/10 text-on-secondary-container font-label-sm text-label-sm px-4 py-2 rounded-full border border-secondary/20">ثوم مشوي</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<h4 class="font-headline-md text-headline-md-mobile text-on-surface mb-4">أبرز المشاركات</h4>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A macro shot of a beautifully plated small dish featuring a modern take on Mediterranean cuisine. Elegant white plate, drizzle of green herb oil, and vibrant fresh garnishes. Soft, appetizing lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDINEpc3YhxN2BizdpMZFsKWp7hADNC1enbfy_-Map34RysjsMS6zJDKtEFM4GpdicNdFwS2eiTul5Wme5-jH9kJwsfw60x70cRABkuf2B8qxMcijyHtvqSWxLCEaj3gbL0qKPpVQUWSsyio3ZavtxZz53AxeAgEdAeJAQMXo9m4dOzehbg_U_hGRHh_a2J_eS4I7uJT2og42at-mV5Kl7VauSEffTmb3z9vXrW4rPQ6Uc-uiO2IDnxKg"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">طاجين السمك المتبل</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">بواسطة الشيف أحمد</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A close-up of a rustic, savory pastry with a golden crust, filled with spinach and feta cheese. Sitting on a wooden board with scattered flour. Warm, inviting natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpcxi2obZfsAqfIimJFVBJHfla6IatDhGwjIMBNNBvV2X_e7D2ychx-dL8IvGNZlEbrvHdtGBkVKK14OMUR6islttmLQoXFGpySTZo_Ilsj9SVbeMkXHgNJqVW3Fo9D42FRTGS9EHjhE_-86FgCXWUvTbel75vYKhJwHu4xTx7ActEcKFG1Q2n8rM0XVfeR1jmKriPc7Stb9atSTEb0g-Eo2IMiWpP3iLP-netcSb6eSvUVUP695BcNA"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">فطيرة السبانخ والجبن</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">بواسطة سارة</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Challenges Grid -->
+<section class="col-span-4 md:col-span-12 mb-section-gap">
+<h3 class="font-headline-lg text-headline-md-mobile md:text-headline-lg text-on-background mb-6">التحديات الجارية</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.12)] transition-shadow duration-300 group cursor-pointer flex flex-col">
+<div class="w-full h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A vibrant, top-down view of a colorful Mediterranean salad bowl featuring fresh cherry tomatoes, cucumber, olives, and a block of feta cheese topped with oregano. Bright, high-key lighting for a fresh aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzbpzU6fdm3Xbt8zs6ZmuBS35KBFOmfpPX2PQh8Ix3RPVipBM3OsGnsivBtRxZ199Vn3qxsYiwiYRjyKQGKYH9flDXmefPGhRrsPpPDngpyV5kAdoHsVgHheIY6gmWGU_BTdRal3vwGLTkmewhkSLA8rDq-ffivc_HvECeUQNm4ism9lAFcem_tKH8-vxP9v2H6qptypfQ7eJ23-79e_1QbRMwv-k9XW4ckq9BVsI2J9JF1qoB6oZxlg')"></div>
+<div class="absolute top-2 right-2 bg-surface/80 backdrop-blur-sm p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="bookmark">bookmark</span>
+</div>
+</div>
+<div class="p-card-padding flex-1 flex flex-col">
+<h4 class="font-headline-md text-headline-md-mobile text-on-surface mb-2">تحدي السلطة المنعشة</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1">ابتكر سلطة صيفية تعتمد على مكونات طازجة ومحلية.</p>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-[12px] text-primary">ينتهي غداً</span>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.12)] transition-shadow duration-300 group cursor-pointer flex flex-col">
+<div class="w-full h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A close-up side view of a perfectly grilled skewer of Mediterranean meat and vegetables, resting on a flatbread with a side of tzatziki sauce. Smoky grill marks visible. Warm, appetizing lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhA-uLZbH-vd4irnIDvT2RPlAjLnYol4qiXMpmaSC_RLQ_8YNcBiW_oggxPXHjzmxTAaggE08_k90r4WvKjRnezsIQDmTZa_LzgPgquHvOUjcgyTbVYgq20KRwDqfHNqaJp_ZmLkzR21d6U4F5ax3ueY85Mw2re-H7NyK0xIKOl_gnqN8UY3BB0fVVy1_D8Dtwd6d7iPUIL5qq7gz62ouwbUczq78O0iCvr58jwbXv8bvt6RQtaAfjuw')"></div>
+</div>
+<div class="p-card-padding flex-1 flex flex-col">
+<h4 class="font-headline-md text-headline-md-mobile text-on-surface mb-2">فن الشواء المتوسطي</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1">أظهر مهاراتك في تتبيل وشواء اللحوم أو الخضار بأسلوب بحر متوسطي.</p>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-[12px] text-on-surface-variant">باقي 3 أيام</span>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.12)] transition-shadow duration-300 group cursor-pointer flex flex-col">
+<div class="w-full h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A rustic overhead shot of a freshly baked flatbread pizza topped with sun-dried tomatoes, artichoke hearts, and fresh basil leaves on a flour-dusted dark stone surface. Moody, directional lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuArOthSNJZB6CEOTunY0BrevLydHELAHsFMbdlrDzb4NQnErGggu1K9ZpzMybl2_KS0Xzda-4KqZfe0zSpqA27jc0yzyHFaeA_Svf6b9xUKX_zuMA-osVmrqNKwcHzHCyyDpwu6PSmxsJCB8TOFDAKRUf4WM3m35_THXypVtBhhme0TVkIcP29cI28IsDSZMrKPeOKYbA0Wypz7XrLMd9r_tb0AS3saUtlVVTUJT4lypis6L7tnC6b4Ng')"></div>
+</div>
+<div class="p-card-padding flex-1 flex flex-col">
+<h4 class="font-headline-md text-headline-md-mobile text-on-surface mb-2">إبداعات العجين</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1">من البيتزا إلى المناقيش، شاركنا أفضل وصفات العجين المخبوزة.</p>
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-[12px] text-on-surface-variant">باقي أسبوع</span>
+<span class="material-symbols-outlined text-outline" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] flex justify-around items-center px-4 pb-4 pt-2">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:text-primary active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-sm text-[10px] mt-1">Challenges</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-sm text-[10px] mt-1">Leaderboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-[10px] mt-1">Passport</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-[10px] mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

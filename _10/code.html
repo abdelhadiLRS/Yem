@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Culinary Intelligence - Live Stream Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-low": "#f3f3f3",
+                "primary": "#944a00",
+                "secondary-fixed": "#6bfe9c",
+                "surface-bright": "#f9f9f9",
+                "background": "#f9f9f9",
+                "on-surface-variant": "#564337",
+                "secondary": "#006d37",
+                "tertiary-container": "#869bb3",
+                "on-tertiary-container": "#1d3347",
+                "error": "#ba1a1a",
+                "surface-container-high": "#e8e8e8",
+                "on-secondary-fixed": "#00210c",
+                "tertiary-fixed": "#cfe5ff",
+                "on-primary-container": "#502600",
+                "surface-container": "#eeeeee",
+                "on-primary-fixed": "#301400",
+                "inverse-on-surface": "#f1f1f1",
+                "surface-tint": "#944a00",
+                "on-primary-fixed-variant": "#713700",
+                "on-tertiary-fixed": "#051d30",
+                "on-secondary-container": "#00743a",
+                "on-secondary": "#ffffff",
+                "surface": "#f9f9f9",
+                "on-tertiary-fixed-variant": "#34495e",
+                "surface-variant": "#e2e2e2",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e2e2e2",
+                "secondary-fixed-dim": "#4ae183",
+                "on-secondary-fixed-variant": "#005228",
+                "outline": "#897365",
+                "on-tertiary": "#ffffff",
+                "on-surface": "#1a1c1c",
+                "inverse-primary": "#ffb783",
+                "on-background": "#1a1c1c",
+                "secondary-container": "#6bfe9c",
+                "on-error-container": "#93000a",
+                "surface-dim": "#dadada",
+                "primary-fixed-dim": "#ffb783",
+                "on-error": "#ffffff",
+                "tertiary": "#4b6076",
+                "primary-container": "#e67e22",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#2f3131",
+                "outline-variant": "#dcc1b1",
+                "on-primary": "#ffffff",
+                "tertiary-fixed-dim": "#b3c9e2",
+                "primary-fixed": "#ffdcc5"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-margin": "24px",
+                "section-gap": "48px",
+                "base": "8px",
+                "gutter": "16px",
+                "card-padding": "20px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                ],
+                "headline-xl": [
+                        "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                ],
+                "headline-md": [
+                        "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                ],
+                "headline-lg": [
+                        "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                ],
+                "body-lg": [
+                        "beVietnamPro"
+                ],
+                "label-sm": [
+                        "beVietnamPro"
+                ],
+                "body-md": [
+                        "beVietnamPro"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "40px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    /* Custom Scrollbar for chat */
+    .chat-scroll::-webkit-scrollbar {
+        width: 4px;
+    }
+    .chat-scroll::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .chat-scroll::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .glass-panel {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-on-surface font-body-md h-screen w-screen overflow-hidden relative selection:bg-primary-container selection:text-on-primary-container">
+<!-- Immersive Video Background -->
+<div class="absolute inset-0 z-0 bg-black">
+<img alt="Live Stream Video" class="object-cover w-full h-full opacity-80" data-alt="A cinematic, high-resolution wide shot of a professional chef cooking a vibrant Mediterranean Tagine in a modern, warmly lit kitchen. The scene is bright and airy, capturing the premium soft minimalism aesthetic with warm, appetizing colors. The camera focuses on the colorful ingredients and the chef's hands, creating an immersive, inviting live-stream feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3JAyggqdB4qRiOfH72M3QRqp46RDL4NuyrYfmbImajWQwicZ__2s_alype2mo6r2pr3JZHFDF5E1LuTqg9vkf9fxqg3tkR9tla2uk9orkg_z3e14-Y7HnC-5_QYPCAqx0j6ByZr90bkXFoYNxolRM1vDporcQIld0Az2P1CoNWbOhmgPKb6i3Vfw6HbxrQAysasVL6Er9YewMS-xn5UU8IV3dGC6UieaM0YD6aBDFqan9_-TyKKewgQ"/>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40 pointer-events-none"></div>
+</div>
+<!-- UI Overlay Layer -->
+<div class="absolute inset-0 z-10 flex flex-col justify-between p-container-margin pointer-events-none">
+<!-- Top Section -->
+<header class="flex justify-between items-start pointer-events-auto w-full max-w-7xl mx-auto">
+<button class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-white hover:bg-white/20 transition-colors shadow-sm active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<div class="flex gap-gutter">
+<button class="px-4 py-2 rounded-full glass-panel flex items-center gap-2 text-white hover:bg-white/20 transition-colors shadow-sm active:scale-95 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                    مشاركة
+                </button>
+</div>
+</header>
+<!-- Middle Section (Info & Badges) -->
+<div class="flex-grow flex flex-col justify-start mt-8 pointer-events-auto max-w-7xl mx-auto w-full">
+<div class="flex flex-col items-start gap-3">
+<div class="flex items-center gap-3">
+<div class="bg-error text-on-error font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1 animate-pulse shadow-md">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+                        مباشر
+                    </div>
+<div class="glass-panel text-white font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                        ١٢,٤٠٥
+                    </div>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-white text-shadow">طاجين متوسطي أصيل</h1>
+<div class="flex items-center gap-2 mt-1">
+<img alt="Chef Avatar" class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="A close-up profile picture of a cheerful, professional chef in a clean white uniform, smiling warmly against a bright, softly blurred kitchen background. Premium lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3q535lMXxMqXaTqTvYfHGp1JFsvcSJuudE2JU73GIszJPjGvhUVdM23gtqKDPYS0af2fCLVyhVQgJMZlWLFfV-r1vYWbwuPebPwcHYtBcpgZ_bKCFjLRjyOwWLsToAGkDToV9ZkyLa5w-YOhNvPMs67ZW1303UeahFXMRITPKBQSL59HPXbnyZ70-Au6z8ao9yyC37E9pSOEE1GXbeQgzCJ8GrmKBRrMk_XSGK2JTvNiigUwRZZqRvQ"/>
+<span class="text-white font-label-sm text-label-sm text-shadow">الشيف طارق</span>
+</div>
+</div>
+</div>
+<!-- Bottom Section -->
+<div class="flex flex-col gap-4 pointer-events-auto w-full max-w-7xl mx-auto pb-4">
+<div class="flex justify-between items-end gap-container-margin">
+<!-- Left: Chat Overlay -->
+<div class="w-full max-w-md h-64 glass-panel rounded-xl p-4 flex flex-col">
+<div class="flex-grow overflow-y-auto chat-scroll flex flex-col justify-end gap-3 pb-2 pr-2">
+<!-- Chat Message -->
+<div class="flex gap-2 items-start">
+<div class="w-6 h-6 rounded-full bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">ي</div>
+<div>
+<span class="text-white/70 font-label-sm text-[12px] block">ياسر المولد</span>
+<span class="text-white font-body-md text-sm text-shadow">الرائحة تكاد تصلني من الشاشة!</span>
+</div>
+</div>
+<div class="flex gap-2 items-start">
+<div class="w-6 h-6 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">ن</div>
+<div>
+<span class="text-white/70 font-label-sm text-[12px] block">نورة العلي</span>
+<span class="text-white font-body-md text-sm text-shadow">هل يمكن استبدال الزعفران بالعصفر؟</span>
+</div>
+</div>
+<div class="flex gap-2 items-start">
+<div class="w-6 h-6 rounded-full bg-tertiary flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">أ</div>
+<div>
+<span class="text-white/70 font-label-sm text-[12px] block">أحمد سعيد</span>
+<span class="text-white font-body-md text-sm text-shadow">يبدو لذيذاً جداً 👏</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Interactions & Ingredients -->
+<div class="flex flex-col gap-4 items-center">
+<!-- Floating Reactions (Visual representation) -->
+<div class="flex flex-col gap-2 mb-2 animate-bounce">
+<span class="material-symbols-outlined text-error text-[28px] drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="material-symbols-outlined text-inverse-primary text-[24px] drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+</div>
+<button aria-label="Ingredients" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[0_12px_30px_rgba(148,74,0,0.4)] hover:bg-primary/90 transition-all active:scale-90">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">kitchen</span>
+</button>
+<button aria-label="Reactions" class="w-14 h-14 rounded-full glass-panel text-white flex items-center justify-center shadow-md hover:bg-white/20 transition-all active:scale-90">
+<span class="material-symbols-outlined text-[28px]">mood</span>
+</button>
+</div>
+</div>
+<!-- Input Area -->
+<div class="w-full flex gap-3 mt-2">
+<div class="relative flex-grow">
+<input class="w-full glass-panel rounded-full py-3 px-6 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-black/60 transition-all font-body-md border-none" placeholder="اسأل الشيف..." type="text"/>
+</div>
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md hover:bg-primary/90 transition-all active:scale-95 flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Cooking App - Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "secondary": "#006d37",
+                        "secondary-container": "#6bfe9c",
+                        "primary": "#944a00",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "on-secondary-fixed": "#00210c",
+                        "on-tertiary-fixed": "#051d30",
+                        "on-surface-variant": "#564337",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#4ae183",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#e67e22",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#713700",
+                        "surface": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb783",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-container": "#869bb3",
+                        "inverse-primary": "#ffb783",
+                        "on-secondary-container": "#00743a",
+                        "surface-dim": "#dadada",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "tertiary": "#4b6076",
+                        "tertiary-fixed": "#cfe5ff",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-container": "#1d3347",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-primary-container": "#502600",
+                        "inverse-surface": "#2f3131",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline": "#897365",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#dcc1b1",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#6bfe9c",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-tint": "#944a00",
+                        "on-surface": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#301400",
+                        "surface-variant": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "base": "8px",
+                        "section-gap": "48px",
+                        "card-padding": "20px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "label-sm": ["\"Be Vietnam Pro\", sans-serif"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "body-lg": ["\"Be Vietnam Pro\", sans-serif"],
+                        "body-md": ["\"Be Vietnam Pro\", sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full bg-white/70 backdrop-blur-xl shadow-sm z-40 hidden md:flex justify-between items-center px-container-margin h-16 w-full z-40">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary">Profile</h1>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="max-w-[1280px] mx-auto px-container-margin md:mt-8 space-y-section-gap">
+<!-- Profile Header -->
+<section class="flex flex-col items-center text-center mt-8">
+<div class="relative">
+<img class="w-32 h-32 rounded-full object-cover shadow-[0_12px_30px_rgba(230,126,34,0.15)] border-4 border-surface-container-lowest" data-alt="A high-quality, professional headshot of a confident female chef with dark hair, wearing a stylish apron, standing in a well-lit, modern kitchen with warm earthy tones and soft natural lighting. The image has a soft focus background emphasizing the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBif75h4_E63OM7tICsp6r3tfr1jOyGei-GCLhXeHrx7u8Qh_136H9bulNwLNbskkd1kg1Y9lrpzfnlQoKSNJ7qxm7HbrovY1vTK_9V94wnkR0a8_RWTuqiB6elrfbJOv9cxgPH_w_SgkEorFYQnPWR7rY87IGS9zUSCgEOcIt7EwZMuicchfHVmfacKKemLZ41ZemQpm0OD8Wa3K-uqw0hl-mtb3RLOSHZX40ubzKxEBKoUsz3fGmD7w"/>
+<div class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary-container rounded-full p-1.5 shadow-sm">
+<span class="material-symbols-outlined icon-fill text-[20px]">verified</span>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mt-4 text-on-background">Yasmin Al-Jazaeri</h2>
+<p class="font-body-md text-body-md text-primary font-semibold mt-1">Expert Chef</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-md mx-auto">Passionate about blending traditional Middle Eastern flavors with modern culinary techniques. Sharing the warmth of home cooking.</p>
+</section>
+<!-- Social Stats Bento -->
+<section class="grid grid-cols-3 gap-base md:gap-gutter">
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-primary">1.2k</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Followers</span>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-on-background">850</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Following</span>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center text-center">
+<span class="font-headline-md text-headline-md text-on-background">45</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Recipes</span>
+</div>
+</section>
+<!-- Rewards & Milestones -->
+<section class="bg-primary-fixed p-card-padding rounded-lg shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col md:flex-row items-center justify-between gap-gutter relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -right-16 -top-16 w-48 h-48 bg-primary opacity-5 rounded-full blur-2xl"></div>
+<div class="flex items-center gap-gutter z-10">
+<div class="bg-surface-container-lowest rounded-full p-3 shadow-sm text-primary">
+<span class="material-symbols-outlined icon-fill text-[32px]">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-primary-fixed">2,450 Points</h3>
+<p class="font-label-sm text-label-sm text-on-primary-fixed-variant">Total culinary score</p>
+</div>
+</div>
+<div class="flex gap-base z-10 mt-4 md:mt-0">
+<div class="flex flex-col items-center bg-surface-container-lowest/50 p-2 rounded-DEFAULT backdrop-blur-sm border border-white/20">
+<span class="material-symbols-outlined text-secondary text-[24px]">eco</span>
+<span class="font-label-sm text-[10px] text-on-primary-fixed mt-1">Sustainability</span>
+</div>
+<div class="flex flex-col items-center bg-surface-container-lowest/50 p-2 rounded-DEFAULT backdrop-blur-sm border border-white/20">
+<span class="material-symbols-outlined text-primary text-[24px]">timer</span>
+<span class="font-label-sm text-[10px] text-on-primary-fixed mt-1">Speed Master</span>
+</div>
+</div>
+</section>
+<!-- Content Tabs -->
+<section>
+<div class="flex gap-gutter border-b border-surface-variant pb-2 overflow-x-auto no-scrollbar">
+<button class="font-label-sm text-label-sm text-primary border-b-2 border-primary pb-2 px-2 whitespace-nowrap">My Recipes</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors pb-2 px-2 whitespace-nowrap">Saved</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors pb-2 px-2 whitespace-nowrap">Meal Plans</button>
+</div>
+</section>
+<!-- Recipe Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-container-margin">
+<!-- Recipe Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] relative group">
+<div class="relative h-48 md:h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A top-down view of a vibrant, freshly prepared Friday Couscous dish in a rustic terracotta bowl. The dish features fluffy couscous topped with colorful roasted vegetables, tender chickpeas, and a drizzle of rich olive oil. The setting is warm, with a soft minimal background emphasizing the fresh ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB733We2v7dG7Ho2LH4ePYJ3zbjtnTvaW3FF-DlPEd-XLRnm305-NMSmtjsyJo3CBeHEnstBM3PekVpE-hZkL7LPai5boH7ly1fwYhKalTzzBc5AzPLftkOrLyWO7KQASkpgTTgfzAiVjTMplI8YIj6LyQLr8C_aOt7XfCqgNbu95zB2i1ktuSH21X7-9aE0IC6Oz58kPVHUx8Mxem7ne79cLjN6_g_AYj6bIWycsuosFardARpxoDjnA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full p-2 text-white hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary/10 backdrop-blur-md text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-[12px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 45m
+                        </span>
+<span class="bg-secondary/10 backdrop-blur-md text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-[12px]">Medium</span>
+</div>
+</div>
+<div class="p-card-padding">
+<h4 class="font-headline-md text-headline-md text-on-background line-clamp-1">Friday Couscous Deluxe</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-2">A rich, comforting traditional couscous loaded with seasonal vegetables and aromatic spices.</p>
+</div>
+</article>
+<!-- Recipe Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] relative group">
+<div class="relative h-48 md:h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a beautifully plated serving of modern shakshuka in a small black cast iron skillet. Bright red tomato and pepper sauce with perfectly poached eggs, garnished with fresh cilantro and a side of rustic bread. Warm, inviting natural light creating a soft modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Y3or0xyUYvD82rJnLhkzspA5k4TMwl3q36nO4TEtiEHojToABHQaJRa7OEHHQ9cZHX1cXB53L4oe_SPwvYPrOYRnXSFC_VlwcGIDiMFm3_tXQpeTYbOe3eX99CFDgLGBfaIXXJjj_MLxYOMI2Tsc_0P3G5HDckFbO6Hx2sYEfR0hp_r5IGikUz3k3ZwZMBgZDrFxUudBTBTRZE7BW5Xc1u7Sl1I5nw8KX7isShEOBMhMGJj3YtDKKQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-full p-2 text-white hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary/10 backdrop-blur-md text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-[12px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 20m
+                        </span>
+<span class="bg-secondary/10 backdrop-blur-md text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-[12px]">Easy</span>
+</div>
+</div>
+<div class="p-card-padding">
+<h4 class="font-headline-md text-headline-md text-on-background line-clamp-1">Morning Shakshuka</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-2">Start your day with this vibrant, spicy tomato and egg skillet. Perfect for weekend brunches.</p>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-white/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-low rounded-2xl transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-low rounded-2xl transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-low rounded-2xl transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1">AI Chef</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-2 hover:bg-surface-container-low rounded-2xl transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-on-primary-container rounded-2xl px-4 py-2 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined icon-fill">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

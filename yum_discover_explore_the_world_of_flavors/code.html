@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CulinaryAI - Discover</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#76d6d5",
+                        "on-primary-fixed": "#301400",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "secondary": "#3f5f92",
+                        "surface-container-low": "#f3f3f3",
+                        "primary": "#944a00",
+                        "secondary-container": "#a6c4fe",
+                        "primary-fixed": "#ffdcc5",
+                        "on-surface-variant": "#564337",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#502600",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#004f4f",
+                        "parchment": "#fdfdfd",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-container": "#003737",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "primary-container": "#e67e22",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#44a7a7",
+                        "premium-gold": "#d4af37",
+                        "tertiary": "#006a6a",
+                        "surface-variant": "#e2e2e2",
+                        "outline": "#897365",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "terracotta-dark": "#944a00",
+                        "on-secondary-container": "#315183",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#dcc1b1",
+                        "primary-fixed-dim": "#ffb783",
+                        "on-tertiary-fixed": "#002020",
+                        "inverse-primary": "#ffb783",
+                        "surface-tint": "#944a00",
+                        "on-secondary-fixed": "#001b3e",
+                        "secondary-fixed": "#d6e3ff",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed-dim": "#aac7ff",
+                        "tertiary-fixed": "#93f2f2",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#264779",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "64px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/75 dark:bg-surface-dim/75 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-gutter py-unit w-full max-w-7xl mx-auto">
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 transition-transform flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Yum AI</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 transition-transform flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8">
+<!-- Header Section -->
+<section class="mb-section-gap text-center max-w-3xl mx-auto">
+<h2 class="font-display-lg text-display-lg text-primary mb-4 hidden md:block">Explore the World of Flavors</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-4 md:hidden">Explore the World of Flavors</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Embark on a culinary journey across continents. Discover signature dishes, traditional techniques, and the rich history behind every bite.</p>
+</section>
+<!-- Global Culinary Map (Hero Bento) -->
+<section class="mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
+<!-- Main Map / Featured Area -->
+<div class="md:col-span-8 row-span-1 md:row-span-2 relative rounded-xl overflow-hidden bg-surface-container-low shadow-sm">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A highly detailed, stylized map of the world focused on culinary regions, using the soft minimalism aesthetic. The map features a light cream background with deep navy and rich orange accents denoting famous food capitals. The lighting is soft and ambient, creating a premium, modern feel suitable for a high-end food application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYjjG30lsMLq-1xbCd8raBo4LbsftTvCLjEKR3v2yyKQqXop7pOcD1-lJZhPtfG8lP8ZGJaqi7e-Hs4K_Ex20NoJXsDROpJJtCCcbIrcueBO1rkO9faVs9OrRqKLeTrRiFaedkE0kIRMRzNJewy2HxrZxMckSNcuz7lE_LGi-6XmQxn2AwNAuQd7CCFVuwvHivt3lemcpEHynNDujSswLUhmg7MCw02IwCmZWIJAkC2_vsQKjuS44k5w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="inline-block px-3 py-1 bg-surface/90 backdrop-blur text-primary font-label-md text-label-md rounded-full mb-3">Interactive Map</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2 shadow-sm">Yum Global Map</h3>
+<p class="font-body-md text-body-md text-white/90 hidden md:block max-w-xl">Pinch and zoom to explore regional specialties, local ingredients, and traditional cooking methods from every corner of the globe.</p>
+</div>
+</div>
+<!-- Fusion Chef Entry Point -->
+<div class="md:col-span-4 row-span-1 relative rounded-xl overflow-hidden bg-surface-container-lowest border-2 border-premium-gold shadow-[0_4px_24px_rgba(63,95,146,0.06)] group cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-premium-gold flex items-center justify-center transform translate-x-4 -translate-y-4 rotate-45 z-10 shadow-sm">
+<span class="material-symbols-outlined text-white -rotate-45" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A split-screen food photography shot showing Italian pasta on one side and Japanese ramen on the other, beautifully blended in the center. The lighting is bright, high-key, and professional, highlighting the textures of the food. The aesthetic is modern and sophisticated, fitting a premium culinary platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGVNuT8GZAy-MpSw0KeTlZ8-RAVE3e1Swie1hsqvdcJsQYBE-zoHpFR2fKtSUgTj0kLEJSE8eZW6CRLxoJxGI9boFiMHwodpzfdGUkGsVdeAMXHpT2sweeLQNp7ktB0t4FWViRl9onVZLYZdA93qa_A-6fZvMLMJcbI3bzejndQo0cEyraSBS-sYC8-T0rkD0xYyGbuyxwcI6QQWb0IoJkgAE48q_bO8iExYDeChrwXFyr0ZSjmQrFWw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 z-20">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Fusion Chef</h3>
+<p class="font-body-md text-body-md text-white/80 mb-4 line-clamp-2">Combine traditions. Create entirely new flavor profiles by merging two distinct culinary cultures.</p>
+<button class="bg-primary px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-primary-container transition-colors w-full justify-center bg-primary-container text-on-primary-container">
+                            Start Blending <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Featured Region: Maghreb -->
+<div class="md:col-span-4 row-span-1 relative rounded-xl overflow-hidden bg-surface-container-low group cursor-pointer">
+<div class="absolute top-4 left-4 z-10 w-8 h-8 rounded-full overflow-hidden border-2 border-white/20 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A small, stylized, flat-design icon representing the flag of Morocco, using simple geometric shapes and colors appropriate for a modern UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgUwBpA970KDsEh4TMPOtt5VHznTsg8whrEmAVin9k7EtDLVv5g7Jzgrr3UPuGFX5XoFz6V8hCPEQVStw-rytX_scAbli_v3bMwVPCjXN4Q3XhQ2kqyPhNUxXCPbshvnPvl0QI-XtVFomQFoc-44we0PBxPI2UaBDVb-tsMLdJu-L4_eEVYHI9KuU9PrDpD_I-xpX_6ji9xW_GZr0eQe-Rw2BnZ5b36eQ-1PrCqenjaVVgacQX6RU2Iw"/>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-angle, premium photograph of a traditional Moroccan Tagine, slow-cooked with lamb, apricots, and almonds. The dish is set on a light, textured surface. The lighting is soft and natural, emphasizing the rich, warm colors of the spices and the steam rising from the clay pot, fitting a modern culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHunmeQTpsVxVzQDdG3PG7RTca2cizjIkWoTgLVoM6e4r_JuykonIpgxF7gjjAbAq8h8loqFUUwevSgtJUzUDmw5waM0STCKOsdeyRv7PnrURKMgA-CMENVQxptQL_5NENL_3OOZyMyOVaKi3HDvEfLWeBwNiGnFsOF-zoJfdytQC1U8sgvkOHStgw07nXvrgqDDrlijvHGXYTMaor28Zozb9g_Y3-1NY9c6ltnU90B9RGlW3l7deZHg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 z-20">
+<h4 class="font-label-sm text-label-sm text-white/80 uppercase tracking-wider mb-1">Maghreb Kitchen</h4>
+<h3 class="font-headline-md text-headline-md text-white">Morocco</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Grids -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Levantine Classics</h2>
+<button class="font-label-md text-label-md text-primary flex items-center gap-1 hover:text-primary-container transition-colors">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Country Card: Lebanon -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(63,95,146,0.04)] hover:shadow-[0_8px_24px_rgba(63,95,146,0.08)] transition-shadow duration-300 group cursor-pointer flex flex-col h-full border border-surface-container">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 left-3 z-10 w-6 h-6 rounded-full overflow-hidden border border-white/30 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A tiny, elegant icon of the Lebanese flag, stylized for a modern user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-gtwNxhYnH8JX0IJNyK1d9OUJdXxiZe3uRux2y9xiKcA1hfiJBsfRHEBiWJgtnD7EYx929Afg6c1KySweX5PAJ8QSN98_zyTquDl64PTWe9wtyhlMS6eZ1-tmtUSY9ba3i4h3EcM3JMAoqP2tn6yycXDhqfeUstX8MaGDrJTm1Z7qKcP4LaI78PvZU9j7e2RLQnM75nzhi7m9Z5ZWM7uTZxYN8p9l9J42bFq5I3AqnfjWNoujIqn2-g"/>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A beautiful spread of Lebanese mezze, featuring creamy hummus, vibrant tabbouleh, and warm pita bread. The scene is bright and inviting, shot from directly above on a clean, light marble surface, embodying a soft minimalist culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzVUZv7sb6qxjXotEAwdS3k6VSmbHz5-fRQ7XU-NvwfrUzXRACiOq7uNwpM2bX-tACqstvVYT98Mlsd3YUD_Tyip8betllfkqyMJKUxgtriGhh80Uz7wFDZSQIKxveYTR3WEfJlt3KaoyarnlQFdyVdLiB78nara8EDL8EuKDwdKfIYg0ZH3LNe_ity7N14p9TlOIdFsrc2EF9Qd-czh4dS-0RcV97ID8K-XbYH6uLg5HEKbJ4ff9heg"/>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Lebanon</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-3">Signature: Mezze Platter</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 text-sm flex-grow">A cuisine built on abundance and sharing. Levantine cooking emphasizes fresh vegetables, olive oil, garlic, and bright citrus flavors.</p>
+</div>
+</div>
+<!-- Country Card: Syria -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(63,95,146,0.04)] hover:shadow-[0_8px_24px_rgba(63,95,146,0.08)] transition-shadow duration-300 group cursor-pointer flex flex-col h-full border border-surface-container">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute top-3 left-3 z-10 w-6 h-6 rounded-full overflow-hidden border border-white/30 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A tiny, elegant icon of the Syrian flag, stylized for a modern user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7RmElpqLJcJBOu5-iTXITYKneyc6ih0U_X7Ri_CwFGC8fSUI9gizIIOyNs0evPnKUhVWMqAr6C7iXM7yhkxv0UjCTQj8rX_7pH1GYFKtvaIZHGuPruX4px3O5vvCwB3Hlzau2GvafvFSrLqp04ieqjpnWmvsGm_mW71wn2ypKUxkyxzrdr0FFdb52SRFctcFPf4WU2fsxJrTidV8NsIbffwxHr4G6ccJMdp1W_8bZamLMlpTXD-6Dkg"/>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A rich, detailed shot of Syrian Kibbeh, perfectly fried and arranged on a simple, modern ceramic plate. The lighting highlights the crisp exterior and the delicate pine nuts scattered around, set against a soft gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB58NMZ72SQA9384FwzJepg7fFWGBS2FF02w5TZYvrfl22s_jhH_HDxxmUiYTBZ11hTtWqoWSHgIVKtmQXuIvLzUl1rSjXJniDH2WY4zWMmfr5SdufhsGvrLOH6NEYjoiLBsFLyXSUhJfUEWY6kBsXe8HAqZszUW-WR-d6GRJcWB6OccuKL8zdXQNhWPxh6KRugLcnQg64DfB5VfMz_SieeXHh2wxe0lB5igWEOHVOyF6na1o9kj11cig"/>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Syria</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-3">Signature: Kibbeh</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 text-sm flex-grow">Known for complex spice blends like Baharat, bringing deep, warming flavors to meats and ancient grains.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(63,95,146,0.04)] rounded-t-xl pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">public</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI Chef</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-label-sm text-label-sm">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<style>
+        /* Safe area padding for modern mobile devices */
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .pb-safe {
+                padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+            }
+        }
+        
+        /* Subtle scrollbar for horizontal lists if needed later */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

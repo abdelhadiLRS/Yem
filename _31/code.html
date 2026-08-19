@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Cooking App - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#051d30",
+                      "primary-fixed-dim": "#ffb783",
+                      "outline": "#897365",
+                      "surface-bright": "#f9f9f9",
+                      "surface-tint": "#944a00",
+                      "surface-container-highest": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#4b6076",
+                      "background": "#f9f9f9",
+                      "on-surface-variant": "#564337",
+                      "inverse-primary": "#ffb783",
+                      "on-secondary-container": "#00743a",
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "inverse-surface": "#2f3131",
+                      "secondary-container": "#6bfe9c",
+                      "surface-container-high": "#e8e8e8",
+                      "surface-dim": "#dadada",
+                      "on-primary-fixed": "#301400",
+                      "outline-variant": "#dcc1b1",
+                      "inverse-on-surface": "#f1f1f1",
+                      "tertiary-container": "#869bb3",
+                      "surface-variant": "#e2e2e2",
+                      "secondary-fixed-dim": "#4ae183",
+                      "secondary": "#006d37",
+                      "on-background": "#1a1c1c",
+                      "surface-container": "#eeeeee",
+                      "tertiary-fixed-dim": "#b3c9e2",
+                      "tertiary-fixed": "#cfe5ff",
+                      "secondary-fixed": "#6bfe9c",
+                      "surface": "#f9f9f9",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1a1c1c",
+                      "on-primary-container": "#502600",
+                      "on-secondary-fixed-variant": "#005228",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f3f3",
+                      "on-secondary": "#ffffff",
+                      "primary": "#944a00",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#713700",
+                      "on-tertiary-container": "#1d3347",
+                      "primary-container": "#e67e22",
+                      "primary-fixed": "#ffdcc5",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#00210c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "gutter": "16px",
+                      "section-gap": "48px",
+                      "container-margin": "24px",
+                      "card-padding": "20px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "label-sm": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "body-md": [
+                              "beVietnamPro"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-32 pt-20 overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-7xl mx-auto">
+<button aria-label="Menu" class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Smart Cooking App</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-high shadow-sm hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A portrait of a smiling user, bright lighting, warm earthy tones, modern soft minimal style. Professional quality, suitable for a profile picture in a high-end app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXap-q454gpmMVq1JeK9tGKkj3yccft7gP9VygKKH4ofH8vKbIb9UfPdXuNVIe5z7XwXWXsXL_EdcikTIJY6MAHJh5Mr0XU3lvu311Wd1tfxY_q_UvyCgxpkAcvJd9mWQF8JFSSp5MCGNXkNpM83knxl6hJurRTdZ2LZA8xPUchTeIn3nNCxgaFrLqv5hQ9UD-BkxjNOoeNT1lSC6TPNxYovZxsbivZg5SfMA5m55dmYu43SMJyW5CZw"/>
+</div>
+</div>
+</header>
+<main class="w-full max-w-7xl mx-auto px-container-margin md:px-gutter grid grid-cols-4 md:grid-cols-12 gap-gutter md:gap-container-margin pt-container-margin">
+<!-- Smart Contextual Widget -->
+<section class="col-span-4 md:col-span-12 mb-section-gap">
+<div class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_12px_30px_rgba(230,126,34,0.08)] relative overflow-hidden flex flex-col md:flex-row items-center gap-container-margin">
+<!-- Background decorative shape -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl -z-10"></div>
+<div class="flex-1 space-y-4 z-10">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="inline-flex items-center gap-1 bg-surface-container-high rounded-full px-3 py-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span> مشمس 31°C
+                        </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-high rounded-full px-3 py-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">kitchen</span> 6 مكونات جاهزة
+                        </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-high rounded-full px-3 py-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 45 دقيقة
+                        </span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-background">دجاج بالليمون مع سلطة البحر المتوسط</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">اقتراح مثالي ليوم مشمس بناءً على مكوناتك المتاحة. سريع ومنعش.</p>
+<button class="bg-primary text-on-primary rounded-full px-6 py-3 font-label-sm text-label-sm shadow-[0_4px_20px_rgba(148,74,0,0.2)] active:scale-95 transition-transform hover:opacity-90 mt-2">
+                        ابدأ الطهي
+                    </button>
+</div>
+<div class="w-full md:w-1/3 h-48 md:h-full min-h-[200px] rounded-lg overflow-hidden relative z-10 shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<img alt="Lemon Chicken" class="w-full h-full object-cover absolute inset-0" data-alt="A beautifully plated Lemon Chicken with Mediterranean Salad. The dish is bright and summery, featuring golden chicken, vibrant red tomatoes, green cucumbers, and yellow lemon slices. Shot from top-down with natural, warm sunlight casting soft shadows on a rustic wooden table. Premium modern food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1dZQTD5xKrDLhE_LMnY6VfwyXxMtz1uYuFwVBhKBfZvKv0XRX5V5REZfAUgUoyaZuwzY9-nDbdP9EMm1yz_YOfSlM1FMrCJxNM0TiA5HX7khYeyiJ1zqAebwPAbU8mbO_-noZg6V59AJKjVZuO_1vTr3q6yC2rLr4AG8y9TL_hiZA7sQZhrvTeawjO7-AnEZljmRA_yjS_O89b4h8VXBnH50JVn7VTRZFH14UgZe5YEdvyY-g8LY_gA"/>
+<!-- Subtle gradient for text overlay legibility if needed later -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Taste the World (Daily Spotlight) -->
+<section class="col-span-4 md:col-span-12 mb-section-gap">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-container-margin">تذوق العالم</h3>
+<div class="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] aspect-[4/5] md:aspect-[21/9]">
+<img alt="Italy Spotlight" class="w-full h-full object-cover absolute inset-0" data-alt="A stunning, atmospheric shot of authentic Italian pasta being served in a rustic Italian kitchen. Warm golden hour lighting streaming through a window, illuminating fresh basil, ripe tomatoes, and olive oil. The mood is inviting and rich. Soft minimalism, earthy tones, high-quality food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArejfbZnkGRfi-ctQyaNB1gCHvPFm6xLDDc8aMgKBFXEaGgF7plwGLv3LECAcbiLoSE3ZGQxaclPOq0samP221ra4oZmLAt14Z0F4aP2b2oUStiB-hYtdlvy70er38wtyot1a9nqvwCX_XZ5gHx5N3vNLjGhMqEmXkutxOyK6-vcO4cBYkbKCFSGAEwu5jfMV-lDwe9kAQMuFO4tpgh06hBttE2yq0595zDxsUs9a4juFScWo9ZuqyLw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-container-margin">
+<span class="inline-block bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full w-max mb-2">إيطاليا</span>
+<h4 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-2">أسرار الباستا التقليدية</h4>
+<p class="font-body-md text-body-md text-white/90 line-clamp-2 md:w-1/2">اكتشف كيف تحضر عائلة إيطالية الباستا منذ أجيال. وصفات تعتمد على البساطة وجودة المكونات.</p>
+</div>
+</div>
+</section>
+<!-- Seasonal Ingredients -->
+<section class="col-span-4 md:col-span-12 mb-section-gap">
+<div class="flex justify-between items-end mb-container-margin">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">مكونات موسمية</h3>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">عرض الكل</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Ingredient 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding text-center shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:-translate-y-1 transition-transform cursor-pointer">
+<div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4 shadow-sm">
+<img alt="Strawberries" class="w-full h-full object-cover" data-alt="Close up of fresh, bright red strawberries in a minimalist ceramic bowl. Natural soft light, vibrant colors against a muted warm earthy background. High resolution, appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXzDq4KLX6OmlEXpVJgqx-zoyjjoY6eqihRp1aodLDvpNThjWVqBrunpPpD2lm4IPFh9dliuZ8yfwQ4J0q1KSDHe9dxhIYcJhYLvJowxG2okBdd3wM6LP_kpMp7Av8dCkt04Umr6UQuEkuqfyWseA7GE6l3DvpvrBVU6ANWTMp3DQ5lRwE0KLuQ7hY-2Xf5-bp1xL-e3GUfCX6oiehvANeyQh0T5qySZoBI5xkIZGqv_t03M9p20f-4g"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background mb-1">فراولة</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">موسم الذروة</p>
+</div>
+<!-- Ingredient 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding text-center shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:-translate-y-1 transition-transform cursor-pointer">
+<div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4 shadow-sm">
+<img alt="Asparagus" class="w-full h-full object-cover" data-alt="Close up of fresh green asparagus spears tied with twine. Natural soft light, vibrant green against a muted warm earthy background. High resolution, appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUtiHSV0hJnIcLK2NnWbxGmkljV4MJ6fVr1DS_L4FZcoOEC6cPkCc2zJ6x719uakzQIrJeqjtN7Jr1PI1WGEwgE1FMz6QX7zfHpsbgKOu-UFdWdyP2HEvAYEzFH1Sbud1n9kv_VixPBJoCqJ4fgcILa4yTGHZh91PJU9Gb3IHw8b6m0s201DVf4-XkRsuedYCWpT_wdX31A1WV2UY4Zfkiswdg--wgnGddDDNTvHZgI8jKxOLeWAjRQQ"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background mb-1">هليون</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">طازج يومياً</p>
+</div>
+<!-- Ingredient 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding text-center shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:-translate-y-1 transition-transform cursor-pointer">
+<div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4 shadow-sm">
+<img alt="Lemons" class="w-full h-full object-cover" data-alt="Close up of vibrant yellow lemons with fresh green leaves. Natural soft light, vibrant colors against a muted warm earthy background. High resolution, appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctsxhDlUI29aUUlFF3yPxQtHTbIdDM61KC42HTDiIWNABQp-cj1nlJdgpZ8EW0uoGT34Yw2mE9W1VBdvKn564kPeBfXmr0oxnAs_L8dQ57JYOp8q6IuJ7ydjuMpwB7o3vGsLjVrFP2Yf_L8JrFSSenih9SfLeO2hwIARtbAdvudiN8fyWQNd-mMcITCCdCdY0Wb1sNkDKbiLl5SATeHosxjb1q6D1gg-9AEjlxwPthoArQ-SJl6XwWg"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background mb-1">ليمون</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">غني بفيتامين C</p>
+</div>
+<!-- Ingredient 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding text-center shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:-translate-y-1 transition-transform cursor-pointer hidden md:block">
+<div class="w-20 h-20 mx-auto rounded-full overflow-hidden mb-4 shadow-sm">
+<img alt="Mint" class="w-full h-full object-cover" data-alt="Close up of fresh green mint leaves. Natural soft light, vibrant green against a muted warm earthy background. High resolution, appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8aAyx0y9vhjzistSCKmwdvi5LGPsWYckYn_9SYN5viCDT9f37b-l2H8VVQ3uSYBHjWEQACH_EGWzPfDkCzx22Aye-f4SV9ZUgOTKqKfq_KsvMf6qR2rtxppX8aVRoCuy0EvPMTTB9pOuLWHJoXZiNvG8S6LByV5NOehvM3WNRTkXSCYLDN0bxdoQyCEMEG8wkLoK3ZHcqeZ-E9oRKFWjM5hLpoPiuqyFwAurIuxfjbgfugmCgcd3RQg"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-background mb-1">نعناع</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">عطري ومنعش</p>
+</div>
+</div>
+</section>
+<!-- Smart Daily Menu -->
+<section class="col-span-4 md:col-span-12 mb-section-gap">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-container-margin">قائمة اليوم الذكية</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-container-margin">
+<!-- Breakfast -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col">
+<div class="aspect-square w-full relative">
+<img alt="Breakfast" class="w-full h-full object-cover" data-alt="A healthy breakfast bowl with yogurt, granola, and fresh berries. Soft morning light, bright and airy feel, warm earthy tones. Minimalist modern food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbVLWgJLv-3oWAMWaQhMNpdYzi0_Z8FfXxJtWAG97FacrhhD8sL5yZAdqqBGela-ouQpzUluI2P9Rwj7_VRs6JYsioynGIWzStSEgtuc92Iz0-wP56HgY-wpv7ZH104X2kVrlsImF725lF1eV3euNh7v11znqqZJABoFBYcWJvDURdhA1qn5UC7AECNrcjH1Lw0MmA9UXJOy2foHHwd_jDKmXYUwacD_eZes4mAxgN-rKC7SI35JSPSg"/>
+<div class="absolute top-2 right-2 bg-secondary/10 text-on-background px-2 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">
+                            الإفطار
+                        </div>
+</div>
+<div class="p-card-padding flex-1 flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-background mb-2">وعاء الشوفان والتوت</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1">بداية نشيطة ليومك مع الشوفان الغني بالألياف والفواكه الطازجة.</p>
+<div class="flex items-center gap-2 mt-auto">
+<span class="inline-flex items-center gap-1 bg-surface-container-low rounded-full px-2 py-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 10 د
+                            </span>
+</div>
+</div>
+</div>
+<!-- Lunch -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col">
+<div class="aspect-square w-full relative">
+<img alt="Lunch" class="w-full h-full object-cover" data-alt="A colorful quinoa salad with avocado, cherry tomatoes, and a light dressing. Bright midday natural light, clean and crisp presentation. Minimalist modern food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2YqWGiKeOEvntxuoVGiZ-4q9-GsDh56h8ABq-X45gJcBj3lekvmshMEuAlkxp0kK1fO-7mrQrR0dzgsenxfiJJgCHr6s5pYafJTID1cUV3oXT3Uhp8rKm3_HaXYP3nXRe-Rkop_x96pRoSnVITxGxTd1d_RqrVh6XO9KzdqNzdG7jBaFEn0ilPV5jZkS3_Df4CdDnU-brFG4rX09lRh0pUxPf4Sk-ne1w3UzycsPDXaQNURvd7805XA"/>
+<div class="absolute top-2 right-2 bg-secondary/10 text-on-background px-2 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">
+                            الغداء
+                        </div>
+</div>
+<div class="p-card-padding flex-1 flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-background mb-2">سلطة الكينوا الملونة</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1">وجبة خفيفة ومغذية تمنحك الطاقة لإكمال يومك.</p>
+<div class="flex items-center gap-2 mt-auto">
+<span class="inline-flex items-center gap-1 bg-surface-container-low rounded-full px-2 py-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 20 د
+                            </span>
+</div>
+</div>
+</div>
+<!-- Dinner -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col">
+<div class="aspect-square w-full relative">
+<img alt="Dinner" class="w-full h-full object-cover" data-alt="A cozy, warm bowl of roasted pumpkin soup with herbs and croutons. Soft, warm evening lighting, rustic yet modern presentation. Minimalist modern food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVzI78Skxf4JGSRpvb1ku0n1OLCazvbCvO9FsJlVEc2UGgklj4VKUUcoBwyAp8vxW-NNGOIKj28COja08f0kyHiP4x_Q9gJ9f8ttKsKcrGME1P6K9KPpmeTGU6b17fThEd7mgtzNiePSufB4qNYK0ns6B-AVkvW2l2mEaRr9YySYC1jiGVpuW24pYOKG0haG3noS7j8pTpVy3Yppr3wJSSJJnJKe9PMSUgEQSSnI8euk485B1DqC2ZAg"/>
+<div class="absolute top-2 right-2 bg-secondary/10 text-on-background px-2 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">
+                            العشاء
+                        </div>
+</div>
+<div class="p-card-padding flex-1 flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-background mb-2">حساء اليقطين المشوي</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-1">عشاء دافئ ومريح، مثالي للاسترخاء بعد يوم طويل.</p>
+<div class="flex items-center gap-2 mt-auto">
+<span class="inline-flex items-center gap-1 bg-surface-container-low rounded-full px-2 py-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 40 د
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Discover (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</a>
+<!-- AI Chef (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI Chef</span>
+</a>
+<!-- Plan (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm">Plan</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

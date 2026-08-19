@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recipe Evolution &amp; Cooksnap 2.0 - CulinaryAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=IBM+Plex+Sans+Arabic:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "tertiary-fixed": "#cfe5ff",
+                      "tertiary-fixed-dim": "#b3c9e2",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-dim": "#dadada",
+                      "background": "#f9f9f9",
+                      "secondary": "#006d37",
+                      "outline": "#897365",
+                      "surface-bright": "#f9f9f9",
+                      "primary-fixed": "#ffdcc5",
+                      "surface-container-low": "#f3f3f3",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#869bb3",
+                      "surface-tint": "#944a00",
+                      "secondary-container": "#6bfe9c",
+                      "surface": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "on-primary-fixed": "#301400",
+                      "on-background": "#1a1c1c",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005228",
+                      "surface-container-high": "#e8e8e8",
+                      "outline-variant": "#dcc1b1",
+                      "on-primary-fixed-variant": "#713700",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "on-secondary-container": "#00743a",
+                      "on-primary-container": "#502600",
+                      "secondary-fixed": "#6bfe9c",
+                      "on-tertiary-container": "#1d3347",
+                      "tertiary": "#4b6076",
+                      "on-error-container": "#93000a",
+                      "surface-container": "#eeeeee",
+                      "primary-fixed-dim": "#ffb783",
+                      "on-secondary-fixed": "#00210c",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-surface": "#1a1c1c",
+                      "inverse-primary": "#ffb783",
+                      "secondary-fixed-dim": "#4ae183",
+                      "primary-container": "#e67e22",
+                      "on-tertiary-fixed": "#051d30",
+                      "on-surface-variant": "#564337",
+                      "error": "#ba1a1a",
+                      "primary": "#944a00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "20px",
+                      "container-margin": "24px",
+                      "base": "8px",
+                      "section-gap": "48px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "body-md": [
+                              "beVietnamPro"
+                      ],
+                      "label-sm": [
+                              "beVietnamPro"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .ambient-shadow-1 { box-shadow: 0 4px 20px rgba(148, 74, 0, 0.05); }
+        .ambient-shadow-2 { box-shadow: 0 12px 30px rgba(148, 74, 0, 0.1); }
+        
+        /* Subtle image gradient overlay */
+        .img-gradient-overlay {
+            background: linear-gradient(to top, rgba(26, 28, 28, 0.4) 0%, rgba(26, 28, 28, 0) 40%);
+        }
+        
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased font-body-md text-body-md min-h-screen relative pb-[80px] md:pb-0">
+<!-- Header (Suppressed BottomNavBar since this is a detailed recipe view / transactional flow) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/75 dark:bg-surface-dim/75 backdrop-blur-md shadow-sm dark:shadow-none flex justify-between items-center px-gutter py-unit w-full h-[64px]">
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">CulinaryAI</h1>
+<button class="text-primary dark:text-primary-fixed-dim cursor-pointer active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</header>
+<main class="max-w-[1280px] mx-auto px-container-margin md:px-8 pt-6 pb-24 grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Hero Section -->
+<div class="col-span-1 md:col-span-12 relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[21/9] ambient-shadow-1">
+<img class="w-full h-full object-cover absolute inset-0 z-0" data-alt="A top-down view of a beautifully plated rustic Italian pasta dish with rich red tomato sauce, fresh green basil leaves, and shaved parmesan cheese. The scene is lit with natural, warm sunlight creating a vibrant, inviting atmosphere on a slightly distressed white wooden table, reflecting a modern premium culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzY3zQiGbSjH5ZiFJQvPxxZNIC3sSHnKKdGb8lo-I95vi-7q9w_qf6BDZ9uT9mzkYXFv0VAHq85qI3O0bqX6DrJZ_V9NG_m9v2gcuAIa4ror_KOLHjo56WHPgCwd8OYP7c_eaav_O3T7yAMPq6nOQGGGCJfnu4-JFQiePKNDm9wTSfavMlBWUyD9GrWAipyiyci4Vx46ItZ9y-cRGEebWE84EWKCTPr78UviFQym1zCa4p80NCxRkJgA"/>
+<div class="absolute inset-0 img-gradient-overlay z-10"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 z-20 flex flex-col justify-end">
+<div class="flex gap-2 mb-3">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">Vegetarian</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">High Protein</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-2 shadow-sm drop-shadow-md">Tuscan Sun-Dried Tomato Pasta</h2>
+<p class="font-body-lg text-body-lg text-white/90 drop-shadow-sm max-w-2xl">A modernized classic, enhanced for maximum flavor depth while reducing overall prep time.</p>
+</div>
+</div>
+<!-- Recipe Meta Details (Bento style) -->
+<div class="col-span-1 md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col items-center justify-center text-center ambient-shadow-1">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Time</span>
+<span class="font-headline-md text-headline-md text-on-surface">35 Min</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col items-center justify-center text-center ambient-shadow-1">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl" style="font-variation-settings: 'FILL' 1;">speed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Difficulty</span>
+<span class="font-headline-md text-headline-md text-on-surface">Medium</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col items-center justify-center text-center ambient-shadow-1">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Calories</span>
+<span class="font-headline-md text-headline-md text-on-surface">420 kcal</span>
+</div>
+<div class="bg-surface-container-lowest rounded-DEFAULT p-4 flex flex-col items-center justify-center text-center ambient-shadow-1">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Est. Cost</span>
+<span class="font-headline-md text-headline-md text-on-surface">$12.50</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="col-span-1 md:col-span-12 flex flex-col sm:flex-row gap-4 mt-4">
+<button class="flex-1 bg-primary-container text-on-primary-container rounded-full py-4 px-6 flex items-center justify-center gap-2 font-headline-md text-headline-md hover:bg-surface-tint hover:text-white transition-colors ambient-shadow-2 active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                Start Cooking (Voice)
+            </button>
+<button class="flex-1 bg-surface-container-lowest border-2 border-secondary text-secondary rounded-full py-4 px-6 flex items-center justify-center gap-2 font-headline-md text-headline-md hover:bg-secondary/5 transition-colors ambient-shadow-1 active:scale-95">
+<span class="material-symbols-outlined">support_agent</span>
+                Recipe Rescue Assistant
+            </button>
+</div>
+<!-- Left Column: Recipe Evolution -->
+<div class="col-span-1 md:col-span-7 flex flex-col gap-6 mt-8">
+<h3 class="font-headline-lg text-headline-lg text-on-surface border-b border-outline-variant pb-2">Recipe Evolution</h3>
+<div class="relative pl-6 border-l-2 border-surface-variant flex flex-col gap-8 py-2">
+<!-- Original -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 bg-surface-variant rounded-full border-4 border-background z-10"></div>
+<div class="bg-surface-container-lowest rounded-xl p-5 ambient-shadow-1">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Original Classic</span>
+<span class="font-label-sm text-label-sm text-outline">v1.0</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-3">Traditional method requiring 2 hours of simmering for sauce reduction. High acidity profile.</p>
+</div>
+</div>
+<!-- AI Enhanced -->
+<div class="relative">
+<div class="absolute -left-[35px] top-1 w-6 h-6 bg-primary rounded-full border-4 border-background z-10"></div>
+<div class="bg-primary-fixed/20 rounded-xl p-5 border border-primary-fixed-dim ambient-shadow-1">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span> AI Enhanced
+                            </span>
+<span class="font-label-sm text-label-sm text-primary">v2.0</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-3">Introduced balsamic reduction technique at step 3. Cuts cooking time by 45 mins while deepening umami notes. Adjusted salt ratio.</p>
+<div class="bg-surface-container-lowest/80 rounded-lg p-3 text-sm text-on-surface-variant italic">
+                            "The balsamic reduction perfectly balances the tomato acidity without the long simmer." - CulinaryAI Engine
+                        </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Cooksnap 2.0 -->
+<div class="col-span-1 md:col-span-5 flex flex-col gap-6 mt-8 md:mt-8">
+<div class="flex justify-between items-end border-b border-outline-variant pb-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Cooksnap 2.0</h3>
+<span class="font-label-sm text-label-sm text-secondary hover:underline cursor-pointer">View All (142)</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Snap 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow-1 flex flex-col">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="A user-generated photo of a rustic pasta dish in a white ceramic bowl, slightly imperfect plating, taken with a smartphone in a bright kitchen. Soft natural lighting, warm aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoprucF3C4CCWov7fPFXmH7UT2E-u6i9kQ3bso_dc05jDX16TCRe9o7F7CQic_JAsvdy_8Ty4Mg8dZtgrAJwZT4IauY8GLHcVEviPUsuKhP0FodbRE3tu3Nk6_UIPgfyps5Pbpuefvtqsx4AwzsL2Y83d_V59RIYrnLhTEU9T3Pl1KpavXyS3McDh1WF6ddgMlXODpbSD8Nsb9aXbfPysZAsWxRxGg4t2f2F7_8LHYxhvC-T0Rse8ikg"/>
+<div class="absolute top-2 right-2 bg-background/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.8</span>
+</div>
+</div>
+<div class="p-3">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 text-sm">"Swapped heavy cream for cashew cream. Still rich and amazing! AI suggested baking the tomatoes first."</p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-variant">
+<div class="w-6 h-6 rounded-full bg-tertiary-container flex items-center justify-center text-xs text-on-tertiary-container font-bold">JD</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-xs">Mod: Vegan</span>
+</div>
+</div>
+</div>
+<!-- Snap 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow-1 flex flex-col">
+<div class="relative aspect-square">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of creamy tomato pasta with fresh basil garnish, shot from directly above. High contrast, appetizing lighting, modern casual dining setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACVdjm339m7JF_idxXWfJ0l1mPsvvlgUj6NI8Kmg7p5l9o09eCgQI2Uo_2DBUDsIrHpSAaIgwWl9IRkZp9KJIIe5l3bb2oMhGlUUGPMGVQKN_RqI96srawHlz2HN_U5SAw6cEy3j9ZMD59E7sYBs4XHumNUBhXkYG4SO_qCwWBZm82MJMXgvd8tZQyFXR2vcWNMugo5JYPkWMfHs2CdqcDyGXg59bpWK2WcbB9i45OxC2Qesto2cagTA"/>
+<div class="absolute top-2 right-2 bg-background/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">5.0</span>
+</div>
+</div>
+<div class="p-3">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 text-sm">"Followed the v2.0 AI instructions exactly. Best weeknight dinner we've had in months."</p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-variant">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center text-xs text-on-secondary-container font-bold">MK</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-xs">As Written</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 mt-2 bg-surface-container border border-outline-variant text-on-surface rounded-xl font-headline-md text-headline-md hover:bg-surface-variant transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add_a_photo</span>
+                Share Your Cooksnap
+            </button>
+</div>
+</main>
+</body></html>

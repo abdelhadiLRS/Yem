@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مساعد التسوق الذكي</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb783",
+                      "surface-container": "#eeeeee",
+                      "tertiary": "#4b6076",
+                      "on-tertiary-container": "#1d3347",
+                      "on-tertiary-fixed": "#051d30",
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "tertiary-container": "#869bb3",
+                      "error": "#ba1a1a",
+                      "primary-container": "#e67e22",
+                      "surface-dim": "#dadada",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-primary-container": "#502600",
+                      "primary": "#944a00",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e2e2e2",
+                      "secondary-container": "#6bfe9c",
+                      "surface-bright": "#f9f9f9",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005228",
+                      "secondary": "#006d37",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#b3c9e2",
+                      "tertiary-fixed": "#cfe5ff",
+                      "background": "#f9f9f9",
+                      "surface-container-low": "#f3f3f3",
+                      "outline": "#897365",
+                      "on-surface-variant": "#564337",
+                      "on-primary-fixed": "#301400",
+                      "secondary-fixed": "#6bfe9c",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#2f3131",
+                      "on-secondary-container": "#00743a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "on-surface": "#1a1c1c",
+                      "on-primary-fixed-variant": "#713700",
+                      "outline-variant": "#dcc1b1",
+                      "on-secondary-fixed": "#00210c",
+                      "surface-container-high": "#e8e8e8",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#944a00",
+                      "inverse-primary": "#ffb783",
+                      "secondary-fixed-dim": "#4ae183",
+                      "surface": "#f9f9f9",
+                      "primary-fixed": "#ffdcc5",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-secondary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "base": "8px",
+                      "card-padding": "20px",
+                      "section-gap": "48px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "label-sm": [
+                              "beVietnamPro"
+                      ],
+                      "body-md": [
+                              "beVietnamPro"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            font-family: "IBM Plex Sans Arabic", sans-serif;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-32">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto bg-surface/70 backdrop-blur-xl sticky top-0 z-40 shadow-sm transition-transform duration-150 docked full-width">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A detailed high-quality portrait of a user avatar, soft lighting, minimalistic background, modern light mode aesthetic, warm colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfyJDw3B2FCzFva3KAIVaVrugJ3beuxZUzgWcJFauRyZcl4WTvuyGk-ItP4uEVrKfOQcrzuOFJ0Iy1mRaHqrkvtwBTkJEYEAWn48eJ_BlAQtZUKmwYlyH-MsYCPkRmp98wmVo-NFL3-gdiOQj5JbUibd4AOAp7Ns5AqsTVnLrUGsMJGSZ1xUzWTC4Zf7YbiEhPiBONW35rOhyNHyhloxC9NA2Sk8JXc90O3PjxvQyyZTOkgiZSII3JOA"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Smart Cooking App</h1>
+</div>
+<button class="w-12 h-12 rounded-full flex items-center justify-center text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin mt-8">
+<!-- Header & Budget -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-section-gap gap-6">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">مساعد التسوق الذكي</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">calendar_today</span>
+                    مستمد من مخطط الوجبات الخاص بك
+                </p>
+</div>
+<!-- Smart Budget -->
+<div class="bg-surface-container-low rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex items-center gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">الميزانية الأسبوعية</p>
+<p class="font-headline-md text-headline-md text-on-surface">5000 <span class="text-sm">DZD</span></p>
+</div>
+<div class="h-10 w-px bg-outline-variant"></div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">المقدر</p>
+<p class="font-headline-md text-headline-md text-primary">4250 <span class="text-sm">DZD</span></p>
+</div>
+<button class="bg-primary text-on-primary rounded-full p-2 hover:bg-primary-container transition-colors shadow-sm ml-2">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</button>
+</div>
+</div>
+<!-- Scan Inventory Banner -->
+<div class="mb-section-gap bg-secondary-container text-on-secondary-container rounded-xl p-card-padding flex justify-between items-center shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<div class="flex items-center gap-4">
+<div class="bg-secondary text-on-secondary p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="barcode_scanner">barcode_scanner</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md">تحديث المخزون</h3>
+<p class="font-body-md text-body-md opacity-80">امسح مطبخك لتجنب الشراء المزدوج</p>
+</div>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label-sm text-label-sm hover:bg-on-secondary hover:text-secondary transition-colors">مسح الآن</button>
+</div>
+<!-- Shopping List Categories -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Category: Vegetables -->
+<div class="bg-surface-bright rounded-xl shadow-[0_4px_20px_rgba(230,126,34,0.08)] p-card-padding border border-surface-container">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-container">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="eco">eco</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">خضروات</h3>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-low rounded-lg transition-colors group">
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary border-outline-variant bg-surface" type="checkbox"/>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">طماطم</p>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">الكمية: 1 كجم</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface">150 DZD</p>
+</div>
+</div>
+<!-- Item 2 (Smart Inventory Deficit) -->
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg transition-colors border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-tertiary"></div>
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary border-outline-variant bg-surface" type="checkbox"/>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">بصل</p>
+<div class="flex flex-col gap-1 mt-1">
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">inventory_2</span> لديك 1 كجم، اشتر 500 جم فقط</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface">50 DZD</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Meat -->
+<div class="bg-surface-bright rounded-xl shadow-[0_4px_20px_rgba(230,126,34,0.08)] p-card-padding border border-surface-container">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-container">
+<span class="material-symbols-outlined text-error text-3xl" data-icon="set_meal">set_meal</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">لحوم</h3>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary border-outline-variant bg-surface" type="checkbox"/>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface">صدر دجاج</p>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">الكمية: 1.5 كجم</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface">1200 DZD</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl hidden md:flex">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm mt-1">اكتشف</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="kitchen" style="font-variation-settings: 'FILL' 1;">kitchen</span>
+<span class="font-label-sm text-label-sm mt-1">المكونات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">مخطط الوجبات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">حسابي</span>
+</a>
+</nav>
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="kitchen" style="font-variation-settings: 'FILL' 1;">kitchen</span>
+<span class="font-label-sm text-label-sm mt-1">المكونات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">حسابي</span>
+</a>
+</nav>
+</body></html>

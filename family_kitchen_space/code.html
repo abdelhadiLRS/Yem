@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مطبخ العائلة الذكي</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#502600",
+                        "surface-tint": "#944a00",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "on-surface": "#1a1c1c",
+                        "tertiary": "#4b6076",
+                        "on-surface-variant": "#564337",
+                        "surface-container": "#eeeeee",
+                        "inverse-primary": "#ffb783",
+                        "on-secondary-container": "#00743a",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-container": "#869bb3",
+                        "on-background": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-container": "#1d3347",
+                        "on-tertiary-fixed": "#051d30",
+                        "secondary-fixed": "#6bfe9c",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "secondary": "#006d37",
+                        "primary": "#944a00",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-secondary-fixed-variant": "#005228",
+                        "primary-fixed-dim": "#ffb783",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#00210c",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9f9",
+                        "surface-bright": "#f9f9f9",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9f9",
+                        "secondary-fixed-dim": "#4ae183",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6bfe9c",
+                        "tertiary-fixed": "#cfe5ff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#301400",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-surface": "#2f3131",
+                        "outline": "#897365",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#e67e22",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#dcc1b1",
+                        "on-primary-fixed-variant": "#713700"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "16px",
+                        "section-gap": "48px",
+                        "card-padding": "20px",
+                        "container-margin": "24px",
+                        "base": "8px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["beVietnamPro"],
+                        "label-sm": ["beVietnamPro"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "headline-xl": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "headline-md": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "body-md": ["beVietnamPro"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic, ibmPlexSans\""]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; background-color: #f9f9f9; color: #1a1c1c; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+        
+        /* Subtle scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dcc1b1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #897365; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-32 md:pb-0">
+<!-- Top App Bar -->
+<header class="docked full-width top-0 sticky z-40 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A portrait of a smiling middle-eastern family consisting of a father, mother, and two kids, in a modern, well-lit terracotta and sage green kitchen. The lighting is warm and inviting, suggesting a morning setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJz5dFk-4cDfVU3RbqFztiHHPfCsR17jAGMpFI3rJ7pmi8mdaaYXL7IEHm4MQC4o6jdAQvErXjrIt7TE5Fk2U2aPsBc-Wq1zWBg_YIc-SQnjXUGd-knP4rBywSyTaGEqdRGxYfdUOGZ2vM6A48_-pMtwD93yuFWr0Gi2j2jabYRsEB1k6JhJrGkfyhyfucOFc6W8tpBVUEw407vkh4eu07QpVMveAbN1XDcTBOiJrhEKTdxbC7ULtWaw"/>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">Smart Cooking App</h1>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin mt-8 mb-section-gap space-y-section-gap">
+<!-- Welcome Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 flex flex-col justify-center">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">مرحباً، عائلة أحمد 👋</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">يوجد 3 مهام قيد الانتظار و 12 عنصر في قائمة المشتريات.</p>
+</div>
+<div class="md:col-span-4 flex items-center justify-end gap-3 mt-4 md:mt-0">
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-label-sm text-label-sm hover:scale-95 transition-transform shadow-[0_12px_30px_rgba(230,126,34,0.15)]">
+<span class="material-symbols-outlined filled">add</span>
+                    إضافة مهمة
+                </button>
+</div>
+</section>
+<!-- Bento Grid: Main Dashboard -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[200px]">
+<!-- Shopping List (Tall) -->
+<div class="md:col-span-4 md:row-span-2 bg-surface-container-lowest rounded-[24px] p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">قائمة المشتريات</h3>
+<button class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors"><span class="material-symbols-outlined">add_circle</span></button>
+</div>
+<div class="flex-1 overflow-y-auto pr-2 space-y-3">
+<label class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-surface-container transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input class="form-checkbox text-primary rounded w-5 h-5 border-outline focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1">حليب لوز</span>
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px] font-bold">الأب</div>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-surface-container transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input class="form-checkbox text-primary rounded w-5 h-5 border-outline focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1">دقيق قمح كامل</span>
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center text-[10px] font-bold">الأم</div>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-surface-container transition-colors cursor-pointer border border-transparent hover:border-outline-variant opacity-60">
+<input checked="" class="form-checkbox text-primary rounded w-5 h-5 border-outline focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1 line-through">طماطم عضوية</span>
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px] font-bold">الأب</div>
+</label>
+<label class="flex items-center gap-3 p-3 bg-surface rounded-xl hover:bg-surface-container transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<input class="form-checkbox text-primary rounded w-5 h-5 border-outline focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface flex-1">خميرة فورية</span>
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center text-[10px] font-bold">الأم</div>
+</label>
+</div>
+</div>
+<!-- Task Distribution (Wide) -->
+<div class="md:col-span-8 md:row-span-1 bg-surface-container-lowest rounded-[24px] p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">مهام اليوم</h3>
+<span class="text-sm font-label-sm text-primary">عرض الكل</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1">
+<!-- Task Card -->
+<div class="bg-surface p-4 rounded-[16px] flex flex-col justify-between border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md text-on-surface font-semibold">تسوق الخضار</span>
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[10px] font-bold">الأب</div>
+<span class="text-xs text-on-surface-variant">قبل 5 مساءً</span>
+</div>
+</div>
+<!-- Task Card -->
+<div class="bg-surface p-4 rounded-[16px] flex flex-col justify-between border-l-4 border-secondary">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md text-on-surface font-semibold">تجهيز الكيك</span>
+<span class="material-symbols-outlined text-secondary">cake</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center text-[10px] font-bold">الأم</div>
+<span class="text-xs text-on-surface-variant">مساءً</span>
+</div>
+</div>
+<!-- Task Card -->
+<div class="bg-surface p-4 rounded-[16px] flex flex-col justify-between border-l-4 border-tertiary">
+<div class="flex justify-between items-start">
+<span class="font-body-md text-body-md text-on-surface font-semibold">ترتيب المخزون</span>
+<span class="material-symbols-outlined text-tertiary">inventory_2</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex -space-x-2 space-x-reverse">
+<div class="w-6 h-6 rounded-full bg-surface-variant border border-surface text-on-surface-variant flex items-center justify-center text-[10px] font-bold z-10">س</div>
+<div class="w-6 h-6 rounded-full bg-surface-variant border border-surface text-on-surface-variant flex items-center justify-center text-[10px] font-bold z-0">م</div>
+</div>
+<span class="text-xs text-on-surface-variant">الأبناء</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Shared Inventory (Square) -->
+<div class="md:col-span-4 md:row-span-1 relative rounded-[24px] overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-500 group-hover:scale-105" data-alt="A macro shot of a meticulously organized, modern kitchen pantry with glass jars filled with various grains, pastas, and spices. Warm under-cabinet lighting creates a cozy, terracotta-tinted glow on the wooden shelves. The focus is sharp on the foreground jars, blurring smoothly into the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6Tm1txCFK4bEpP8yYUBYps4YkTdCpIK7YbSXjoLqwzdLpe6tPQ3y0TS9vhf-3U0vSp1X_2twFYUTM6M2QXKMfje-xe9hX9RcDzpG3-QfP-v_CjKv6q7HJ47XIV-ITQM9kVQsrTKLHJpPpDZSJeU6npyKubpAO6uBqfCefC3PF9uOSGK0CS_Es8v8MauKI1IamF_F0EjqrZ8Y0JMj7lLV930UJnCRtIrRvQgMSD3aBoeTEAAUBdTBaEA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-card-padding">
+<h3 class="font-headline-md text-headline-md text-on-primary mb-1">المخزون المشترك</h3>
+<p class="text-sm text-surface-container opacity-90">تحقق من النواقص قبل التسوق</p>
+</div>
+</div>
+<!-- Upcoming Events (Square) -->
+<div class="md:col-span-4 md:row-span-1 bg-primary-container/20 rounded-[24px] p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col justify-between border border-primary-container/30">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-[16px] bg-primary text-on-primary flex flex-col items-center justify-center">
+<span class="text-xs opacity-80">أكتوبر</span>
+<span class="text-lg font-bold">24</span>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">عشاء عائلي</h3>
+<p class="text-sm text-on-surface-variant">تجمع عائلة العم خالد - مطلوب تحضير حلى</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all scale-90 duration-200" href="#">
+<span class="material-symbols-outlined filled">home</span>
+<span class="font-label-sm text-label-sm-mobile mt-1 text-[10px]">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm-mobile mt-1 text-[10px]">اكتشف</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">kitchen</span>
+<span class="font-label-sm text-label-sm-mobile mt-1 text-[10px]">المكونات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm-mobile mt-1 text-[10px]">مخطط الوجبات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm-mobile mt-1 text-[10px]">حسابي</span>
+</a>
+</nav>
+</body></html>

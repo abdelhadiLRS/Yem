@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yum - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#dcc1b1",
+                      "secondary": "#635e53",
+                      "surface-container-low": "#e9f6f7",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#eefcfd",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#213344",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#36485b",
+                      "surface-variant": "#d8e5e6",
+                      "secondary-fixed": "#e9e2d3",
+                      "surface-bright": "#eefcfd",
+                      "on-background": "#121e1f",
+                      "on-secondary-fixed": "#1e1b13",
+                      "secondary-fixed-dim": "#cdc6b8",
+                      "primary": "#944a00",
+                      "surface-dim": "#cfdddd",
+                      "tertiary": "#4e6073",
+                      "on-surface": "#121e1f",
+                      "inverse-surface": "#263334",
+                      "background": "#eefcfd",
+                      "tertiary-fixed-dim": "#b5c8df",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#889bb0",
+                      "outline": "#897365",
+                      "on-secondary-fixed-variant": "#4b463c",
+                      "primary-fixed": "#ffdcc5",
+                      "on-primary-fixed-variant": "#713700",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#d1e4fb",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#e9e2d3",
+                      "surface-tint": "#944a00",
+                      "surface-container-high": "#ddebec",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#301400",
+                      "inverse-on-surface": "#e6f3f4",
+                      "surface-container-highest": "#d8e5e6",
+                      "on-secondary-container": "#696458",
+                      "on-primary-container": "#502600",
+                      "on-surface-variant": "#564337",
+                      "inverse-primary": "#ffb783",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#091d2e",
+                      "primary-fixed-dim": "#ffb783",
+                      "primary-container": "#e67e22",
+                      "surface-container": "#e3f0f1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max-width": "1280px",
+                      "margin-mobile": "16px",
+                      "unit": "8px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": ["IBM Plex Sans"],
+                      "display-lg-mobile": ["IBM Plex Sans"],
+                      "body-lg": ["IBM Plex Sans"],
+                      "display-lg": ["IBM Plex Sans"],
+                      "label-md": ["IBM Plex Sans"],
+                      "headline-sm": ["IBM Plex Sans"],
+                      "body-md": ["IBM Plex Sans"],
+                      "headline-md": ["IBM Plex Sans"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A lush, high-resolution close-up of premium fresh culinary ingredients including vibrant green basil, ripe red tomatoes, and rich dark olive oil against a deep dark background. The lighting is moody and cinematic, emphasizing textures and natural colors, creating an upscale gourmet atmosphere suited for a dark mode modern UI." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNEOcfQFAhRJtFry4-6wcrHv3Wrk1tzB9iWVPeX8edV495cVPtJ7XJPlfqbfDxBd19zworMisWEOUksgjYt7wq4ePeRvZ7cYXdHbtulKc-oFVsKiU--JNcFjmv-YYVVy-nsqp6gjmMYpRv4laTh4xBjM_cA2C80QiBpEY8YGqfEMN4nTz60ka5y72qlc-gz2-GDm-avUGtgPBYEgvk6MfUUyBcobjRprREmWLvL4TjEUN2lUaoyghGOg')"></div>
+<div class="absolute inset-0 bg-[#121e1f]/85 backdrop-blur-md"></div>
+</div>
+<main class="relative z-10 w-full max-w-[420px] px-margin-mobile md:px-0">
+<div class="bg-inverse-surface/90 backdrop-blur-2xl rounded-xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.4)] border border-white/5 flex flex-col items-center w-full">
+<img class="w-16 h-16 rounded-full mb-6 shadow-md border border-white/10 object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VHhD8X6C9738s6IDuLh8Obe8wQkpXKpC4RuwjkJFJ9JwdoahTBqA_LMh-Ui7oG4DYwyYINWzUt5Zq34QVkiR5XQQ0bV2wZm-ak27WDWKucuKOcMPOp0IqlHXSp1q-ws1_2ZrzHtOrF3OkmIR3wa5VxEIYYEdI9__B3bmzxAlOS1krNPDuqIiKK5fTGr5D2PhP6JwszhPOXqmNYDHp3GVK6VtUmMx4cM5T8hYaSf9brcUS6AO4viACMmWc"/>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-inverse-on-surface mb-2 text-center tracking-tight">Welcome to Yum 👋</h1>
+<p class="font-body-md text-body-md text-secondary-fixed-dim text-center mb-8 w-full" dir="rtl">اكتشف، اطبخ، تعلّم، وشارك عالم الطعام.</p>
+<form class="w-full flex flex-col gap-4">
+<div>
+<label class="sr-only" for="email">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary-container text-[20px]">mail</span>
+<input class="w-full h-14 pl-12 pr-4 bg-[#1e293b]/50 border border-outline-variant/20 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-lg font-body-md text-inverse-on-surface transition-all placeholder:text-tertiary-container outline-none" id="email" placeholder="Email address" type="email"/>
+</div>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary-container text-[20px]">lock</span>
+<input class="w-full h-14 pl-12 pr-4 bg-[#1e293b]/50 border border-outline-variant/20 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-lg font-body-md text-inverse-on-surface transition-all placeholder:text-tertiary-container outline-none" id="password" placeholder="Password" type="password"/>
+</div>
+<div class="flex justify-end mt-2">
+<a class="font-label-sm text-label-sm text-primary-container hover:text-primary-fixed-dim transition-colors" href="#">Forgot password?</a>
+</div>
+</div>
+<button class="w-full h-14 bg-primary-container hover:bg-[#d6721d] text-white font-label-md text-label-md rounded-lg shadow-[0_4px_20px_rgba(230,126,34,0.25)] hover:shadow-[0_6px_25px_rgba(230,126,34,0.35)] hover:-translate-y-[1px] transition-all flex items-center justify-center mt-2" type="submit">
+                    Sign In
+                </button>
+</form>
+<div class="w-full flex items-center gap-4 my-6">
+<div class="h-px bg-outline-variant/20 flex-1"></div>
+<span class="font-label-sm text-label-sm text-tertiary-container">or continue with</span>
+<div class="h-px bg-outline-variant/20 flex-1"></div>
+</div>
+<div class="w-full flex flex-col gap-3">
+<button class="w-full h-14 bg-inverse-surface border border-outline-variant/20 hover:bg-[#2d3a47] rounded-lg flex items-center justify-center gap-3 font-label-md text-label-md text-inverse-on-surface transition-colors">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAiQKSvBXxM34aj6zn-JvPEW9i2AhUMspHV-7mRP6oAitENxwepzr57KM5O5HJVfNYMkaUzfJHf2EbK_jtfMBiqSOpe-c-lyKpjPx_SU_Qh8EzDojSOuWn8BK1xyjnuSXQPT7-bfBetbh7TrSVbW7CqijcFH-ealoTz2RDcPcy3vEmmgaiYi-nrtZ__nmaiiZXrmln4nCFRxQ9xly2xOFaND7j0-uOLTjdgiaQ7hmuxnGcYC8rXGznA"/>
+                    Continue with Google
+                </button>
+<button class="w-full h-14 bg-inverse-surface border border-outline-variant/20 hover:bg-[#2d3a47] rounded-lg flex items-center justify-center gap-3 font-label-md text-label-md text-inverse-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">file_download</span>
+                    Continue with Apple
+                </button>
+</div>
+<button class="w-full h-14 mt-6 bg-transparent border-2 border-dashed border-tertiary/50 hover:border-primary-container/60 hover:bg-primary-container/5 rounded-lg flex items-center justify-center gap-2 font-label-md text-label-md text-secondary-fixed-dim hover:text-primary-fixed-dim transition-all group">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">explore</span>
+                Continue as Guest
+            </button>
+<div class="mt-8 text-center font-body-md text-body-md text-tertiary-container">
+                Don't have an account? <a class="text-primary-container font-label-md hover:underline hover:text-primary-fixed-dim transition-colors" href="#">Create Account</a>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تحديات الطهي - Smart Cooking App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#564337",
+                        "surface-container-highest": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadada",
+                        "secondary-fixed-dim": "#aac7ff",
+                        "premium-gold": "#d4af37",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed": "#002020",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#004f4f",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed": "#d6e3ff",
+                        "primary": "#944a00",
+                        "on-primary-container": "#502600",
+                        "tertiary-fixed": "#93f2f2",
+                        "on-primary-fixed-variant": "#713700",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary": "#006a6a",
+                        "on-secondary-fixed": "#001b3e",
+                        "terracotta-dark": "#944a00",
+                        "tertiary-fixed-dim": "#76d6d5",
+                        "on-secondary-fixed-variant": "#264779",
+                        "on-primary-fixed": "#301400",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#003737",
+                        "outline-variant": "#dcc1b1",
+                        "parchment": "#fdfdfd",
+                        "outline": "#897365",
+                        "on-secondary-container": "#315183",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#e67e22",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#944a00",
+                        "primary-fixed-dim": "#ffb783",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#a6c4fe",
+                        "inverse-primary": "#ffb783",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-container": "#44a7a7",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary": "#3f5f92"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "gutter": "16px",
+                        "section-gap": "64px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg-mobile": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- Top App Bar (From Shared Components) -->
+<header class="bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm docked full-width top-0 sticky z-40 transition-transform duration-150">
+<div class="flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling person wearing a modern, subtle chef's apron in a bright, beautifully lit, premium kitchen setting. The image uses soft white light and warm earthy tones to convey approachability and culinary expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGRAoOKja2sbaUq6Ww1nGa5SBUp-b-ugXDHn75Pp-T8z2RdCfg-So9cB4FqU_RW6dNSV2vTcNWXCs086r-I0m1KacuTNm6Y0yJg-4yyOa9tM3i_XIBvWtJUm1WJxS7HvSAMEnglRHhGLUjQ5Fif-TrPOl8MA_xmWAn3aXGnCjN6RVcEQv83sYa94rnly13Xk9j6J5j5ZoUCASTEbGi9bymHeKN2_fsWzbhEVMMOVDXfGryA1WOgC_46w"/>
+</div>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Smart Cooking App</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-margin-desktop py-6 space-y-10">
+<!-- Header Section -->
+<section class="mb-section-gap">
+<h2 class="font-display-lg text-display-lg text-on-background mb-2">تحديات الطهي</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">ارتقِ بمهاراتك واكتشف آفاقاً جديدة في مطبخك.</p>
+</section><div class="bg-primary-container text-on-primary-container p-4 rounded-2xl flex items-center justify-between shadow-sm mb-section-gap">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm opacity-90">رصيد النقاط الحالي</p>
+<h3 class="font-headline-md text-headline-md font-bold">2,450 نقطة</h3>
+</div>
+</div>
+<button class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full font-label-md text-label-md transition-colors">
+        سجل النشاط
+    </button>
+</div>
+<!-- Featured Challenge Card -->
+<section class="mb-section-gap">
+<div class="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
+<img alt="5 Ingredients Challenge" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stunning, high-definition macro photograph of an expertly plated minimalist dish featuring exactly five distinct ingredients on a dark slate plate. Soft, directional natural lighting highlights the textures of fresh herbs, seared protein, and vibrant vegetables, creating a premium culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWzRmc7lcw2trMKDtSH3zjvrpU5NvwLNX681swU4tSpXy1mYcEYa0n-kb3il64slz0fMTOsUicXULGIlARb4OPjTwfG2AugCHgMKQqqn6Baua28E6Gw6WR0RzOnNP2phOPUC9F5eTMeawy3s9AISYcpcJvzfxpPLnV7YtUEvQJxsuFIGG9V0qFuKeee_A2755z7wJsH1sg2RKGFjUA75D4tiVELjcPLtAVk0BW9eaZGF22NSY4U1B2Zw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col items-start text-white">
+<div class="flex items-center gap-2 mb-3 bg-surface/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm">تحدي الأسبوع</span>
+</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-2">تحدي الـ 5 مكونات</h3>
+<p class="font-body-md text-body-md text-white/90 mb-6 max-w-lg">أثبت إبداعك وصمم وجبة فاخرة باستخدام 5 مكونات أساسية فقط. البساطة هي مفتاح العظمة المطبخية.</p>
+<div class="flex items-center justify-between w-full">
+<div class="flex gap-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">star</span>
+<span class="font-label-md text-label-md">متوسط</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="font-label-md text-label-md">3 أيام متبقية</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+                            ابدأ التحدي
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Challenges Horizontal Scroll -->
+<section class="mb-section-gap">
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background">تحدياتك الحالية</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">عرض الكل</a>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+<!-- Active Card 1 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container-low rounded-xl p-4 shadow-sm border border-surface-container-highest flex-shrink-0">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded-md">يوم 3 من 7</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-semibold mb-1">أسبوع نباتي</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">استكشف النكهات النباتية العالمية.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mb-1">
+<div class="bg-tertiary h-2 rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>45%</span>
+<span>مكتمل</span>
+</div>
+</div>
+<!-- Active Card 2 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container-low rounded-xl p-4 shadow-sm border border-surface-container-highest flex-shrink-0">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">bakery_dining</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded-md">يوم 1 من 3</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-semibold mb-1">إتقان الخبز</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">أسرار العجين المخمر الفرنسي.</p>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mb-1">
+<div class="bg-secondary h-2 rounded-full" style="width: 33%"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>33%</span>
+<span>مكتمل</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Challenge Categories Grid -->
+<section class="mb-section-gap">
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background">أوسمة ومكافآت</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">عرض الإنجازات</a>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-4 hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+<!-- Badge 1: Earned -->
+<div class="flex flex-col items-center min-w-[120px] group">
+<div class="w-20 h-20 rounded-full bg-premium-gold/20 flex items-center justify-center mb-3 shadow-[0_0_20px_rgba(212,175,55,0.3)] border-2 border-premium-gold transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-premium-gold text-[40px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<span class="font-label-md text-label-md text-on-background text-center">بطل الاستدامة</span>
+<span class="font-label-sm text-label-sm text-primary">تم الحصول عليه</span>
+</div>
+<!-- Badge 2: Earned -->
+<div class="flex flex-col items-center min-w-[120px] group">
+<div class="w-20 h-20 rounded-full bg-primary-container/20 flex items-center justify-center mb-3 shadow-[0_0_20px_rgba(230,126,34,0.3)] border-2 border-primary-container transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-label-md text-label-md text-on-background text-center">سيد السرعة</span>
+<span class="font-label-sm text-label-sm text-primary">تم الحصول عليه</span>
+</div>
+<!-- Badge 3: In Progress -->
+<div class="flex flex-col items-center min-w-[120px] group opacity-60 grayscale">
+<div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center mb-3 border-2 border-outline-variant transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-on-surface-variant text-[40px]">public</span>
+</div>
+<span class="font-label-md text-label-md text-on-background text-center">مستكشف العالم</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">قيد التنفيذ</span>
+</div>
+<!-- Badge 4: In Progress -->
+<div class="flex flex-col items-center min-w-[120px] group opacity-60 grayscale">
+<div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center mb-3 border-2 border-outline-variant transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-on-surface-variant text-[40px]">restaurant</span>
+</div>
+<span class="font-label-md text-label-md text-on-background text-center">خبير النكهات</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">قيد التنفيذ</span>
+</div>
+</div>
+</section><section class="mb-section-gap">
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline-md text-headline-md text-on-background">مكافآت حصرية</h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">المتجر</a>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+<!-- Reward 1 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container-highest flex-shrink-0 flex flex-col">
+<div class="h-32 bg-surface-container-highest flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[48px] text-outline">cake</span>
+<div class="absolute top-2 right-2 bg-black/60 text-white px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="text-label-sm">مغلق</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h4 class="font-label-md text-label-md font-bold mb-1">أسرار المعجنات الفرنسية</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">دورة تدريبية متقدمة للمحترفين.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md">5000</span>
+</div>
+<button class="text-primary font-label-sm hover:underline">التفاصيل</button>
+</div>
+</div>
+</div>
+<!-- Reward 2 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container-highest flex-shrink-0 flex flex-col">
+<div class="h-32 bg-surface-container-highest flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[48px] text-outline">smart_toy</span>
+<div class="absolute top-2 right-2 bg-black/60 text-white px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="text-label-sm">مغلق</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h4 class="font-label-md text-label-md font-bold mb-1">استشارة شيف ذكاء اصطناعي</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">جلسة خاصة لتخطيط وجباتك بذكاء.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md">3000</span>
+</div>
+<button class="text-primary font-label-sm hover:underline">التفاصيل</button>
+</div>
+</div>
+</div>
+<!-- Reward 3 -->
+<div class="min-w-[280px] w-[280px] bg-surface-container-low rounded-xl overflow-hidden shadow-sm border border-surface-container-highest flex-shrink-0 flex flex-col">
+<div class="h-32 bg-surface-container-highest flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[48px] text-outline">ad_off</span>
+<div class="absolute top-2 right-2 bg-black/60 text-white px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="text-label-sm">مغلق</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h4 class="font-label-md text-label-md font-bold mb-1">تجربة بدون إعلانات</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">استمتع بالتطبيق بدون فواصل لمدة شهر.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-md">1500</span>
+</div>
+<button class="text-primary font-label-sm hover:underline">التفاصيل</button>
+</div>
+</div>
+</div>
+</div>
+</section><section class="mb-section-gap">
+<h3 class="font-headline-md text-headline-md text-on-background mb-6">استكشف المزيد</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Category 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow group flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img alt="20-Minute Challenge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dynamic, brightly lit photograph of a chef rapidly tossing fresh stir-fry ingredients in a hot wok. The motion blur of the vegetables and the bright, clean kitchen environment convey speed, energy, and high-quality fast cooking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc6Um9R6QlXDK9kiSUcGpt0NfvjD7XBk6RfjeJtUJ0nocu5eaorXaZ1_EyQsSF7TTmyWLCHcHRHEzwmXIYSjv10pFmlDHspDj8vTjSDdpeNrtFS5VxBdpGdTxLBqlFGhiUpKHMc4M34jKs35Edp61K1watQ0bZiwnbWpv0Ls4n5IZh8JGjQMLLICfNn4qeM0q20LEvjXCH26__GJ9u_laxhyQjMGSf-KnQuMqE40lSGbMVdDh3mGiJFA"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="font-headline-sm text-headline-sm font-semibold mb-2">تحدي الـ 20 دقيقة</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">وجبات سريعة وعالية الجودة للأيام المزدحمة دون التنازل عن النكهة.</p>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>سريع</span>
+</div>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow group flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img alt="Global Kitchen Challenge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An overhead flat-lay photograph of diverse, beautifully arranged spices, ingredients, and small dishes from various cultures on a pristine white marble countertop. The lighting is soft and even, emphasizing the rich, vibrant colors of the global culinary elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_oqh43xAZxfU2P5xu5kPy2ZL3Iqk7L3UonWS-s6d76gwJhymYyV5Lg6EqCyl_NReWmKDsUbuKAGplzHcRd6WyHrhiIb7d6oYmsj8fdeg9YGjKf_a9z8_k8CRsjnHZUl7BxYBVNxG-SGtFP2bDWCN-DVUzsMjIBqpCON1PzDf_f8MSR4Vt03rh1UOhVm_CLSSRzTvFdk0QeWVwLSVtgMr74IQv76x3ew4xXB7-ARV6zZr5hmIdTCjVFw"/>
+<div class="absolute top-2 left-2 w-8 h-8 rounded-full bg-surface/80 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">public</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="font-headline-sm text-headline-sm font-semibold mb-2">تحدي المطبخ العالمي</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">اكتشف أسرار مطابخ العالم. وصفة جديدة من بلد مختلف كل يوم.</p>
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+<span>يومي</span>
+</div>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container hover:shadow-md transition-shadow group flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img alt="Zero Waste Challenge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A beautiful, rustic photograph showing a creative dish made entirely from recognizable kitchen scraps and leftovers, plated elegantly on eco-friendly tableware. The warm, earthy lighting highlights the ingenuity and sustainability of zero-waste cooking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu7tNfzStYl_lEniG4eOcc_5pSkLoEWfBjnluR44hHJDq5afVUYpoy6BSJztK_bCF7YdBVY4rAYIXZTFv38JZRhOZCExoDHmSHG-NneavbDZxAnd8W_RWuR1unXi9HSRTKtfHJZFfNrU09tpB1Yz8hviLNy13Dg0HWmc5sE1b8k9YFPORevYvU8SNEjXWHYU489b8Ff1JnMEqXmvWVzwuystf8a2XBVHIRr9C4VY4LXbhNG98jZsPkwg"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<h4 class="font-headline-sm text-headline-sm font-semibold mb-2">تحدي الصفر هدر</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">استخدم بواقي الطعام بذكاء وإبداع لابتكار أطباق مذهلة.</p>
+<div class="flex items-center gap-2 text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">recycling</span>
+<span>مستدام</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leaderboard / Social Proof -->
+<section class="bg-surface-container-low rounded-2xl p-6 border border-surface-container-highest">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-premium-gold/20 flex items-center justify-center text-premium-gold">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold">لوحة الشرف</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">أكمل 1,245 طاهٍ التحدي اليوم</p>
+</div>
+</div>
+<div class="flex -space-x-3 space-x-reverse">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="A tiny profile portrait of a smiling user in a soft, bright environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIcExD3WEXByEF6bbZxAe17m0WipPzdDsc5iXJIfixJqPQxrCRkFwz8FxmlL1O6l_aE-NQqngDWH1XVpjU6SSMsjv6AFOjfKovhQbS5ygK347ndYA3LiRDt089SZHu3foK_l0PzaCy2AfzQSvpKwqrPFr9AaeoKb36A8qP7zp46IKhaBp47qqlJcNkRk1sfc6o9xZq2Cflb02qB4feexsMdKS_LuQrm4tSLt4dJkKHw2Hj31B7j75J1w"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="A tiny profile portrait of a smiling user in a soft, bright environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQO5mUu4NaqYAglU8eFq4D_IiuPnAb4pPDiCekOUQpKI_Sr8jSMl6D-bUK6XDNNx3IWoIoPUGIun0_Qpx-Yw0jqzCWa2lGFZXLNSa7slppRCdI7wgHKCZfaZ6tvwyw9VhAJacYo7h004DmDCkqFJHBpB8PVrejaZos5_I383H7IU4gLIMdqU0-aTwy9ZBfRT8bOPG_w7mR8KPCmGi4xON0AMTAkF27onG8gqUgm8joyhUwX6CO_JVhSA"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="A tiny profile portrait of a smiling user in a soft, bright environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdeoRHakSQHdW2NqKRD-kIWo8Al1f8RsXLSP6p_0h9KDWUWzb7uDQeF-H059o5mRc0uNR_CByUhff1JgpEE-Dg-ju_KK68qIJEpqwhlAT1_793oo3v3iBXFzVyUfY2f-iPe_11thF15Ge54voEy1RZKYZ6Ph0FYe_5yq94Fde0NPrUnWwsJnunXjlVYVfYpolkL0WM5r_NoucHKugQ-WV_QH44onK5E7eVhQ5XiDoLdTWd3QcTC1Rupw"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-surface-container-low object-cover" data-alt="A tiny profile portrait of a smiling user in a soft, bright environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmO4ubS0HP6QBW8SCfeBLPp08HbYjcsEQNtljku-APc9uymrs3l831fqxcTUgTnpWtCas4wcZnvgbiT7vCZQJNUnpH3iLjdAxmoL_AUzlGSMZIYxGxDyhfkgWtMJXok_mPDUfL431eRikKUEscNg971pzlI-JOjQaOSCOmkMZAqgJHBUq_TN_G0_xMWCLflHBuRL5etJwzgd_Tl72cW4QJFW3_7L-7bstRRxW7nSv0AVj9l5VMxHmFdA"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-low bg-surface-container-highest flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant">
+                    +99
+                </div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (From Shared Components JSON) -->
+<nav class="md:hidden bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] fixed bottom-0 left-0 right-0 w-full rounded-t-xl z-50 flex justify-around items-center px-4 pb-safe pt-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-all duration-200">home</span>
+<span class="font-label-sm text-label-sm mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm mt-1">اكتشف</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-all duration-200">kitchen</span>
+<span class="font-label-sm text-label-sm mt-1">المكونات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-all duration-200">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">مخطط الوجبات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-all duration-200">person</span>
+<span class="font-label-sm text-label-sm mt-1">حسابي</span>
+</a>
+</nav>
+</body></html>

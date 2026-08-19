@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_SVG_START:ANIMATION_68 class="fixed inset-0 w-full h-full" --><div class="fixed inset-0 w-full h-full" id="animated-svg-ANIMATION_68" style="display:block;"><svg height="200" viewbox="0 0 200 200" width="200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#e67e22;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#f39c12;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<circle cx="100" cy="100" fill="white" opacity="0.1" r="90" stroke="#e67e22" stroke-width="2">
+<animate attributename="r" dur="3s" repeatcount="indefinite" values="90;95;90"></animate>
+</circle>
+<path d="M70 60 Q100 40 130 60 L130 110 Q100 140 70 110 Z" fill="url(#grad1)">
+<animatetransform attributename="transform" dur="2s" repeatcount="indefinite" type="translate" values="0 0; 0 -5; 0 0"></animatetransform>
+</path>
+<circle cx="100" cy="100" fill="none" r="40" stroke="white" stroke-dasharray="10 20" stroke-linecap="round" stroke-width="8">
+<animatetransform attributename="transform" dur="10s" from="0 100 100" repeatcount="indefinite" to="360 100 100" type="rotate"></animatetransform>
+</circle>
+</svg></div><!-- STITCH_SVG_END:ANIMATION_68 -->
+</body>
+</html>

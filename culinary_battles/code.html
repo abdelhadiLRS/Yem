@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Culinary Battles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#564337",
+                      "primary-fixed": "#ffdcc5",
+                      "surface-variant": "#e2e2e2",
+                      "on-secondary-fixed": "#00210c",
+                      "on-primary-fixed": "#301400",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#869bb3",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#4b6076",
+                      "on-primary-fixed-variant": "#713700",
+                      "on-background": "#1a1c1c",
+                      "on-primary-container": "#502600",
+                      "secondary-container": "#6bfe9c",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#00743a",
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "surface-bright": "#f9f9f9",
+                      "on-primary": "#ffffff",
+                      "background": "#f9f9f9",
+                      "surface-container-high": "#e8e8e8",
+                      "surface-container-highest": "#e2e2e2",
+                      "inverse-surface": "#2f3131",
+                      "secondary-fixed": "#6bfe9c",
+                      "secondary-fixed-dim": "#4ae183",
+                      "inverse-primary": "#ffb783",
+                      "primary": "#944a00",
+                      "on-surface": "#1a1c1c",
+                      "surface-tint": "#944a00",
+                      "outline-variant": "#dcc1b1",
+                      "surface": "#f9f9f9",
+                      "primary-fixed-dim": "#ffb783",
+                      "on-tertiary-container": "#1d3347",
+                      "inverse-on-surface": "#f1f1f1",
+                      "secondary": "#006d37",
+                      "surface-container": "#eeeeee",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005228",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dadada",
+                      "on-tertiary-fixed": "#051d30",
+                      "outline": "#897365",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f3f3f3",
+                      "tertiary-fixed": "#cfe5ff",
+                      "primary-container": "#e67e22",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#b3c9e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "gutter": "16px",
+                      "base": "8px",
+                      "card-padding": "20px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "beVietnamPro"
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic, ibmPlexSans\""
+                      ],
+                      "body-md": [
+                              "beVietnamPro"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(249, 249, 249, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gradient-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar from JSON -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto">
+<button aria-label="Menu" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary font-bold tracking-tight">Culinary Battles</h1>
+<button aria-label="Profile" class="hover:opacity-80 transition-opacity active:scale-95 transition-transform overflow-hidden rounded-full w-10 h-10 border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A cinematic close-up of a professional chef's profile avatar. The chef is smiling confidently in a modern, brightly lit kitchen with earthy tones and warm sunlight. High-quality food photography style with soft depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOE31MIiiTpuCvxHxJjL_gCZ36DP5co2xSfyyLUdAS3OM2j4B_Dz_BMGJOPtWxdCWg-1pgv1h4RbUhVTVOaOi3GwmJdc8F4YPv1yhTl5x7yItz2_-fBVk6oHjRGhvZukkZiLspq6QZP3XG6foj8SEhsQPhC8Vs5_qd_QSlo3m4QPbx7_DArmriPpln7tesORZe1mLDfN8RKvQGXmb2n9asmwRXtuJo2O4vc0Q97QkZ3cv7atgoE88N1A"/>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto">
+<!-- Quick Actions (Bento Grid Style) -->
+<section class="px-container-margin py-section-gap">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<button class="col-span-2 md:col-span-1 bg-primary text-on-primary rounded-xl p-card-padding flex flex-col items-center justify-center gap-2 shadow-[0_12px_30px_rgba(148,74,0,0.15)] hover:shadow-[0_16px_40px_rgba(148,74,0,0.2)] transition-all active:scale-95 relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-container opacity-0 group-hover:opacity-20 transition-opacity"></div>
+<span class="material-symbols-outlined text-[32px] mb-1" style="font-variation-settings: 'FILL' 1;">swords</span>
+<span class="font-label-sm text-label-sm text-center">Create a Battle</span>
+</button>
+<button class="bg-surface-container-high rounded-xl p-card-padding flex flex-col items-center justify-center gap-2 shadow-[0_4px_20px_rgba(86,67,55,0.05)] hover:bg-surface-variant transition-colors active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">person_search</span>
+<span class="font-label-sm text-label-sm text-center">Find Opponent</span>
+</button>
+<button class="bg-surface-container-high rounded-xl p-card-padding flex flex-col items-center justify-center gap-2 shadow-[0_4px_20px_rgba(86,67,55,0.05)] hover:bg-surface-variant transition-colors active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0;">bolt</span>
+<span class="font-label-sm text-label-sm text-center">Instant Match</span>
+</button>
+<div class="col-span-2 md:col-span-1 bg-surface-container-low rounded-xl p-card-padding flex flex-col justify-center border border-outline-variant shadow-[0_4px_20px_rgba(86,67,55,0.05)]">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">My Status</p>
+<p class="font-headline-lg-mobile md:font-headline-lg text-primary font-bold">Rank #42</p>
+<p class="font-body-md text-body-md text-tertiary">Pro League</p>
+</div>
+</div>
+</section>
+<!-- Live Battles (Horizontal Scroll) -->
+<section class="py-section-gap">
+<div class="px-container-margin mb-6 flex justify-between items-end">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-background tracking-tight">Live Battles</h2>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-1 hover:opacity-80">
+                    See All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="flex overflow-x-auto hide-scrollbar pl-container-margin pr-container-margin gap-gutter pb-4 snap-x snap-mandatory">
+<!-- Live Battle Card 1 -->
+<div class="snap-center shrink-0 w-[300px] md:w-[400px] rounded-24 bg-surface shadow-[0_4px_20px_rgba(86,67,55,0.08)] overflow-hidden relative group">
+<div class="relative h-[300px] w-full">
+<img alt="Battle Dishes" class="w-full h-full object-cover" data-alt="A split-screen cinematic shot of two gourmet dishes. On the left, a beautifully plated modern pasta dish with rich tomato sauce and basil. On the right, an elegant grilled seafood plate with vibrant lemon butter. Earthy, rich lighting with a soft minimalist background. Premium food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPjU2MKrX5OcAgOJfSCuFNx4wETN8BaRFugUdOjFOWewDG_AraTqqHMj4JBEF1lebbMxbi5vJ1ws50CYNy4v809th1JChNuULuvqtnh9qzIQMSIEeO_lhx-IMYkIExbKM1o4LXoNkOfHBWAkT1FtQn-lZfsRyROUJgZ6bKKzqM-LTcMHj13LUmllD3dV6SQhT4HkLvc6nnY19xBdXj6UFvO0CWNKCzkvybPetisCkrNCNKSsIe-MBZRQ"/>
+<div class="absolute inset-0 gradient-overlay"></div>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 animate-pulse shadow-lg">
+<div class="w-2 h-2 bg-on-error rounded-full"></div> LIVE
+                         </div>
+<div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 shadow-lg text-on-background">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 12.4k
+                         </div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary/90 text-on-primary font-headline-xl text-headline-xl font-bold w-16 h-16 rounded-full flex items-center justify-center backdrop-blur-md shadow-2xl border-4 border-surface/20 transform -rotate-12">VS</div>
+</div>
+</div>
+<div class="p-card-padding relative z-10 bg-surface">
+<div class="flex justify-between items-center mb-4">
+<div class="text-center w-2/5">
+<p class="font-label-sm text-label-sm font-bold text-on-surface line-clamp-1">Chef Ahmed</p>
+<p class="text-[12px] text-tertiary line-clamp-1">Pasta Master</p>
+</div>
+<div class="w-1/5"></div>
+<div class="text-center w-2/5">
+<p class="font-label-sm text-label-sm font-bold text-on-surface line-clamp-1">Chef Marco</p>
+<p class="text-[12px] text-tertiary line-clamp-1">Seafood King</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 rounded-full hover:shadow-[0_12px_30px_rgba(230,126,34,0.2)] transition-all active:scale-95">
+                            Watch &amp; Vote
+                        </button>
+</div>
+</div>
+<!-- Live Battle Card 2 -->
+<div class="snap-center shrink-0 w-[300px] md:w-[400px] rounded-24 bg-surface shadow-[0_4px_20px_rgba(86,67,55,0.08)] overflow-hidden relative group">
+<div class="relative h-[300px] w-full">
+<img alt="Battle Dishes" class="w-full h-full object-cover" data-alt="A split-screen cinematic shot of two gourmet desserts. On the left, a delicate matcha mille-crepe cake. On the right, a rich dark chocolate lava cake oozing on a stark white plate. Earthy, warm lighting highlighting the textures. Premium soft minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAax2_a41OBMi2V4sYuwKZgLEDZvV-6zA7LZPxM4GBw6taK532tgFoSmSj5iMCvr0-vDRKjvNM_uTjm0XrX6cx33z3_chtnNGSHtcy0Bhv8Wyk2CAjDfIpLj5eKHNa5Mpj2ztftk-zW-GFl2ixKNHV84uehLgIwrIPeeNY3weTt749_Hbjz9klln-5tuYXPYNpwSymZrLNECge2ZmNP9p0H2NAHuUUDVwlHlvP4zTq7_NHbvLYBOoY1jA"/>
+<div class="absolute inset-0 gradient-overlay"></div>
+<div class="absolute top-4 left-4 bg-error text-on-error px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 animate-pulse shadow-lg">
+<div class="w-2 h-2 bg-on-error rounded-full"></div> LIVE
+                         </div>
+<div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 shadow-lg text-on-background">
+<span class="material-symbols-outlined text-[16px]">visibility</span> 8.2k
+                         </div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary/90 text-on-primary font-headline-xl text-headline-xl font-bold w-16 h-16 rounded-full flex items-center justify-center backdrop-blur-md shadow-2xl border-4 border-surface/20 transform -rotate-12">VS</div>
+</div>
+</div>
+<div class="p-card-padding relative z-10 bg-surface">
+<div class="flex justify-between items-center mb-4">
+<div class="text-center w-2/5">
+<p class="font-label-sm text-label-sm font-bold text-on-surface line-clamp-1">Chef Yuki</p>
+<p class="text-[12px] text-tertiary line-clamp-1">Pastry</p>
+</div>
+<div class="w-1/5"></div>
+<div class="text-center w-2/5">
+<p class="font-label-sm text-label-sm font-bold text-on-surface line-clamp-1">Chef Elena</p>
+<p class="text-[12px] text-tertiary line-clamp-1">Chocolatier</p>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 rounded-full hover:shadow-[0_12px_30px_rgba(230,126,34,0.2)] transition-all active:scale-95">
+                            Watch &amp; Vote
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-2xl rounded-t-xl shadow-[0_-4px_20px_rgba(148,74,0,0.08)] md:hidden">
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-variant/50 active:scale-90 transition-all duration-200 px-4 py-1.5 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-[11px]">Home</span>
+</a>
+<!-- Active -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1.5 active:scale-90 transition-all duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-label-sm text-[11px] font-bold">Battles</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-variant/50 active:scale-90 transition-all duration-200 px-4 py-1.5 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">psychology</span>
+<span class="font-label-sm text-[11px]">AI Coach</span>
+</a>
+<!-- Inactive -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-variant/50 active:scale-90 transition-all duration-200 px-4 py-1.5 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">trophy</span>
+<span class="font-label-sm text-[11px]">Championship</span>
+</a>
+</nav>
+</body></html>

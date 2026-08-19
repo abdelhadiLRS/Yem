@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Winner Reveal - Culinary Battles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#564337",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary-fixed": "#00210c",
+                        "on-primary-fixed": "#301400",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#869bb3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#4b6076",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-background": "#1a1c1c",
+                        "on-primary-container": "#502600",
+                        "secondary-container": "#6bfe9c",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#00743a",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#6bfe9c",
+                        "secondary-fixed-dim": "#4ae183",
+                        "inverse-primary": "#ffb783",
+                        "primary": "#944a00",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#944a00",
+                        "outline-variant": "#dcc1b1",
+                        "surface": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb783",
+                        "on-tertiary-container": "#1d3347",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary": "#006d37",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005228",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed": "#051d30",
+                        "outline": "#897365",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-fixed": "#cfe5ff",
+                        "primary-container": "#e67e22",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#b3c9e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "card-padding": "20px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["beVietnamPro"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "body-lg": ["beVietnamPro"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "body-md": ["beVietnamPro"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        .font-ibm { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(148,74,0,0.1) 0%, rgba(230,126,34,0.15) 100%);
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 4px 20px rgba(148, 74, 0, 0.08);
+        }
+        
+        .shadow-hover {
+            box-shadow: 0 12px 30px rgba(148, 74, 0, 0.12);
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Confetti Animation */
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f1c40f;
+            animation: fall linear infinite;
+            z-index: 10;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform flex items-center justify-center p-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold tracking-tight text-primary">Culinary Battles</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant">
+<img alt="user_profile_avatar" class="w-full h-full object-cover" data-alt="A small circular profile picture of a chef in a white uniform smiling warmly. Light mode, premium aesthetic, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNs0y5ltkoJ34DCztzw47GI4D6pukfHlGdGLFiSlcJsbaOONoNUnW2t4yozPEojrmgTK3lwbdsYs0AkkecO9hgt_YsZdE_k2kEEXg95jgBAMjv2kBHmRkVtjYb14ApznwwVjNDp78WxwmyQ9OOKN1chEB6rxysOjIMo13s9GYuLijp26Zihl1zk_Yu0nRwVBob8pWhGMvPNlGnhP5OgeW-utPuFT7DwnUGZNQrbIpwOytwIUW6GRRvoQ"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin pt-8 pb-section-gap space-y-section-gap relative overflow-hidden">
+<!-- Confetti Container -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none overflow-hidden" id="confetti-container"></div>
+<!-- Hero Section -->
+<section class="relative bg-surface rounded-xl shadow-soft p-8 text-center hero-gradient flex flex-col items-center border border-outline-variant/30 overflow-hidden">
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold mb-6 tracking-tighter uppercase relative z-20">🏆 WINNER</h2>
+<div class="relative w-48 h-48 md:w-64 md:h-64 mb-6 z-20">
+<div class="absolute inset-0 bg-primary-container rounded-full blur-2xl opacity-20"></div>
+<img alt="Winning Chef" class="w-full h-full object-cover rounded-full border-4 border-surface shadow-hover relative z-10" data-alt="A portrait of a victorious chef holding a beautifully plated dish. The chef is smiling, wearing a modern terracotta apron. The dish features fresh ingredients with vibrant colors. The lighting is cinematic and warm, highlighting the joy of cooking. Premium, light mode aesthetic, soft minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPYYMNjh96y1fFQ-IPsZPfHGK2uyzoMUwuhWNooyLm01SGGgkSfMKMrs3A_TX_GfC9P6J6VIQ2N8PsYc1L09oY46jgObsymynR3qJnXuu1otto06CIuHQ2UQTqxYJC42XZncwk3wFXmIMDFJ7KNywHQgp633omIihWjJm3YltavbtVhS4kq7BDZkpepsfVXW6uVgWBrodlZteNsl5NslvonFgZvAgIVdxnwZs3KIavi9zy235jHELRgQ"/>
+<div class="absolute -bottom-4 -right-4 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-4 py-2 rounded-full shadow-soft z-20 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+                    Chef Abdullah
+                </div>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Truffle Mushroom Risotto</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A masterful blend of earthy flavors and creamy texture, executed with flawless precision.</p>
+</section>
+<!-- Comparison Scoreboard (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Chef A (Winner) -->
+<div class="md:col-span-5 bg-primary/5 rounded-xl p-6 border-2 border-primary/20 shadow-soft relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-bl-full -z-10"></div>
+<div class="flex items-center gap-4 mb-6">
+<img alt="Chef A" class="w-16 h-16 rounded-full object-cover border-2 border-primary" data-alt="Profile picture of Chef Abdullah, smiling confidently. Premium light mode, warm terracotta tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMliB4zQdtFLmQ4bKGpigVrI-km6S8yZEajCDKQayrRelY8IKEzuuU_0s5G4vWtsG_ZpEkjeO2TYC62tKKt5dKF6z7VGIaGSu-Y835Xc4gQxs1Izpj6YHsXHtcetexMrpC4X2c2I-bp3m55vxul3qNnCf1brinRLa9sz5HE5tqmylfzDv4nHv43yNR7-hATBEQhYyOAKkxan4e1gkybdjjoXqd6SS6IWEN4CR_AKJEUsjfS0yoiKvfGA"/>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary font-bold">Chef Abdullah</h4>
+<span class="font-label-sm text-label-sm text-primary/80 uppercase tracking-wider">Winner</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-[20px]">smart_toy</span> AI Judge
+                        </span>
+<span class="font-headline-md text-[20px] font-bold text-on-surface">9.5</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-[20px]">group</span> Expert Judges
+                        </span>
+<span class="font-headline-md text-[20px] font-bold text-on-surface">9.2</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-[20px]">public</span> Community
+                        </span>
+<span class="font-headline-md text-[20px] font-bold text-on-surface">9.8</span>
+</div>
+</div>
+</div>
+<!-- Center Column: VS -->
+<div class="md:col-span-2 flex flex-col items-center justify-center py-4 md:py-0">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold font-headline-md shadow-inner">
+                    VS
+                </div>
+<div class="h-full w-px bg-outline-variant/50 hidden md:block my-4"></div>
+</div>
+<!-- Right Column: Chef B -->
+<div class="md:col-span-5 bg-surface rounded-xl p-6 border border-outline-variant/50 shadow-soft">
+<div class="flex items-center gap-4 mb-6 opacity-70">
+<img alt="Chef B" class="w-16 h-16 rounded-full object-cover border-2 border-outline-variant grayscale" data-alt="Profile picture of a female chef looking determined. Premium light mode, soft ambient shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgJo8lfVmo1rpARtZG0ose4hPM_Xu3OAfcBgmC31YnLPf9ycgfCqDijR02iZ2R580YZQK-lgXYMNEPp8BXT043vTNw2GeF9iWkSr2j84QAB26BSb5tOZOlDY3ObDNpsLJhn94a6eTfilI8zKp-r5K-MZ9PP4XoJ1iW7PUy4nVzrrq43SE4bWWc7OJ-9ykr8kQdSQX7lcog63GuzUDe5fuoB2ZZnBEEtzDt5EzlNhH5ka5-UJ6MMu1pmQ"/>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold">Chef Sarah</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Runner Up</span>
+</div>
+</div>
+<div class="space-y-4 opacity-70">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span> AI Judge
+                        </span>
+<span class="font-headline-md text-[20px] font-bold text-on-surface">8.8</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">group</span> Expert Judges
+                        </span>
+<span class="font-headline-md text-[20px] font-bold text-on-surface">8.5</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">public</span> Community
+                        </span>
+<span class="font-headline-md text-[20px] font-bold text-on-surface">8.9</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Multi-dimensional Scoring & Rewards (Asymmetric Split) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Radar Chart Area -->
+<div class="lg:col-span-2 bg-surface rounded-xl p-6 shadow-soft flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/30 pb-4">Performance Breakdown</h3>
+<!-- Simulated Bar Chart for dimensions (Using bars as they are cleaner in HTML/CSS than a radar chart without external JS libraries) -->
+<div class="flex-grow flex flex-col justify-center space-y-6">
+<!-- Taste -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Taste</span>
+<span class="font-label-sm text-label-sm text-primary">9.8</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 98%;"></div>
+</div>
+</div>
+<!-- Creativity -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Creativity</span>
+<span class="font-label-sm text-label-sm text-primary">9.2</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 92%;"></div>
+</div>
+</div>
+<!-- Presentation -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Presentation</span>
+<span class="font-label-sm text-label-sm text-primary">9.5</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 95%;"></div>
+</div>
+</div>
+<!-- Technique -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Technique</span>
+<span class="font-label-sm text-label-sm text-primary">9.0</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Rule Compliance -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Rule Compliance</span>
+<span class="font-label-sm text-label-sm text-secondary">10.0</span>
+</div>
+<div class="h-3 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-1000 ease-out" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rewards Section -->
+<div class="lg:col-span-1 bg-primary/10 rounded-xl p-6 shadow-soft flex flex-col border border-primary/20">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-primary/20 pb-4">Spoils of Victory</h3>
+<div class="flex-grow flex flex-col gap-4">
+<!-- Points -->
+<div class="bg-surface rounded-lg p-4 flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">stars</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Points Earned</p>
+<p class="font-headline-md text-[20px] font-bold text-primary">+250 XP</p>
+</div>
+</div>
+<!-- Badge -->
+<div class="bg-surface rounded-lg p-4 flex items-center gap-4 shadow-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">military_tech</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">New Badge</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Battle Master</p>
+</div>
+</div>
+<!-- Passport Stamp -->
+<div class="bg-surface rounded-lg p-4 flex items-center gap-4 shadow-sm relative overflow-hidden">
+<!-- Subtle background texture/pattern could go here -->
+<div class="w-12 h-12 rounded-full border-2 border-outline border-dashed text-on-surface-variant flex items-center justify-center bg-surface-container-low">
+<span class="text-2xl">🇮🇹</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Passport Stamp</p>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Italy</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Actions -->
+<section class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors shadow-soft active:scale-95 flex-1 max-w-xs">
+<span class="material-symbols-outlined">ios_share</span>
+                Share Battle Card
+            </button>
+<button class="bg-transparent border-2 border-secondary text-secondary font-label-sm text-label-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-secondary/10 transition-colors active:scale-95 flex-1 max-w-xs">
+<span class="material-symbols-outlined">refresh</span>
+                Rematch Request
+            </button>
+<button class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors shadow-sm active:scale-95 flex-1 max-w-xs">
+<span class="material-symbols-outlined">blender</span>
+                Remix This Recipe
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-2xl rounded-t-xl shadow-[0_-4px_20px_rgba(148,74,0,0.08)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-variant/50 active:scale-90 transition-all duration-200 px-4 py-1.5 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1.5 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-label-sm text-label-sm font-bold">Battles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-variant/50 active:scale-90 transition-all duration-200 px-4 py-1.5 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">psychology</span>
+<span class="font-label-sm text-label-sm">AI Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-surface-variant/50 active:scale-90 transition-all duration-200 px-4 py-1.5 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1">trophy</span>
+<span class="font-label-sm text-label-sm">Championship</span>
+</a>
+</nav>
+<script>
+        // Simple Confetti Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#e67e22', '#f1c40f', '#e74c3c', '#944a00', '#6bfe9c'];
+            const numConfetti = 50;
+
+            for (let i = 0; i < numConfetti; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Randomize properties
+                const left = Math.random() * 100; // 0 to 100 vw
+                const delay = Math.random() * 3; // 0 to 3s delay
+                const duration = Math.random() * 2 + 3; // 3 to 5s duration
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.random() * 8 + 6; // 6 to 14px
+
+                confetti.style.left = `${left}vw`;
+                confetti.style.backgroundColor = color;
+                confetti.style.animationDelay = `${delay}s`;
+                confetti.style.animationDuration = `${duration}s`;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                
+                // Random shape (some circles, some squares)
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+
+                container.appendChild(confetti);
+            }
+            
+            // Stop confetti after a few seconds to avoid distraction
+            setTimeout(() => {
+                container.style.opacity = '0';
+                container.style.transition = 'opacity 2s ease';
+                setTimeout(() => container.innerHTML = '', 2000);
+            }, 6000);
+        });
+    </script>
+</body></html>

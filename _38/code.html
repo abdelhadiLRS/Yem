@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Cooking App - Publish Recipe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#869bb3",
+                        "secondary-fixed": "#6bfe9c",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#1d3347",
+                        "inverse-primary": "#ffb783",
+                        "background": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#564337",
+                        "surface-tint": "#944a00",
+                        "surface-bright": "#f9f9f9",
+                        "primary-fixed": "#ffdcc5",
+                        "on-secondary-fixed-variant": "#005228",
+                        "outline": "#897365",
+                        "on-tertiary-fixed": "#051d30",
+                        "surface": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb783",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed": "#00210c",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#00743a",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "secondary-container": "#6bfe9c",
+                        "on-primary-fixed-variant": "#713700",
+                        "secondary-fixed-dim": "#4ae183",
+                        "on-background": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#301400",
+                        "error": "#ba1a1a",
+                        "secondary": "#006d37",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "tertiary-fixed": "#cfe5ff",
+                        "primary-container": "#e67e22",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary": "#4b6076",
+                        "surface-container-high": "#e8e8e8",
+                        "primary": "#944a00",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#dcc1b1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#502600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "card-padding": "20px",
+                        "section-gap": "48px",
+                        "base": "8px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["beVietnamPro"],
+                        "label-sm": ["beVietnamPro"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\"", "ibmPlexSans"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\"", "ibmPlexSans"],
+                        "body-lg": ["beVietnamPro"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic\"", "ibmPlexSans"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\"", "ibmPlexSans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: "IBM Plex Sans Arabic", sans-serif; background-color: #f9f9f9; }
+        .glassmorphism { background: rgba(249, 249, 249, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm transition-transform active:scale-95">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-7xl mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity p-2 rounded-full focus:outline-none">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">انشر طبختك</h1>
+<div class="w-10"></div> <!-- Placeholder for balance -->
+</div>
+</header>
+<main class="pt-24 px-4 md:px-8 max-w-3xl mx-auto">
+<!-- Media Upload -->
+<section class="mb-8">
+<div class="w-full h-64 bg-surface-container-high rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-outline-variant cursor-pointer hover:bg-surface-container transition-colors shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<span class="material-symbols-outlined text-[48px] text-tertiary mb-4" style="font-variation-settings: 'FILL' 0;">add_photo_alternate</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">أضف صورة أو فيديو للطبق</p>
+</div>
+</section>
+<!-- Form Fields -->
+<section class="space-y-6">
+<!-- Dish Title -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-2" for="dish-title">اسم الطبخة</label>
+<input class="w-full bg-[#F9F9F9] border border-surface-dim rounded-DEFAULT p-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-body-md shadow-sm" id="dish-title" placeholder="مثال: مكرونة بالبشاميل" type="text"/>
+</div>
+<!-- Ingredients -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block font-label-sm text-label-sm text-on-surface">المكونات</label>
+<button class="text-primary font-label-sm text-label-sm flex items-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined mr-1 text-[20px]">add</span> إضافة
+                    </button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<input class="flex-1 bg-[#F9F9F9] border border-surface-dim rounded-DEFAULT p-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-body-md shadow-sm" placeholder="مثال: 2 كوب دقيق" type="text"/>
+<button class="text-on-surface-variant hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Preparation Steps -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-2" for="prep-steps">خطوات التحضير</label>
+<textarea class="w-full bg-[#F9F9F9] border border-surface-dim rounded-DEFAULT p-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-body-md resize-none shadow-sm" id="prep-steps" placeholder="اكتب خطوات التحضير بالتفصيل..." rows="4"></textarea>
+</div>
+<!-- Categories / Tags -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-2">التصنيفات</label>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-on-surface font-label-sm text-label-sm border border-secondary/20 cursor-pointer hover:bg-secondary/20 transition-colors">
+                        #نباتي
+                    </span>
+<span class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-on-surface font-label-sm text-label-sm border border-secondary/20 cursor-pointer hover:bg-secondary/20 transition-colors">
+                        #حار
+                    </span>
+<span class="inline-flex items-center px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm border border-outline-variant cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined ml-1 text-[18px]">add</span> أضف تصنيف
+                    </span>
+</div>
+</div>
+<!-- AI Assistance -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-surface-dim flex items-center justify-between shadow-[0_4px_20px_rgba(230,126,34,0.04)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">حسن الوصفة بالذكاء الاصطناعي</p>
+<p class="text-[12px] text-on-surface-variant">تنظيم المكونات والخطوات بشكل احترافي</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-[-100%] rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-white after:border-surface-dim after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Visibility -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-2">من يمكنه رؤية الوصفة؟</label>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 text-primary bg-surface-container border-surface-dim focus:ring-primary focus:ring-2" name="visibility" type="radio" value="public"/>
+<span class="font-body-md text-body-md text-on-surface">عام</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 text-primary bg-surface-container border-surface-dim focus:ring-primary focus:ring-2" name="visibility" type="radio" value="private"/>
+<span class="font-body-md text-body-md text-on-surface">خاص</span>
+</label>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="pt-6 pb-8">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 rounded-full shadow-[0_12px_30px_rgba(230,126,34,0.15)] hover:bg-surface-tint hover:shadow-[0_4px_15px_rgba(230,126,34,0.2)] transition-all active:scale-[0.98] relative overflow-hidden">
+                    انشر الآن
+                    <!-- Inner glow effect -->
+<div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+</div>
+</section>
+</main>
+<!-- Suppressed BottomNav for structural flow, but keeping spacing -->
+</body></html>

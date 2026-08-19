@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Taste Profile &amp; Privacy - Smart Cooking App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#051d30",
+                        "primary-fixed-dim": "#ffb783",
+                        "outline": "#897365",
+                        "surface-bright": "#f9f9f9",
+                        "surface-tint": "#944a00",
+                        "surface-container-highest": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#4b6076",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#564337",
+                        "inverse-primary": "#ffb783",
+                        "on-secondary-container": "#00743a",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "inverse-surface": "#2f3131",
+                        "secondary-container": "#6bfe9c",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed": "#301400",
+                        "outline-variant": "#dcc1b1",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-container": "#869bb3",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#4ae183",
+                        "secondary": "#006d37",
+                        "on-background": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "tertiary-fixed": "#cfe5ff",
+                        "secondary-fixed": "#6bfe9c",
+                        "surface": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#502600",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary": "#ffffff",
+                        "primary": "#944a00",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-tertiary-container": "#1d3347",
+                        "primary-container": "#e67e22",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#00210c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "16px",
+                        "section-gap": "48px",
+                        "container-margin": "24px",
+                        "card-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "body-lg": ["\"Be Vietnam Pro\", sans-serif"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "label-sm": ["\"Be Vietnam Pro\", sans-serif"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "body-md": ["\"Be Vietnam Pro\", sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-panel {
+                @apply bg-surface/80 backdrop-blur-xl border border-outline-variant/30 shadow-[0_12px_30px_rgba(230,126,34,0.08)];
+            }
+            .floating-card {
+                @apply bg-surface shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.12)] transition-shadow duration-300;
+            }
+            .toggle-checkbox:checked {
+                @apply right-0 border-primary bg-primary;
+            }
+            .toggle-checkbox:checked + .toggle-label {
+                @apply bg-primary-container;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-32">
+<!-- Top App Bar - Using Shared Component Spec -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-gutter h-16 w-full max-w-7xl mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Smart Cooking App</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center text-primary hover:opacity-80 transition-opacity active:scale-95 cursor-pointer">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up, high-quality portrait of a smiling user in a bright, modern kitchen setting. The lighting is soft and natural, emphasizing a healthy, vibrant lifestyle consistent with a premium cooking application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3SzM3ciPNHqmysfi-GCpYmFqMwDSKc8M7em1-1cdlF27-yKCNLSjmzNhhyUcAYPrn83jXtUNHt4mOQccWCxu1NrQJxEXkesd-5EXl7FFYy3cW1R94XUsWvjtZD84XcyYV5y8Su7V9G3pkVkLs-6U8DKZbQvJ2rB4EkGm9d-T14gZAUkmkEk_Kiip1gOB24nnjeU3E3k7Rxc0BWjyNn4woM0mkl7jxJmeaXZsSmUPOCyMOpJNB9RX5Yw"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin pt-24 space-y-section-gap">
+<!-- Header Section -->
+<section class="text-center md:text-left pt-8">
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">AI Taste Profile &amp; Privacy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                We use Contextual AI to craft personalized recipes that fit your life. Control exactly what data shapes your culinary journey below.
+            </p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Taste Profile Chart - Spans larger area on desktop -->
+<div class="md:col-span-7 glass-panel rounded-xl p-card-padding relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at top right, var(--tw-colors-primary-container) 0%, transparent 60%);"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Your Culinary DNA</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Based on your saved recipes and ratings.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-label-sm text-label-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                        Edit
+                    </button>
+</div>
+<!-- Abstract Visual Representation of Taste -->
+<div class="space-y-4 relative z-10">
+<!-- Preference Item -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Algerian Cuisine</span>
+</div>
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Preference Item -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Plant-Based Focus</span>
+</div>
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Preference Item -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Spicy Dishes</span>
+</div>
+<div class="flex gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-outline-variant/30 text-center">
+<button class="font-label-sm text-label-sm text-outline hover:text-on-surface-variant transition-colors">Reset Profile</button>
+</div>
+</div>
+<!-- Contextual Data Toggles -->
+<div class="md:col-span-5 space-y-4">
+<div class="floating-card rounded-xl p-card-padding">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Contextual Inputs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Manage how the AI chef understands your environment.</p>
+<div class="space-y-6">
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">location_on</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Location &amp; Season</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body-md">Suggests recipes based on local, in-season produce.</p>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-bright border-4 border-surface-container appearance-none cursor-pointer z-10 transition-transform duration-300 ease-in-out" id="toggle-location" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container cursor-pointer transition-colors duration-300 ease-in-out" for="toggle-location"></label>
+</div>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">partly_cloudy_day</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Weather Data</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body-md">Recommends cozy soups on rainy days or fresh salads when it's hot.</p>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-bright border-4 border-surface-container appearance-none cursor-pointer z-10 transition-transform duration-300 ease-in-out" id="toggle-weather" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container cursor-pointer transition-colors duration-300 ease-in-out" for="toggle-weather"></label>
+</div>
+</div>
+</div>
+</div>
+<div class="floating-card rounded-xl p-card-padding">
+<div class="space-y-6">
+<!-- Toggle Item -->
+<div class="flex items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">history</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Cooking History</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body-md">Uses past successes to inform future suggestions.</p>
+</div>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in mt-1">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface-bright border-4 border-surface-container appearance-none cursor-pointer z-10 transition-transform duration-300 ease-in-out" id="toggle-history" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container cursor-pointer transition-colors duration-300 ease-in-out" for="toggle-history"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar - Shared Component JSON Execution -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">smart_toy</span>
+<span class="font-label-sm text-label-sm">AI Chef</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-sm text-label-sm">Plan</span>
+</button>
+<!-- Active State Logic Applied Here (Profile Intent) -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple toggle interaction logic for demonstration
+        document.querySelectorAll('.toggle-checkbox').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                if(this.checked) {
+                    this.style.transform = 'translateX(100%)';
+                } else {
+                    this.style.transform = 'translateX(0)';
+                }
+            });
+            // Initial state setup based on checked attribute
+            if(toggle.checked) {
+                 toggle.style.transform = 'translateX(100%)';
+            }
+        });
+    </script>
+</body></html>

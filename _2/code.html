@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CulinaryAI - Smart Cooking Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e8e8e8",
+                      "inverse-on-surface": "#f1f1f1",
+                      "tertiary-fixed-dim": "#76d6d5",
+                      "on-primary-fixed": "#301400",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "background": "#f9f9f9",
+                      "secondary": "#3f5f92",
+                      "surface-container-low": "#f3f3f3",
+                      "primary": "#944a00",
+                      "secondary-container": "#a6c4fe",
+                      "primary-fixed": "#ffdcc5",
+                      "on-surface-variant": "#564337",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-primary-container": "#502600",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#004f4f",
+                      "parchment": "#fdfdfd",
+                      "on-surface": "#1a1c1c",
+                      "on-tertiary-container": "#003737",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#dadada",
+                      "primary-container": "#e67e22",
+                      "inverse-surface": "#2f3131",
+                      "tertiary-container": "#44a7a7",
+                      "premium-gold": "#d4af37",
+                      "tertiary": "#006a6a",
+                      "surface-variant": "#e2e2e2",
+                      "outline": "#897365",
+                      "surface-container": "#eeeeee",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "terracotta-dark": "#944a00",
+                      "on-secondary-container": "#315183",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#dcc1b1",
+                      "primary-fixed-dim": "#ffb783",
+                      "on-tertiary-fixed": "#002020",
+                      "inverse-primary": "#ffb783",
+                      "surface-tint": "#944a00",
+                      "on-secondary-fixed": "#001b3e",
+                      "secondary-fixed": "#d6e3ff",
+                      "surface-bright": "#f9f9f9",
+                      "secondary-fixed-dim": "#aac7ff",
+                      "tertiary-fixed": "#93f2f2",
+                      "on-primary-fixed-variant": "#713700",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#264779",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "64px",
+                      "unit": "8px",
+                      "gutter": "16px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans"
+                      ],
+                      "label-md": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "display-lg": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      }
+              }
+            },
+        }
+      </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Container -->
+<header class="bg-surface/75 dark:bg-surface-dim/75 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none hidden md:flex flex-col">
+<!-- Main Top Bar -->
+<div class="flex justify-between items-center px-gutter py-unit w-full max-w-7xl mx-auto">
+<!-- Leading Action -->
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 flex items-center justify-center p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<!-- Brand / Headline -->
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                CulinaryAI
+            </h1>
+<!-- Trailing Action -->
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 flex items-center justify-center p-2 rounded-full hover:bg-surface-container-highest">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<!-- Desktop Navigation Tabs (Web Only) -->
+<nav class="w-full max-w-7xl mx-auto px-gutter border-b border-surface-variant dark:border-outline/20">
+<ul class="flex space-x-8 items-center h-12">
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex items-center h-full border-b-2 border-transparent hover:border-primary" href="#">
+                        Home
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex items-center h-full border-b-2 border-transparent hover:border-primary" href="#">
+                        Discover
+                    </a>
+</li>
+<li>
+<a aria-current="page" class="text-primary dark:text-primary-fixed-dim font-label-md text-label-md flex items-center h-full border-b-2 border-primary" href="#">
+                        AI Chef
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex items-center h-full border-b-2 border-transparent hover:border-primary" href="#">
+                        Plan
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex items-center h-full border-b-2 border-transparent hover:border-primary" href="#">
+                        Profile
+                    </a>
+</li>
+</ul>
+</nav>
+</header>
+<!-- Mobile Top Header (Stripped down for mobile, as bottom nav takes over) -->
+<header class="bg-surface/75 dark:bg-surface-dim/75 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none flex md:hidden justify-between items-center px-gutter py-unit w-full">
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 flex items-center justify-center p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+            CulinaryAI
+        </h1>
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 cursor-pointer active:scale-95 flex items-center justify-center p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-8">
+<!-- Hero Section -->
+<section class="mb-section-gap">
+<div class="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-6 shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full" data-alt="A cinematic, high-definition photograph of a pristine, modern professional culinary kitchen. Stainless steel countertops gleam under bright, focused white lighting. In the background, a chef expertly works with fresh, vibrant ingredients, surrounded by an atmosphere of intense focus and sophisticated artistry. The overall color palette features crisp whites, metallic greys, and warm accents of wood and fresh produce, embodying a Global Premium Modern aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiPbjtKP47GxTCsCg3_xn5skcGVBhfOOTS47RAfGlNF5XR75teLZcF9c80Hd5qs5b5rCbXrfwAf3QvxWU3gKj2XWHCv-o8gu5-RhYmn0eXQwvOKxB3_rod--16bcxiIuW7VZjZUr3znZlFXdhNczCcCvRF-MLtMZj1Jp7UByFhMjvWS7s8PhW89irirrSaZFxSYowvomybvRJ3wTPBczTeHrMoA0ixIFQpwfqlFa0aE70vqjir7mHiLA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-10 text-on-primary">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg font-bold mb-2">Smart Cooking Academy</h2>
+<p class="font-headline-lg text-body-lg md:text-headline-md font-medium opacity-90 mb-4 font-headline-lg">Level Up Your Culinary Skills</p>
+<button class="bg-primary hover:bg-terracotta-dark text-on-primary font-label-md text-label-md px-6 py-3 rounded-full transition-colors duration-200 active:scale-95 shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow">play_arrow</span>
+                        Start Latest Lesson
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories & Progression Bento -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-section-gap">
+<!-- Skill Progression Map (Spans 8 columns on desktop) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-2xl p-6 shadow-[0_4px_16px_rgba(63,95,146,0.06)] border border-outline-variant/30 relative overflow-hidden">
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-1">Your Culinary Journey</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Current Level: Intermediate</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-md text-label-sm font-semibold flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="workspace_premium">workspace_premium</span>
+                        Lebanese Cuisine Specialist
+                    </div>
+</div>
+<!-- Stylized Path Visualization -->
+<div class="relative h-32 flex items-center justify-between px-4 z-10 mt-4">
+<!-- Connecting Line -->
+<div class="absolute top-1/2 left-8 right-8 h-1 bg-surface-variant -translate-y-1/2 rounded-full z-0"></div>
+<!-- Active Path -->
+<div class="absolute top-1/2 left-8 w-[60%] h-1 bg-primary -translate-y-1/2 rounded-full z-0"></div>
+<!-- Nodes -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold text-center w-20">Basics</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-[24px]" data-icon="restaurant_menu">restaurant_menu</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold text-center w-20">Mezze Arts</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-outline-variant text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center w-20">Advanced Grills</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border-2 border-outline-variant text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center w-20">Pastry Chef</span>
+</div>
+</div>
+</div>
+<!-- Learn from Mistakes Widget (Spans 4 columns on desktop) -->
+<div class="md:col-span-4 bg-tertiary-fixed rounded-2xl p-6 shadow-sm border border-tertiary-fixed-dim/50 flex flex-col justify-between relative overflow-hidden group">
+<!-- Decorative background element -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/20 rounded-full blur-2xl group-hover:bg-white/30 transition-all duration-500"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-on-tertiary-fixed flex items-center justify-center text-tertiary-fixed shadow-inner">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</div>
+<h3 class="font-headline-md text-body-lg font-bold text-on-tertiary-fixed">Learn from Mistakes</h3>
+</div>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mb-6 leading-relaxed">
+                        Something went wrong? Ask AI Chef why your dough is hard or your sauce broke.
+                    </p>
+</div>
+<button class="relative z-10 w-full bg-on-tertiary-fixed text-tertiary-fixed hover:bg-on-tertiary-fixed-variant font-label-md text-label-md py-3 rounded-xl transition-colors duration-200 shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="help_center">help_center</span>
+                    Consult AI Chef
+                </button>
+</div>
+</section>
+<!-- Skill Categories -->
+<section class="mb-section-gap">
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface mb-6">Focus Areas</h2>
+<div class="flex overflow-x-auto hide-scrollbar gap-4 pb-4">
+<button class="flex-shrink-0 bg-primary text-on-primary px-6 py-3 rounded-full font-label-md text-label-md shadow-sm border border-transparent transition-all">
+                    Knife Skills
+                </button>
+<button class="flex-shrink-0 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low px-6 py-3 rounded-full font-label-md text-label-md shadow-sm border border-outline-variant transition-all">
+                    Sauces
+                </button>
+<button class="flex-shrink-0 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low px-6 py-3 rounded-full font-label-md text-label-md shadow-sm border border-outline-variant transition-all">
+                    Global Techniques
+                </button>
+<button class="flex-shrink-0 bg-surface-container-lowest text-on-surface hover:bg-surface-container-low px-6 py-3 rounded-full font-label-md text-label-md shadow-sm border border-outline-variant transition-all">
+                    Baking
+                </button>
+</div>
+</section>
+<!-- Course Cards (Academy Lesson Cards) -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface">Current Lessons</h2>
+<a class="font-label-md text-label-md text-primary hover:text-terracotta-dark" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Lesson Card 1 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(63,95,146,0.04)] border border-outline-variant/30 flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, high-quality video thumbnail image showing a chef's hands expertly julienning bright orange carrots on a premium wooden cutting board. A professional chef's knife is in sharp focus. The lighting is soft and natural, emphasizing the texture of the wood and the freshness of the vegetables. Global Premium Modern culinary aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMnb036fWk8QeCMsJZXFx9Ct0BS3AmcYrEqnE5T1qaDZAEKBPR4FbBxOsfr2Nz-vErZdBdxTQkP-eswrS2mmTuaZuMWr8IJ2mrQGSejnDIBEHGZm6eZRaP7TII1igGehLEXobDim-YEcTaZ6FiBEUl0kRgCebdhGVA0cIWvq8j4f644MAnBDoxWNjTRy8Wu-A9hgHKHPIM8VPnfzqMcVkrtyKVG7embSKhJSUaFKD6tfX7cOo1fGzSTA')"></div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-on-surface shadow-lg">
+<span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<!-- Status Badge -->
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="bookmark">bookmark</span>
+                            Enrolled
+                        </div>
+<!-- Duration Badge -->
+<div class="absolute bottom-4 right-4 bg-on-surface/80 backdrop-blur-md text-surface px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            15:20
+                        </div>
+<!-- Progress Bar -->
+<div class="absolute bottom-0 left-0 h-1 bg-secondary/30 w-full">
+<div class="h-full bg-secondary w-1/3 rounded-r-full"></div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-body-lg font-bold text-on-surface leading-tight">Precision Knife Cuts: The Julienne</h3>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 mb-4">
+                                Master the fundamental knife skills required for professional kitchen prep and vegetable presentation.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A small, professional portrait headshot of a smiling culinary instructor wearing a crisp white chef's coat against a neutral light grey background. Friendly, expert expression." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgFH8QLGcbx4h7LmAB_XwlO9Ga_CSvDhX9ilrTkSspNQ8b76efU-Yj5fqwtVdXPfgiXbfut4zZdkZIQb3ucoqPIc8mY2FqZEx02NKG8-PE9TAVVb3-GCvW8TCtrOebpe1AxxZWufXf-wy9XRGFwQmO1eSNP-6aZePIyR0B-ikoO3vGcyiMiQml5v0hqYZWKxfuZzZOMDbchQsbgq47cB56WzeYF375cDb_GahewxD4fMUQ0Q7P6KvvfA')"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chef Marcus</span>
+</div>
+<!-- Difficulty Badge -->
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-semibold">Beginner</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lesson Card 2 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(63,95,146,0.04)] border border-outline-variant/30 flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+<div class="relative h-48 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A top-down view of a classic French Mother Sauce being whisked in a heavy copper pan. The sauce is smooth and velvety. Steam rises gently. The lighting is warm and inviting, emphasizing the rich texture and culinary heritage. High-end editorial food photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRQaabpmZn10Wuydx_YkGBbdJzpNUmKuY19lJ6SMWMsFYHuCMkBkviSxsYQV4S4BAeppoKhAkS_p2m1CwL2J2oR-AZmSQ3VBV7XVY7q95HZlnV5Y3C8tG862pm1CFF8r6AQaTIbVe1oXQAWyK_n8W_y1h8mbEIrPpYborQR5hFIqiKulyyS-S6qca4Xe_50LdtPOoOI8YymsAsPsB4b_eym7zxtqbcOoMlAFGLSu7Ycz-NUhvVy-pLLA')"></div>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-on-surface shadow-lg">
+<span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="bookmark">bookmark</span>
+                            Enrolled
+                        </div>
+<div class="absolute bottom-4 right-4 bg-on-surface/80 backdrop-blur-md text-surface px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            22:45
+                        </div>
+<div class="absolute bottom-0 left-0 h-1 bg-surface-variant w-full">
+<div class="h-full bg-secondary w-0 rounded-r-full"></div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-body-lg font-bold text-on-surface leading-tight">Demystifying the Mother Sauces</h3>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 mb-4">
+                                Learn the five classic foundations of French cuisine and how to create infinite variations from them.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A small, professional portrait headshot of a female culinary instructor with dark hair tied back, wearing a black apron over a white shirt. Confident and approachable expression." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBs9SQguFdsytECwSqkmSRoRiCRxMVIfZM36eVsjCrll_FbZ1eF0eKy_iLf3JZ5lOjkffVQCOk0GOdPzPVi4f6iebZGOF2-In6XWTlGbpff_ih3jtQiSPN9nD4MFzdw-uBxKR3NGWfJEb3SE6wnLURqEKssJgDIagC7EW9HdbhXjvHrcVzDCSMN3Bvg3cEdeciHe0lM1aoJiQCAklbb1fLrQZO3tqZPlksnawHX2-6hYD9bXcXZuOITTA')"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chef Elena</span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-semibold ml-1">Intermediate</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lesson Card 3 (Fusion Style as per guidance) -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(63,95,146,0.04)] border-2 border-premium-gold/50 flex flex-col group cursor-pointer hover:shadow-md transition-shadow relative">
+<!-- Premium Sash -->
+<div class="absolute top-0 right-0 w-16 h-16 overflow-hidden z-10">
+<div class="bg-premium-gold text-on-surface text-[10px] font-bold uppercase tracking-wider py-1 text-center transform rotate-45 translate-x-4 translate-y-3 shadow-sm">Pro</div>
+</div>
+<div class="relative h-48 w-full overflow-hidden flex">
+<!-- Split Image for Fusion -->
+<div class="w-1/2 h-full">
+<div class="w-full h-full bg-cover bg-center" data-alt="A visually striking close-up of delicate Japanese sushi rice and fresh salmon sashimi, presented on a minimalist ceramic plate. Clean, bright, and precise lighting. Modern Asian culinary aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBTj2afLPhrGCsbK7G6dePWZYNzh7BVtvHvnZVt22RzkJrskoif0ruiFJZ-95Ig3oF1u-nDDLec_-Dx80ETjP5m3FLhjtcPKxiXSWtKuAH3Yc_nDi8wuCcDokobqk3h-_TE27_7pIouqI_2xmVGm6oHLBrhtGH37uwfnoZYEB_inNLOcSSYCXsQ5aOFEJunVF6rQdU5j9kMf7_nsTsEpUreeUdeZd58qq8c5SnB4mViUM0gaKrHqain_w')"></div>
+</div>
+<div class="w-1/2 h-full">
+<div class="w-full h-full bg-cover bg-center" data-alt="A vibrant macro shot of Peruvian ceviche ingredients: diced red onions, cilantro, and bright aji amarillo peppers. The lighting is sunny and colorful, emphasizing fresh, bold Latin American flavors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6FVdMyftOSmb606043c365GoqHyEqTFbndfXyc8YyN6YRoDe1klceN5LDLM17xGux7ptEaZsPiAkSzXQII9u5BFANgqx0gpio9uZqMXVtFogVHnGXt6hOgdxDmPH6vOC-tbGiyk5TDa_Dpax8yZPcwm-udAmeiCejZ2HeosJPR3lqGPmngosVopCYJiDhhYTkbzw8nOXjGfun7_YVzAWSMMHfoxTPacT6ZQIpX101ugge2bc6A5UWwQ')"></div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-on-surface shadow-lg">
+<span class="material-symbols-outlined" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-4 right-4 bg-on-surface/80 backdrop-blur-md text-surface px-2 py-1 rounded text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+                            45:00
+                        </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-body-lg font-bold text-on-surface leading-tight">Nikkei Cuisine: Japan meets Peru</h3>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant line-clamp-2 mb-4">
+                                Explore the masterclass on fusion techniques, blending delicate Japanese precision with bold Peruvian flavors.
+                            </p>
+</div>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">school</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Masterclass</span>
+</div>
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm font-semibold ml-1">Advanced</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-4 py-2 border-t border-outline-variant dark:border-outline/20 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(63,95,146,0.04)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span>Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm">
+<span class="material-symbols-outlined mb-1" data-icon="public">public</span>
+<span>Discover</span>
+</button>
+<!-- Active Tab: AI Chef / Academy Intent -->
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-3 py-1 transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm">
+<span class="material-symbols-outlined mb-1" data-icon="smart_toy" data-weight="fill" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span>AI Chef</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span>Plan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span>Profile</span>
+</button>
+</nav>
+</body></html>

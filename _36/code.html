@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Cooking App - Seasons</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<!-- Google Fonts: Be Vietnam Pro (Body/Label) & IBM Plex Sans Arabic (Headline) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=IBM+Plex+Sans+Arabic:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#051d30",
+                        "primary-fixed-dim": "#ffb783",
+                        "outline": "#897365",
+                        "surface-bright": "#f9f9f9",
+                        "surface-tint": "#944a00",
+                        "surface-container-highest": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#4b6076",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#564337",
+                        "inverse-primary": "#ffb783",
+                        "on-secondary-container": "#00743a",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "inverse-surface": "#2f3131",
+                        "secondary-container": "#6bfe9c",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-dim": "#dadada",
+                        "on-primary-fixed": "#301400",
+                        "outline-variant": "#dcc1b1",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-container": "#869bb3",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#4ae183",
+                        "secondary": "#006d37",
+                        "on-background": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "tertiary-fixed": "#cfe5ff",
+                        "secondary-fixed": "#6bfe9c",
+                        "surface": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-container": "#502600",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary": "#ffffff",
+                        "primary": "#944a00",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-tertiary-container": "#1d3347",
+                        "primary-container": "#e67e22",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#00210c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "16px",
+                        "section-gap": "48px",
+                        "container-margin": "24px",
+                        "card-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "body-lg": ["\"Be Vietnam Pro\", sans-serif"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "label-sm": ["\"Be Vietnam Pro\", sans-serif"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "body-md": ["\"Be Vietnam Pro\", sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-[100px] md:pb-0 pt-[80px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl shadow-sm h-[80px]">
+<div class="flex justify-between items-center px-gutter h-full w-full max-w-[1280px] mx-auto">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Smart Cooking App</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close up portrait of a young person with a warm smile, softly lit from the side, set against a neutral, blurred background. The style is modern, professional, and slightly warm, fitting a high-end food app context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEFdeX4W2rD2S66dQkkNbXHU47tCSoJa5ZoDxAh3ZpwAFFPm5ZVcxIONIYfb47G0iAewdbpUrP2k-BXxw8qXVIIxzZ4KHtguQQQ4bfmfC4DBbZlkpDPOX0mXLfnKeoU8BGIlbSUEkfHXL_BiZ-cZIcWxVq8WyHAKeZQRTe1kvjsIehxYJieQGgIPC9dK-gtFm6YRdCLqM2696TaNplIVMJJVUP9JfqyWxHRhfEj5Lhzz8_YaQuxdcUZw"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-gutter md:px-container-margin py-base">
+<!-- Hero Section -->
+<section class="mb-section-gap relative rounded-xl overflow-hidden h-[300px] md:h-[400px]">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A stunning, high-resolution wide shot of a bustling farmers market bathed in bright, warm morning sunlight. Stalls overflow with vibrant, freshly harvested seasonal vegetables like bright red radishes, deep purple eggplants, and lush green leafy vegetables. The scene conveys a sense of abundance, freshness, and the joy of home cooking, fitting a premium modern aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmofyf2xXlTeeHgUfAFL0yNOJfonNvGFicTNm6SQr2eC-qVhwknBEqhbMlMEiL7wDF1plVRgwj_s-m0W3NLY8-ByuFskHRXTf5gLJcnqmjzNVMy--aHHpNakDtAEi_lIdoTzjTjAqISI42H6O-JrrkqnTAPcpoQZ0tGQahgIsoLOe0IMgEBk7f27uYlCJu9gNM2lMT9ud52zZauGdfLVkYVAWJNOU-vj4fPeE4hAFZvA6ZkjXlCM0RXg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-card-padding left-card-padding right-card-padding text-white">
+<h2 class="font-headline-xl text-headline-xl mb-base">Season's Best</h2>
+<p class="font-body-lg text-body-lg text-surface-container-low opacity-90 max-w-[600px]">Explore the freshest flavors nature has to offer right now. Embrace the rhythm of the year with recipes tailored to the current harvest.</p>
+</div>
+</section>
+<!-- Season Selector (Bento Grid Style) -->
+<section class="mb-section-gap grid grid-cols-2 md:grid-cols-4 gap-base md:gap-gutter">
+<!-- Spring -->
+<button class="relative rounded-lg overflow-hidden h-[120px] md:h-[160px] group transition-transform active:scale-95">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity" data-alt="A close-up, softly focused image of vibrant green spring peas in their pods and delicate pink cherry blossoms against a light, airy background. The lighting is bright and cheerful, evoking the freshness of early spring. The aesthetic is clean and appetizing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDE2nhpLsK6Yuyb7z-pcKF9jMeROkXfk4gUG9ikW2oldB-0PQWTKvXcS-imBjDXTojK6sauO7dyCmfYvSc4FtZrxuKVCGlP5A8PIYqKd1-KxlLho4s4ietP6BBiXu6UZFpWFmrUvKc8w2bH6JqY174Z1YqJX5aI81jy6MQIwNLHgj8223e8JsKRlUdYwHqEkg6wUv8cIrcapHdPMhBmW2OKOrSBke3u_V6Lwg6ohMN_Wt1Ld0mbZm5Upg')"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+<span class="material-symbols-outlined mb-2">local_florist</span>
+<span class="font-headline-md text-headline-md">Spring</span>
+</div>
+</button>
+<!-- Summer (Active) -->
+<button class="relative rounded-lg overflow-hidden h-[120px] md:h-[160px] group border-4 border-primary ring-2 ring-primary-container ring-offset-2 ring-offset-background transition-transform active:scale-95">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A vivid, sun-drenched close-up of ripe, glistening strawberries and a slice of bright yellow lemon resting on a rustic wooden board. The colors are highly saturated—deep reds and vivid yellows—conveying the heat and vibrancy of summer. The style is premium food photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApysHST-vdRJ_taAYSP_Q3HzMTuQpXzCwJmxNlvlV9jBf_gIj9Hm8gK1c1x20CkrCxvy4c-AE7KMLxOReo_cG1krDMbsB32wp_8pEUN5XXE7dgHK-SPvkT2qT5VDSxk4eaFFkn-2DDmidTnfoUsRG4XwE4HoEcm12tvRju_44qPfNfSa9it2bD0mxdQoP7CWKHAHr-E-FdwJqZtGko-cHGQdazmPFrpkOnYbfdtNvq4xBHNdwZBGP2mQ')"></div>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+<span class="material-symbols-outlined mb-2 filled">wb_sunny</span>
+<span class="font-headline-md text-headline-md font-bold">Summer</span>
+</div>
+</button>
+<!-- Autumn -->
+<button class="relative rounded-lg overflow-hidden h-[120px] md:h-[160px] group transition-transform active:scale-95">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity" data-alt="A warm, earthy composition featuring a rustic, textured orange pumpkin surrounded by crisp, fallen autumn leaves in shades of rust, gold, and brown. The lighting is soft and golden, evoking a cozy, cool autumn afternoon. High quality, modern food styling." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKUND03kBIbgIkcbRJllBAPWFOk9osOmMs1bz2ERoV6aDaNTpZy71i49qZgIuxMxAmrliYcqL1ZwBTlNAGQzQpkTDcxRb5tCJ68ji8-7RlSgytSpq2NS8bNRnl_aajs67z8l0imhqFRvcFsrrni6KKzlZlS40RFQ60epBoFUgezdz9dVhGomRecCj3Uwuw5vQff4JV-nvt5Bv6707Pj3v3_7myIlv7vQ0C7wUHMz11HTVvrVfnJDdkug')"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+<span class="material-symbols-outlined mb-2">eco</span>
+<span class="font-headline-md text-headline-md">Autumn</span>
+</div>
+</button>
+<!-- Winter -->
+<button class="relative rounded-lg overflow-hidden h-[120px] md:h-[160px] group transition-transform active:scale-95">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity" data-alt="A moody, cool-toned image of hearty root vegetables like carrots and potatoes dusted lightly with what appears to be frost or flour, set against a dark, slate-grey background. The aesthetic is cozy, grounded, and slightly rustic, perfect for hearty winter cooking." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCG965xFxJ27L-kwEdK8zQr-vwIiUmf8vDdZy1SoBRzDESGKtTulGf7vdkV2Gw37v8h4gVXcpzzenwU1F5NvASfzs2K6OBwIrzF8stu4XGp0betiPOImOVVMltJHFuFplTED29aUVhTjblMSuSTB2y7q_mW1O_C3z2g9xJIX5ZLz5SuXRLiBDo3yH1svYFcMLAI_jZwMRV7PJvRfHFP2IzjKInzDa8BZH9QJQdHPuXt_HeWrTo8puiU6w')"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+<span class="material-symbols-outlined mb-2">ac_unit</span>
+<span class="font-headline-md text-headline-md">Winter</span>
+</div>
+</button>
+</section>
+<!-- Current Season Highlight -->
+<section class="mb-section-gap">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-gutter">Summer Peak Ingredients</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Ingredient Card -->
+<div class="bg-surface-container rounded-lg p-card-padding flex flex-col items-center shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4">
+<img alt="Heirloom Tomatoes" class="w-full h-full object-cover" data-alt="A bright, close-up shot of a perfectly ripe, deep red tomato still attached to a piece of green vine. Dew drops glisten on its surface, emphasizing freshness. The background is a soft, blurry green. High-end food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw1vVyQYHW0hoHni-FmN6_a5m4lnMYu0B-8c_MquAtY83M4slMSW8OTeJ7y2KSCrPveFwHb4ZD0TiP_TM-kqvYdMRa7MX0CnYv9IYuh3X1FduByvs4v6YcRkEFIyb3CT8hrEG-1TUI3YhX9asE0OHpF02imxJr2VpIjPxr99OPDPNMWuQa8VaUu50CgTt6w-tqxc6a-MM1n6komSXax7lXBKacPEE6vTqLHVUPx3OxItyivdVrvQa_LA"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center mb-1">Heirloom Tomatoes</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-center text-[12px]">Peak Freshness</span>
+</div>
+<div class="bg-surface-container rounded-lg p-card-padding flex flex-col items-center shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4">
+<img alt="Fresh Basil" class="w-full h-full object-cover" data-alt="A detailed macro shot of fresh basil leaves, showcasing their vibrant green color and delicate veining. The lighting highlights the glossy texture of the leaves against a clean, light background. Premium culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMkClQBLuAtqnDCDXy9ZypaaGwuOZCwEdgtT6d32O51LRBt7o52Cs_DW5u_lLKTntQyCNaoHucR7PWTzslcBZ-Oa_aR3OsGCyA_BGZhq4pvl4l71VvvPUcC4JOwaZ44DYF-HVjSyFKiX6d3okPOwq2DtRdAzC_vnyuE9guO1ce6OgAKb2UKOne3NnFj9B0PSnVu86AgD1P3B_LKfE_ByyAvfR_X6dfcRw2vSTbK3VwE0bGSASjOMQmCw"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center mb-1">Fresh Basil</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-center text-[12px]">Aromatic herb</span>
+</div>
+<div class="bg-surface-container rounded-lg p-card-padding flex flex-col items-center shadow-[0_4px_20px_rgba(230,126,34,0.08)] hidden md:flex">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4">
+<img alt="Sweet Corn" class="w-full h-full object-cover" data-alt="A close-up of a vibrant yellow ear of sweet corn, partially husked, revealing plump, juicy kernels. The rustic background suggests a farm-to-table freshness. Lighting is warm and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6rwTHmbqPBon8B8XV56xYJBoSzK9TihEm_oHZYOfrjuzcuZ1Ax7Y1GezTltlYa5rV3LkEUrDGMQRCJoEzC9rcyQ3qzpyhiRVdP59qPOxSInFrn3yGB8ftMPWxtzzW3NyvANYpTwP1BQnow_k3Yh2AzyxwHbSynMx8xHZ4ZDh-oOl4uTIpt8fhqEQlBE7kUysx0dYPgmGfocn8YPytgNH4AHL6cS_25FRjXLv6cWVq4VWe1wqCZM5MLw"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center mb-1">Sweet Corn</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-center text-[12px]">Sweet &amp; Crunchy</span>
+</div>
+<div class="bg-surface-container rounded-lg p-card-padding flex flex-col items-center shadow-[0_4px_20px_rgba(230,126,34,0.08)] hidden md:flex">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4">
+<img alt="Summer Berries" class="w-full h-full object-cover" data-alt="A mouth-watering shot of plump, dark purple blackberries and bright red raspberries resting on a white ceramic plate. The colors pop beautifully, conveying tart sweetness and summer abundance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6hQ1F_RQwbTRZA4XwzgXT3ogLgVGBm5FzMOtf6cQ6rnjxeFNIVbPLHfYtVM2TLmFywq2SAy780fbcns5SAnu7X85FnHV1vq9HVpp1Yol8yfRb2l8YNbmUA7L-xqAiu98TQ3eoLOWPv20Jt9VPxgorpQnTY8nDyGO6EhFV6L7rEXJkupKaYEOO61bzLdZ9LyZ86RxqT8hcIx3S9dCt-REMroba7XW0qk-X1hfE6CsE5UvJ1FENLmKeDA"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center mb-1">Summer Berries</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-center text-[12px]">Antioxidant rich</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-lg">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined filled">explore</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px] font-bold">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-lg">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">AI Chef</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-lg">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Plan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-lg">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Profile</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yum - Splash Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dcc1b1",
+                        "secondary": "#635e53",
+                        "surface-container-low": "#e9f6f7",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#eefcfd",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#213344",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#36485b",
+                        "surface-variant": "#d8e5e6",
+                        "secondary-fixed": "#e9e2d3",
+                        "surface-bright": "#eefcfd",
+                        "on-background": "#121e1f",
+                        "on-secondary-fixed": "#1e1b13",
+                        "secondary-fixed-dim": "#cdc6b8",
+                        "primary": "#944a00",
+                        "surface-dim": "#cfdddd",
+                        "tertiary": "#4e6073",
+                        "on-surface": "#121e1f",
+                        "inverse-surface": "#263334",
+                        "background": "#eefcfd",
+                        "tertiary-fixed-dim": "#b5c8df",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#889bb0",
+                        "outline": "#897365",
+                        "on-secondary-fixed-variant": "#4b463c",
+                        "primary-fixed": "#ffdcc5",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d1e4fb",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e9e2d3",
+                        "surface-tint": "#944a00",
+                        "surface-container-high": "#ddebec",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#301400",
+                        "inverse-on-surface": "#e6f3f4",
+                        "surface-container-highest": "#d8e5e6",
+                        "on-secondary-container": "#696458",
+                        "on-primary-container": "#502600",
+                        "on-surface-variant": "#564337",
+                        "inverse-primary": "#ffb783",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#091d2e",
+                        "primary-fixed-dim": "#ffb783",
+                        "primary-container": "#e67e22",
+                        "surface-container": "#e3f0f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1280px",
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["IBM Plex Sans"],
+                        "display-lg-mobile": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "display-lg": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-sm": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center m-0 p-0 overflow-hidden">
+<div class="flex flex-col items-center justify-center relative w-full h-full max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Animated Logo -->
+<div class="fade-in-up w-[200px] h-[200px] mb-8">
+<!-- STITCH_SVG_START:ANIMATION_68 class="w-full h-full object-contain" --><div class="w-full h-full object-contain" id="animated-svg-ANIMATION_68" style="display:block;"><svg height="200" viewbox="0 0 200 200" width="200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#e67e22;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#f39c12;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<circle cx="100" cy="100" fill="white" opacity="0.1" r="90" stroke="#e67e22" stroke-width="2">
+<animate attributename="r" dur="3s" repeatcount="indefinite" values="90;95;90"></animate>
+</circle>
+<path d="M70 60 Q100 40 130 60 L130 110 Q100 140 70 110 Z" fill="url(#grad1)">
+<animatetransform attributename="transform" dur="2s" repeatcount="indefinite" type="translate" values="0 0; 0 -5; 0 0"></animatetransform>
+</path>
+<circle cx="100" cy="100" fill="none" r="40" stroke="white" stroke-dasharray="10 20" stroke-linecap="round" stroke-width="8">
+<animatetransform attributename="transform" dur="10s" from="0 100 100" repeatcount="indefinite" to="360 100 100" type="rotate"></animatetransform>
+</circle>
+</svg></div><!-- STITCH_SVG_END:ANIMATION_68 -->
+</div>
+<!-- Brand Name -->
+<h1 class="fade-in-up delay-100 font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container text-center mb-2 tracking-tight">
+            Yum
+        </h1>
+<!-- Tagline -->
+<p class="fade-in-up delay-200 font-body-lg text-body-lg text-secondary text-center max-w-[300px]">
+            Your World of Food
+        </p>
+</div>
+</body></html>

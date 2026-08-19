@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مخطط المناسبات الذكي - Smart Cooking App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap');
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#502600",
+                      "surface-tint": "#944a00",
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "on-surface": "#1a1c1c",
+                      "tertiary": "#4b6076",
+                      "on-surface-variant": "#564337",
+                      "surface-container": "#eeeeee",
+                      "inverse-primary": "#ffb783",
+                      "on-secondary-container": "#00743a",
+                      "surface-container-highest": "#e2e2e2",
+                      "tertiary-container": "#869bb3",
+                      "on-background": "#1a1c1c",
+                      "surface-dim": "#dadada",
+                      "on-tertiary-container": "#1d3347",
+                      "on-tertiary-fixed": "#051d30",
+                      "secondary-fixed": "#6bfe9c",
+                      "tertiary-fixed-dim": "#b3c9e2",
+                      "secondary": "#006d37",
+                      "primary": "#944a00",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-secondary-fixed-variant": "#005228",
+                      "primary-fixed-dim": "#ffb783",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#00210c",
+                      "on-error-container": "#93000a",
+                      "surface": "#f9f9f9",
+                      "surface-bright": "#f9f9f9",
+                      "error-container": "#ffdad6",
+                      "background": "#f9f9f9",
+                      "secondary-fixed-dim": "#4ae183",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#6bfe9c",
+                      "tertiary-fixed": "#cfe5ff",
+                      "on-primary": "#ffffff",
+                      "primary-fixed": "#ffdcc5",
+                      "surface-container-high": "#e8e8e8",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#301400",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-surface": "#2f3131",
+                      "outline": "#897365",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#e67e22",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#dcc1b1",
+                      "on-primary-fixed-variant": "#713700"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "section-gap": "48px",
+                      "card-padding": "20px",
+                      "container-margin": "24px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "label-sm": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "body-md": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl docked full-width top-0 sticky shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto">
+<!-- Leading: Avatar -->
+<div class="flex-shrink-0 cursor-pointer hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors rounded-full p-1">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="A close up portrait of a middle eastern woman with a warm smile, wearing a subtle earth-toned hijab. Soft, warm natural lighting emphasizing a premium, lifestyle app aesthetic. Crisp focus on the face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrlTU4156E98VwnY7KxTNm3an-CQwIjVe-_a9Hp81bWOPPxtaEVV9TjFAxeB933wB2PuOMLsSVvsoq1e-s_laRqIGN7NBfVmmegvrvgYg-bnFqIg7NYBnroVe2o8x5DQxo61XNJcKHgVPsOHkLAesfLxpNlP4qTeVCtbdWkCAH045VYKCiKGXtqYngDqGe6iFqUql9p_Qy1bEVrgilqIbDebHo2XPhct94wh_NkA7dX8t0whQorERxUA"/>
+</div>
+<!-- Headline / Brand -->
+<div class="flex-grow text-center">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">Smart Cooking App</h1>
+</div>
+<!-- Trailing: Icon -->
+<button class="flex-shrink-0 cursor-pointer text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors rounded-full p-2 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-container-margin py-section-gap max-w-7xl mx-auto w-full grid grid-cols-4 md:grid-cols-12 gap-gutter">
+<!-- Header Section -->
+<section class="col-span-4 md:col-span-12 mb-8">
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">مخطط المناسبات الذكي</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">دع الذكاء الاصطناعي يخطط لقائمتك المثالية، من المقادير إلى أوقات الطهي.</p>
+</section>
+<!-- Bento Grid: Event Selection & Configuration -->
+<section class="col-span-4 md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<!-- Event Type Selection (Card 1) -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] md:col-span-2">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">اختر المناسبة</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Option 1 -->
+<button class="relative overflow-hidden rounded-lg group text-left border-2 border-primary-container bg-surface-container-low transition-all">
+<div class="bg-cover bg-center w-full h-24 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A beautifully set iftar table during Ramadan with soft lantern light, dates, glowing warm ambiance. Premium lifestyle photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXeGjlyMd9QOqCeyDZHhl1433pZ7gZBfN4K5s14AyB484SdZOjQV5MkeePraH7Mte08LMgS1eQTzmmIwgSf0NThEJ851sLjCdNGBLetRGGOsgo_mG5IyXO4kyVJoOdWzw6MooiDk0pTLn_sTvtKOz5sU2J5wb9TQc7BM9PVpK2XTwCp7ejC_HzYmWnF7UFdDjvDqhCHBdp3L_GlYBy5_4fWLjhPs4_eSwA0CvIjJ8Saoe34kXN4MgHsA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-white">
+<span class="font-label-sm text-label-sm block">إفطار رمضان</span>
+</div>
+<div class="absolute top-2 right-2 bg-primary-container text-on-primary-container rounded-full p-1 shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1; font-size: 16px;">check_circle</span>
+</div>
+</button>
+<!-- Option 2 -->
+<button class="relative overflow-hidden rounded-lg group text-left border border-outline-variant bg-surface-container-low hover:border-primary-container transition-all opacity-70 hover:opacity-100">
+<div class="bg-cover bg-center w-full h-24" data-alt="A festive Eid celebration spread with vibrant sweets, maamoul, and elegant tea cups on a light wooden table. Bright, airy, celebratory lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFGu0JMBWJ4yiWO74cspX12ntYEsI6AF75-7gzIAVaEnZBWyLNWeE0RDB_OmkfN7MUh_HB4X3_bzyEg7yIbeH2EfQKVzYn-Lvx2L-uQZPzJXBOkGbX05X-8UzhY1cNVDYGNPoEZtGJXNs3dexC-Ag7fInCJf5l8kCgQYuNK_eUohDGFPWyi_RXQhXjLoU_7BGN-YtucZtriaRT4Sgl9k_WEqJHTx40NBg4oGjMTmVkavB_hcA7U5FyuA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-white">
+<span class="font-label-sm text-label-sm block">عزومة العيد</span>
+</div>
+</button>
+<!-- Option 3 -->
+<button class="relative overflow-hidden rounded-lg group text-left border border-outline-variant bg-surface-container-low hover:border-primary-container transition-all opacity-70 hover:opacity-100">
+<div class="bg-cover bg-center w-full h-24" data-alt="A cozy, large family dinner table setting overhead view. Plates of roasted vegetables, large salad bowls, warm intimate lighting. Mediterranean style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQA-HMLQRal7CZsc5oWRx_6p0pL0tl6DQ7X0HGb0RQMIUGjtIj0ydk7VWd8tIXEwYjXzvK7f8SzsYht_oZqDjqhaW2Vx6LjNOFWoP9UBqWw7my9huQOQbVfabVxC9LTVxrqK_3Ngwc4b-JWtw4Jwz3phIuExbB0XAEiqAyhxySpaR1ojS_KFsVinW1KJ2XAO7ORzauyEziMeLsggHtZQWLohU6S8jK4k7vMpSC_mZLCyuAr4IF3S3dow')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 text-white">
+<span class="font-label-sm text-label-sm block">عزومة عائلية</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Configuration (Card 2) -->
+<div class="bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">التفاصيل</h3>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">عدد الضيوف</label>
+<div class="flex items-center bg-surface-container-low rounded-lg p-2 mb-4 border border-outline-variant focus-within:border-primary">
+<span class="material-symbols-outlined text-tertiary mr-2">group</span>
+<input class="bg-transparent border-none w-full text-on-surface font-body-md focus:ring-0" type="number" value="8"/>
+</div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">التفضيلات الغذائية</label>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm px-3 py-1 rounded-full border border-secondary-container">نباتي</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full border border-outline-variant cursor-pointer hover:bg-surface-container-highest">خالي من الجلوتين</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 rounded-full flex justify-center items-center gap-2 hover:bg-surface-tint hover:text-white transition-colors shadow-md">
+<span class="material-symbols-outlined">magic_button</span>
+                    تحديث القائمة
+                </button>
+</div>
+</section>
+<!-- AI Generated Menu Section -->
+<section class="col-span-4 md:col-span-12">
+<div class="flex items-center justify-between mb-6 border-b border-surface-variant pb-2">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
+                    قائمة الطعام المقترحة
+                </h2>
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">schedule</span> ٢ س ٣٠ د تحضير
+                    </div>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 justify-end mt-1">
+<span class="material-symbols-outlined text-sm">payments</span> تكلفة تقديرية: متوسطة
+                    </div>
+</div>
+</div>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Category: Starters -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface-variant mb-2 border-b-2 border-tertiary-container pb-1 inline-block">المقبلات</h3>
+<!-- Recipe Item -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-md transition-shadow group flex items-stretch h-28">
+<div class="w-1/3 bg-cover bg-center" data-alt="A close up shot of a creamy bowl of lentil soup with a drizzle of olive oil, toasted pita bread on the side. Warm, inviting lighting, dark rustic background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANw9O2VEHrAVfMIUmGMMavUrRDmcTytofRpbNC7Lq_qyGB-ndxDiqg38YFc1_k-hoz4wo3vGavjICBWlLoxPH4FbJbIDoxM2C_T7qg_e2vDEK4DqUKW_WMgxy0PTHMWMUkr7h3xGWxwFM4ArPPeTujynRScR9QExEUAPPprPDHewHkAnYqqG8UwzOTu-IBpevjt-vNw0DyBcZASOA7NHAGOUhr2Uv-w5l6fLa7IWeVDou6jsGkdU9hig')"></div>
+<div class="p-3 w-2/3 flex flex-col justify-between">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface line-clamp-1">شوربة العدس التقليدية</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-1">دافئة ومغذية</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="bg-surface-variant text-on-surface-variant text-xs px-2 py-0.5 rounded-full">٢٠ دقيقة</span>
+<button class="text-primary hover:text-surface-tint"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 20px;">bookmark</span></button>
+</div>
+</div>
+</div>
+<!-- Recipe Item -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-md transition-shadow group flex items-stretch h-28">
+<div class="w-1/3 bg-cover bg-center" data-alt="A top down view of a vibrant fresh fattoush salad in a large wooden bowl, crispy bread on top, pomegranate seeds. Bright natural light, fresh and healthy aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJdm6utNBdbC7CKO-XeAU4gZFRDsYLRpRvH50GxSh7L9zh7sNeXxZnr8bh474nwcTNNqSh_uX_6vZGH_3AqfhlVuAI24H5uBCHLBUEinmVmzlqGLH2-NbhqTv9sEG-6yvvHwNgqoPbV65L9OB1-BQKMMCWIFBGIXGRQhI-27TxvfeqU8loFs3Xbkd4xQZ0KLFIoDAt6TnujH0N1myNPO4vM2TfgAOfT-hJsz2zY6GMsgxwmhfECFF4fQ')"></div>
+<div class="p-3 w-2/3 flex flex-col justify-between">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface line-clamp-1">سلطة فتوش طازجة</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-1">مع دبس الرمان</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="bg-surface-variant text-on-surface-variant text-xs px-2 py-0.5 rounded-full">١٥ دقيقة</span>
+<button class="text-primary hover:text-surface-tint"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 20px;">bookmark</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Mains -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface-variant mb-2 border-b-2 border-primary-container pb-1 inline-block">الأطباق الرئيسية</h3>
+<!-- Recipe Item -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-md transition-shadow group flex flex-col h-full">
+<div class="w-full h-40 bg-cover bg-center relative" data-alt="A beautifully plated dish of aromatic chicken machboos (kabsa) with spiced yellow rice, roasted nuts, and tender chicken. Warm overhead lighting, elegant ceramic plate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWN04zm1G01Tl-OhpCeWIDYcslnetKf2Miz9dXsfoBWz6AP3r2y2ZdM4QMzY70yGjEycCtzMm3OBMAXqisejUMKDF4nEoxSwoqH6xLWyBIVoGCUnmoikEheFMX8YWSoHPJq4lDprL1LeCZfELpVo2sYdS-u2SCo1SiO1URs_hJYHX3fyz2KWI4RDvhaFhtmJqPB2fHF7mwV9Brnl4e8j3l_nom_ImUYOtz6TNgTMYIhax3sJEeSKyurg')">
+<div class="absolute top-2 right-2">
+<span class="bg-surface-container-lowest/80 backdrop-blur-sm text-on-surface font-label-sm text-xs px-2 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> مقترح بشدة
+                                 </span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface mb-1">مجبوس الدجاج بالبهارات الخليجية</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-3">طبق غني بالنكهات يناسب العزائم العائلية الكبيرة.</p>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<div class="flex gap-2">
+<span class="bg-surface-variant text-on-surface-variant text-xs px-2 py-0.5 rounded-full flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> ٦٠ د</span>
+</div>
+<button class="text-primary hover:text-surface-tint"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 24px;">bookmark_add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Desserts -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface-variant mb-2 border-b-2 border-secondary-container pb-1 inline-block">الحلويات</h3>
+<!-- Recipe Item -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-md transition-shadow group flex items-stretch h-28">
+<div class="w-1/3 bg-cover bg-center" data-alt="A close up of a piece of golden brown kunafa oozing with melted cheese, topped with bright green crushed pistachios, being drizzled with clear sugar syrup. Dark background, dramatic side lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHn8RuoX3abVHzOKP2q5icmWIJNOcmmMPhQ61wh-XcgPd4Ny0XoHhE6MdS3-ea1De_7fcY68fv1HkA662Xe-wK40QVq-DD_m9HlAqEldtj9lgUTOTGMZLcSw1tgLq5_Z3PFBM61mGagAa59FNm6FLlQ3RJ_S5MN6G59NcnpxGS-sSuHRmwhhLQNiUFzYGK4lYcPCY0nGHXtDcUu8Zd5DcsppbX-v3MlJ2sG-l-qnk9FbkMlfRuQAgj8A')"></div>
+<div class="p-3 w-2/3 flex flex-col justify-between">
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface line-clamp-1">كنافة بالجبن</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-1">مقرمشة من الخارج وساخنة</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="bg-surface-variant text-on-surface-variant text-xs px-2 py-0.5 rounded-full">٤٠ دقيقة</span>
+<button class="text-primary hover:text-surface-tint"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 20px;">bookmark</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="col-span-4 md:col-span-12 flex flex-col md:flex-row justify-end gap-4 mt-8 pt-4 border-t border-surface-variant">
+<button class="px-6 py-3 rounded-full font-label-sm text-label-sm text-secondary border-2 border-secondary hover:bg-secondary hover:text-on-secondary transition-colors text-center">
+                إضافة المزيد من الأطباق
+            </button>
+<button class="px-6 py-3 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container hover:bg-surface-tint hover:text-white transition-colors text-center shadow-[0_4px_20px_rgba(230,126,34,0.2)]">
+                إنشاء قائمة التسوق
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-xl z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] flex justify-around items-center px-4 pb-safe pt-2">
+<!-- Inactive Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm-mobile">الرئيسية</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="font-label-sm text-label-sm-mobile">اكتشف</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined mb-1">kitchen</span>
+<span class="font-label-sm text-label-sm-mobile">المكونات</span>
+</a>
+<!-- Active Tab (Meal Planner) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all scale-90 duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="font-label-sm text-label-sm-mobile">مخطط الوجبات</span>
+</a>
+<!-- Inactive Tab -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-label-sm-mobile">حسابي</span>
+</a>
+</nav>
+</body></html>

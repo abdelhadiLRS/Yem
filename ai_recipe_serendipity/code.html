@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CulinaryAI - فاجئني بوصفة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dadada",
+                        "tertiary-container": "#869bb3",
+                        "primary-container": "#e67e22",
+                        "on-surface-variant": "#564337",
+                        "on-tertiary-container": "#1d3347",
+                        "background": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb783",
+                        "inverse-primary": "#ffb783",
+                        "surface-tint": "#944a00",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#cfe5ff",
+                        "outline-variant": "#dcc1b1",
+                        "outline": "#897365",
+                        "secondary-container": "#6bfe9c",
+                        "inverse-surface": "#2f3131",
+                        "secondary": "#006d37",
+                        "inverse-on-surface": "#f1f1f1",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-container": "#502600",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#4ae183",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-fixed": "#00210c",
+                        "on-secondary-container": "#00743a",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed": "#ffdcc5",
+                        "primary": "#944a00",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-tertiary-fixed": "#051d30",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "secondary-fixed": "#6bfe9c",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#301400",
+                        "on-error": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "tertiary": "#4b6076",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "20px",
+                        "base": "8px",
+                        "container-margin": "24px",
+                        "gutter": "16px",
+                        "section-gap": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["beVietnamPro"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "body-md": ["beVietnamPro"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\", sans-serif"],
+                        "label-sm": ["beVietnamPro"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'beVietnamPro', sans-serif;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+        }
+        
+        .shadow-resting {
+            box-shadow: 0 4px 20px rgba(230, 126, 34, 0.08);
+        }
+        .shadow-active {
+            box-shadow: 0 12px 30px rgba(230, 126, 34, 0.12);
+        }
+        
+        /* Inner glow for buttons */
+        .btn-inner-glow {
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Subtle image gradient */
+        .img-gradient-overlay::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+        
+        /* Custom radio button styling */
+        .surprise-level input:checked + div {
+            background-color: #e67e22; /* primary-container */
+            color: white;
+            border-color: #e67e22;
+        }
+        .surprise-level input:checked + div .material-symbols-outlined {
+             color: white;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-32">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/75 dark:bg-surface-dim/75 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-gutter py-4 w-full">
+<button class="text-on-surface-variant cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">language</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">CulinaryAI</h1>
+<button class="text-on-surface-variant cursor-pointer active:scale-95 transition-transform hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin md:px-8 pt-section-gap">
+<!-- Serendipity Header & Level Selector -->
+<section class="mb-section-gap text-center">
+<div class="inline-flex items-center justify-center p-4 bg-tertiary-fixed rounded-full mb-6 text-on-tertiary-fixed shadow-resting animate-pulse">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">لدينا مفاجأة لك اليوم!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl mx-auto">اختر مستوى المفاجأة ودع الذكاء الاصطناعي يقترح لك وصفة فريدة تناسب ذوقك وما يتوفر لديك.</p>
+<div class="flex flex-wrap justify-center gap-3">
+<label class="surprise-level cursor-pointer">
+<input checked="" class="hidden" name="surpriseLevel" type="radio" value="familiar"/>
+<div class="flex flex-col items-center px-6 py-4 rounded-xl border-2 border-outline-variant bg-surface transition-all hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-2 text-on-surface-variant">favorite</span>
+<span class="font-label-sm text-label-sm">مألوف</span>
+</div>
+</label>
+<label class="surprise-level cursor-pointer">
+<input class="hidden" name="surpriseLevel" type="radio" value="adventurous"/>
+<div class="flex flex-col items-center px-6 py-4 rounded-xl border-2 border-outline-variant bg-surface transition-all hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-2 text-on-surface-variant">explore</span>
+<span class="font-label-sm text-label-sm">مغامر</span>
+</div>
+</label>
+<label class="surprise-level cursor-pointer">
+<input class="hidden" name="surpriseLevel" type="radio" value="explorer"/>
+<div class="flex flex-col items-center px-6 py-4 rounded-xl border-2 border-outline-variant bg-surface transition-all hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-2 text-on-surface-variant">public</span>
+<span class="font-label-sm text-label-sm">مستكشف</span>
+</div>
+</label>
+<label class="surprise-level cursor-pointer">
+<input class="hidden" name="surpriseLevel" type="radio" value="crazy"/>
+<div class="flex flex-col items-center px-6 py-4 rounded-xl border-2 border-outline-variant bg-surface transition-all hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-2 text-on-surface-variant">local_fire_department</span>
+<span class="font-label-sm text-label-sm">مجنون 🔥</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Suggested Recipe Card (The Reveal) -->
+<section class="mb-section-gap relative">
+<div class="bg-surface-container-lowest rounded-xl shadow-active overflow-hidden flex flex-col md:flex-row relative">
+<!-- AI Badge Overlay -->
+<div class="absolute top-4 right-4 z-10 bg-surface/90 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary text-sm">smart_toy</span>
+<span class="font-label-sm text-label-sm text-on-surface">اختيار الذكاء الاصطناعي</span>
+</div>
+<div class="md:w-1/2 relative h-80 md:h-auto img-gradient-overlay">
+<img alt="Spicy Thai Green Curry" class="w-full h-full object-cover rounded-t-xl md:rounded-l-none md:rounded-r-xl" data-alt="A beautifully plated spicy Thai green curry with vibrant vegetables and chicken, presented in a handcrafted ceramic bowl resting on a rustic wooden table. The lighting is warm and inviting, highlighting the steam rising from the hot dish, reflecting a cozy, premium food photography style suitable for a modern culinary app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhVs4zJUxJrBCQwhZwD4trGQ1-HmlWnklUl3tSAEci-zI9Q78Y2-GOqjbRIBVJH93BEK2uuiBWjZbsNSJOS0wbTI1QsvR-b0G7foB81Bjx-7yl6xyG-3vd7Xvy8v5RbC9sDuc5pruFBWIPSLCjAiSeUotlmoYR0_GSjqzf1kr2L9pDsnDFsSF_CyBpfW-YEN67EmpwDAi1Gf1B0B2oYSv5QCf0TR4yAft2EajXpcFhKvGL8FoXvasP1Q"/>
+<div class="absolute bottom-4 right-4 z-10 flex gap-2">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">timer</span> 35 دقيقة
+                        </span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm backdrop-blur-md">
+                            حار
+                        </span>
+</div>
+<button class="absolute top-4 left-4 z-10 w-10 h-10 bg-surface/80 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">كاري أخضر تايلاندي حار</h3>
+<!-- AI Explanation -->
+<div class="bg-surface-container-low rounded-lg p-4 mb-6 border border-outline-variant/50">
+<p class="font-body-md text-body-md text-on-surface-variant flex items-start gap-2">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">insights</span>
+                                "تتناسب هذه الوصفة مع ذوقك في الأطباق الحارة والطقس البارد اليوم، كما أنها تستخدم 70% من المكونات المتوفرة في ثلاجتك."
+                            </p>
+</div>
+<!-- Readiness Indicator -->
+<div class="mb-8">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-sm text-label-sm text-on-surface">المكونات المتوفرة</span>
+<span class="font-headline-md text-headline-md text-secondary">70%</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2.5">
+<div class="bg-secondary h-2.5 rounded-full" style="width: 70%"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2">ينقصك: حليب جوز الهند، ريحان طازج</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 mt-6">
+<button class="flex-1 bg-primary-container text-on-secondary px-6 py-3 rounded-xl font-label-sm text-label-sm font-semibold flex items-center justify-center gap-2 btn-inner-glow hover:bg-surface-tint transition-colors shadow-sm">
+<span class="material-symbols-outlined">restaurant</span>
+                            ابدأ الطبخ
+                        </button>
+<button class="flex-1 border-2 border-secondary text-secondary px-6 py-3 rounded-xl font-label-sm text-label-sm font-semibold flex items-center justify-center gap-2 hover:bg-secondary/5 transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                            أضف النواقص للسلة
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Cook with what you have (Zero Shop Recipes) -->
+<section class="mb-section-gap">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">kitchen</span>
+                    اطبخ مما لديك
+                </h3>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">لا حاجة للتسوق</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Mini Recipe Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-resting overflow-hidden group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="h-40 relative img-gradient-overlay">
+<img alt="Tomato Soup" class="w-full h-full object-cover rounded-t-xl" data-alt="A comforting bowl of creamy tomato soup garnished with a swirl of cream and fresh basil leaves, served alongside a perfectly toasted, golden-brown grilled cheese sandwich. The scene is lit softly to emphasize the rich red of the soup, capturing a warm, home-cooked aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9HhigesQLh5n2i1piCEADwBxfC3b7LnsIawspN9JuwiQx947Z2ZL8f59l9fjbn7--A1KyPH7X1cpQNnmr86iDdZLC27RCjSo0prCkZOdUyC9mYVJ7L0wpBvRMDPDPQU2e4UuwI2uS7doK9L6-WgbBdQmMGTw-ld_kbb82knzG5QkUl3rI5V2HnXBTxpcWQIATrcRhaUHoVMUIOMOSP1-oXarg_odTOlcL-DlOQjxfeflpnNIZT-p8Hw"/>
+<div class="absolute bottom-2 right-2 z-10 flex gap-1">
+<span class="bg-surface/80 px-2 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface backdrop-blur-md">15 دقيقة</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-label-sm text-label-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">شوربة الطماطم الكريمية</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">مكونات بسيطة من خزانة المؤن.</p>
+</div>
+</div>
+<!-- Mini Recipe Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-resting overflow-hidden group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="h-40 relative img-gradient-overlay">
+<img alt="Pantry Pasta" class="w-full h-full object-cover rounded-t-xl" data-alt="A rustic, hearty pasta dish featuring penne coated in a light olive oil sauce with sun-dried tomatoes, spinach, and grated parmesan cheese. Photographed from a top-down perspective on a clean, light-colored wooden table, emphasizing the fresh, simple ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4F60ebeskoGb-eI9D5VZoPP2VXWH5pwOOu9VZBJTkhJdbuWPv29IMcdXGh-uofbKrz5LHttJ7Kx-cU430mPdG8HUWxrR5b3XyD1EQDm349ZSZ5YNGYUdmriRChOjKH7qTBeIGPeUBnSG70zzYpKdYOrRahVri0g2xh2c_s1jjpY11UNZ5Ll9G_qOl-WsKflGhQ4fI-VSoeDSGPwPTfHnmLGMEzxiO8agVvzNEHxVsG31Xue1r4PJwZw"/>
+<div class="absolute bottom-2 right-2 z-10 flex gap-1">
+<span class="bg-surface/80 px-2 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface backdrop-blur-md">20 دقيقة</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-label-sm text-label-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">مكرونة الثوم والأعشاب</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">عشاء سريع التحضير ولذيذ.</p>
+</div>
+</div>
+<!-- Mini Recipe Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-resting overflow-hidden group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<div class="h-40 relative img-gradient-overlay">
+<img alt="Vegetable Frittata" class="w-full h-full object-cover rounded-t-xl" data-alt="A fluffy, golden-yellow frittata cooked in a cast-iron skillet, studded with chunks of potatoes, onions, and bell peppers. The setting suggests a bright weekend brunch, with soft natural light enhancing the appetizing textures of the eggs and vegetables." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgNGFO2Y8OJWO5eEhedlC5tJuA7zTKlGKn625t_3IC7kISlOH6mXdtrxN0vNubl81r_ncVJt09vRGARG8ooaXIY3woRiv29A0D6WC_B85D-nfgaBhEhD-OpxhjU5jHG42_YAV0u3Xbi_FBf29nJgrXXyXImeoTEqb-nMyHW2JdkPYo772Ul3yLv8evoXMgqiw7pHB3AU4xOpnIUt8YbjgfpGARIGGXB8MW4EnUMkGbF1EFWq1XWs6Y1w"/>
+<div class="absolute bottom-2 right-2 z-10 flex gap-1">
+<span class="bg-surface/80 px-2 py-0.5 rounded-full font-label-sm text-label-sm text-on-surface backdrop-blur-md">25 دقيقة</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-label-sm text-label-sm text-on-surface font-semibold mb-1 group-hover:text-primary transition-colors">فريتاتا الخضار المتنوعة</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">استغل الخضروات المتبقية في الثلاجة.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t border-outline-variant dark:border-outline/20 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(63,95,146,0.04)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl">
+<span class="material-symbols-outlined">public</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px] font-bold">AI Chef</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Plan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1 text-[10px]">Profile</span>
+</button>
+</nav>
+</body></html>

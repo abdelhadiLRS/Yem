@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chef Profile - Smart Cooking App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#564337",
+                    "tertiary": "#4b6076",
+                    "on-surface": "#1a1c1c",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "secondary-container": "#6bfe9c",
+                    "surface-dim": "#dadada",
+                    "on-secondary-container": "#00743a",
+                    "on-secondary-fixed-variant": "#005228",
+                    "on-primary-container": "#502600",
+                    "primary-container": "#e67e22",
+                    "on-tertiary-container": "#1d3347",
+                    "on-tertiary-fixed": "#051d30",
+                    "tertiary-container": "#869bb3",
+                    "inverse-primary": "#ffb783",
+                    "on-secondary-fixed": "#00210c",
+                    "outline-variant": "#dcc1b1",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdcc5",
+                    "primary": "#944a00",
+                    "on-primary-fixed": "#301400",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e2e2e2",
+                    "tertiary-fixed": "#cfe5ff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "outline": "#897365",
+                    "surface-container-low": "#f3f3f3",
+                    "secondary": "#006d37",
+                    "surface-tint": "#944a00",
+                    "error-container": "#ffdad6",
+                    "background": "#f9f9f9",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-fixed-variant": "#34495e",
+                    "secondary-fixed": "#6bfe9c",
+                    "surface-container": "#eeeeee",
+                    "primary-fixed-dim": "#ffb783",
+                    "tertiary-fixed-dim": "#b3c9e2",
+                    "secondary-fixed-dim": "#4ae183",
+                    "on-primary-fixed-variant": "#713700",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "16px",
+                    "section-gap": "48px",
+                    "card-padding": "20px",
+                    "container-margin": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "beVietnamPro"
+                    ],
+                    "headline-lg-mobile": [
+                            "\"IBM Plex Sans Arabic\", sans-serif"
+                    ],
+                    "body-md": [
+                            "beVietnamPro"
+                    ],
+                    "headline-lg": [
+                            "\"IBM Plex Sans Arabic\", sans-serif"
+                    ],
+                    "headline-xl": [
+                            "\"IBM Plex Sans Arabic\", sans-serif"
+                    ],
+                    "headline-md": [
+                            "\"IBM Plex Sans Arabic\", sans-serif"
+                    ],
+                    "label-sm": [
+                            "beVietnamPro"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-xl": [
+                            "40px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md pb-24 md:pb-0">
+<!-- Top App Bar (Hidden on Mobile) -->
+<header class="hidden md:flex justify-between items-center w-full px-container-margin py-base max-w-7xl mx-auto bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">Smart Cooking App</span>
+</div>
+<nav class="flex gap-6">
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-4 py-2 rounded-full font-label-sm text-label-sm" href="#">الرئيسية</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-4 py-2 rounded-full font-label-sm text-label-sm" href="#">اكتشف</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-4 py-2 rounded-full font-label-sm text-label-sm" href="#">المكونات</a>
+<a class="text-on-surface-variant hover:bg-surface-container transition-colors px-4 py-2 rounded-full font-label-sm text-label-sm" href="#">مخطط الوجبات</a>
+<a class="text-primary bg-primary-container text-on-primary-container hover:bg-surface-container transition-colors px-4 py-2 rounded-full font-label-sm text-label-sm" href="#">حسابي</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="notifications">notifications</span>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container cursor-pointer" data-alt="A small circular avatar placeholder image for a user profile in a modern cooking app. High quality, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Fc7df9Jew5FAS1Rjw4KOspZUlFwK9ealiZt6FkJB67j6yNFM4ghTh3ez2zFRgD9RHCnxEZax1JwuM4POI0CPkJepWmlbqfTpa7d4M3Q3-8GrZQyW04T8E2rAEd6VqLQj6AilJ2_b38OYS7Goj1vu4Un5btNqoh15IoHQmVMlysNrZRGJYGnUqikVedh-1T0lZDbJbDpkzxXw3ihM1YH3XiyVGY6Z-lx1Ya4fRoQ_3H0pchgKdCsRfg"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin md:px-section-gap pt-8 pb-32">
+<!-- Profile Header -->
+<section class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+<div class="relative group">
+<img alt="Chef Ahmed" class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-[0_4px_20px_rgba(230,126,34,0.08)] border-4 border-surface" data-alt="A professional headshot of a smiling male chef in a pristine white chef's coat, shot against a warm, terracotta-toned kitchen background. High resolution, shallow depth of field, warm inviting lighting, soft shadows, modern culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAalUqDjBsfdWGtAyhh33le2hf8c_u_pU9DZyTXNx-0AbNJlW1EfY45NPsu5MclQ32W-eAhwjYYgnUqBFaoLoHAGERKudrimobZzaNqt168_gMMeZRQX0E2aAk-AvkVuJ4xApfQpNMly8DtSuiSswqRdswnC4he-hqEnPzkFJjnC-4f0dJZsvEUa7wAbPOqtU1ksknge4uWyCveCmSrxjPvphOUNkemMY8QyxYZr206eIuR3McIdKoQIw"/>
+<div class="absolute bottom-2 right-2 bg-secondary text-on-secondary w-10 h-10 rounded-full flex items-center justify-center shadow-md border-2 border-surface" title="Verified Professional Chef">
+<span class="material-symbols-outlined" data-icon="verified" data-weight="fill">verified</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-right">
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl text-on-surface mb-2">الشيف أحمد</h1>
+<div class="flex items-center justify-center md:justify-start gap-2 text-on-surface-variant font-label-sm text-label-sm mb-4">
+<span class="material-symbols-outlined text-lg" data-icon="location_on">location_on</span>
+<span>الجزائر, الجزائر</span>
+<span class="mx-2">•</span>
+<span class="material-symbols-outlined text-lg text-primary" data-icon="star">star</span>
+<span class="font-bold text-primary">السمعة الطهوية: 94/100</span>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-2xl mb-6">شيف تنفيذي بخبرة 15 عاماً في دمج المطبخ الجزائري التقليدي مع التقنيات الحديثة. شغوف بتحويل المكونات المحلية البسيطة إلى تجارب تذوق استثنائية.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
+<span class="px-4 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-fixed-variant font-label-sm text-label-sm border border-secondary-container/50">تقليدي جزائري</span>
+<span class="px-4 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-fixed-variant font-label-sm text-label-sm border border-secondary-container/50">مخبوزات وحلويات</span>
+<span class="px-4 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-fixed-variant font-label-sm text-label-sm border border-secondary-container/50">مطبخ متوسطي</span>
+</div>
+<div class="flex items-center justify-center md:justify-start gap-4">
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-label-sm text-label-sm px-8 py-3 rounded-full shadow-[0_12px_30px_rgba(230,126,34,0.2)] transition-transform hover:scale-105 active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+                        متابعة
+                    </button>
+<button class="border-2 border-outline-variant text-primary font-label-sm text-label-sm px-6 py-3 rounded-full hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+                        مراسلة
+                    </button>
+</div>
+</div>
+<!-- Stats Bento Box -->
+<div class="w-full md:w-auto grid grid-cols-3 md:grid-cols-1 gap-4 mt-8 md:mt-0 p-6 bg-surface-container-low rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-surface-container">
+<div class="text-center md:text-right md:pb-4 md:border-b border-surface-variant">
+<div class="font-headline-md text-headline-md text-on-surface">12.4K</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">متابع</div>
+</div>
+<div class="text-center md:text-right md:pb-4 md:border-b border-surface-variant">
+<div class="font-headline-md text-headline-md text-on-surface">148</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">وصفة</div>
+</div>
+<div class="text-center md:text-right">
+<div class="font-headline-md text-headline-md text-on-surface">3.2K</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">تطبيق (Cooksnap)</div>
+</div>
+</div>
+</section>
+<!-- Tabs -->
+<div class="flex gap-8 border-b border-surface-variant mb-8 overflow-x-auto pb-2">
+<button class="text-primary font-headline-md text-headline-md md:text-headline-md pb-2 border-b-4 border-primary px-2 whitespace-nowrap">الوصفات (148)</button>
+<button class="text-on-surface-variant hover:text-primary font-headline-md text-headline-md md:text-headline-md pb-2 border-b-4 border-transparent px-2 whitespace-nowrap transition-colors">تطبيقات (Cooksnaps)</button>
+<button class="text-on-surface-variant hover:text-primary font-headline-md text-headline-md md:text-headline-md pb-2 border-b-4 border-transparent px-2 whitespace-nowrap transition-colors">حول الشيف</button>
+</div>
+<!-- Recipe Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Recipe Card 1 -->
+<div class="group bg-surface rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.15)] transition-all duration-300 border border-surface-container-high flex flex-col h-full cursor-pointer">
+<div class="relative h-64 overflow-hidden rounded-t-3xl">
+<img alt="كسكس باللحم" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully plated Algerian Couscous dish with tender lamb, carrots, zucchini, and chickpeas in a rich red sauce, served in a traditional artisanal ceramic bowl. The lighting is warm and natural, highlighting the textures of the semolina grains and the rich sauce. A high-end culinary photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtfugaMvPpe2uhIguVzSqlIQ7qjupLO_jgfzRk7YqbM8-VBUevHWvj_bu5sDw5vIZFKwf3x4JxpkHHSTVAxFFNdh654J2vNARf-ne0zdfDFskkygyJ5UT65lpFKE2nlO3ttkbTiwF9-GXF7JEzBbelx_U4h3Jhmi-Qir9xkT3x6XrVmV0fQ58TAb4oUPi_IzgpjL2XC-gumjHPGX_vgbJ89GLK5b4sudamVe__Qk5htDaElM2-Dj65Ow"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/90 backdrop-blur rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-sm z-10">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="flex gap-2">
+<span class="bg-primary-container/90 text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 backdrop-blur-sm shadow-sm"><span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span> 90 دقيقة</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">كسكس جزائري أصيل باللحم والخضار</h3>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md line-clamp-2 mb-4 flex-1">وصفة متوارثة من الأجداد لتحضير الكسكس التقليدي مع مرق أحمر غني بالنكهات والبهارات.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant/50">
+<span class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-tertiary-container/20 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[14px]" data-icon="restaurant">restaurant</span> طبق رئيسي</span>
+<span class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-tertiary-container/20 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department">local_fire_department</span> تقليدي</span>
+</div>
+</div>
+</div>
+<!-- Recipe Card 2 -->
+<div class="group bg-surface rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.15)] transition-all duration-300 border border-surface-container-high flex flex-col h-full cursor-pointer">
+<div class="relative h-64 overflow-hidden rounded-t-3xl">
+<img alt="دزيريات" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up shot of delicate traditional Algerian almond pastries (Dziriettes), golden brown on top, arranged on an ornate brass tray. The pastries are slightly glistening with honey syrup. Soft, diffused daylight filtering through a window, creating a light, airy, and elegant mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeg66z5w_U4h8mlzh_x1zOawvsdscTVQu09JgYicZxGHL0ZRZSFUPm8G0swsYi25U5ll4G3Rv4b15JIPZvYt-013B5Srpc8MGJL--PRBYHx441tp1-m73fuxQlrW3g82jtwLJN2FI77q4Ts6wydbomI4TPNRBN7VjeMi-SY-F4sKNN1heAkm7W12EP4Q25qBIKh35lmkO2fakVfZuNLDDPC8Aipgl0LjS-pQ3aPZq5O2hdJLpYsUlUgQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/90 backdrop-blur rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-sm z-10">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="flex gap-2">
+<span class="bg-primary-container/90 text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 backdrop-blur-sm shadow-sm"><span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span> 120 دقيقة</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">دزيريات اللوز الفاخرة</h3>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md line-clamp-2 mb-4 flex-1">حلوى جزائرية راقية محشوة باللوز المعطر بماء الزهر، مثالية للمناسبات والأعياد.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant/50">
+<span class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-tertiary-container/20 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[14px]" data-icon="cake">cake</span> حلويات</span>
+<span class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-tertiary-container/20 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[14px]" data-icon="star">star</span> فاخر</span>
+</div>
+</div>
+</div>
+<!-- Recipe Card 3 -->
+<div class="group bg-surface rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(230,126,34,0.08)] hover:shadow-[0_12px_30px_rgba(230,126,34,0.15)] transition-all duration-300 border border-surface-container-high flex flex-col h-full cursor-pointer">
+<div class="relative h-64 overflow-hidden rounded-t-3xl">
+<img alt="شخشوخة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern presentation of Algerian Chakhchoukha. Torn flatbread pieces soaking in a vibrant red sauce, topped with tender chunks of beef and perfectly cooked vegetables. Served on a minimalist white ceramic plate against a dark wooden table, emphasizing the rich colors of the dish. Professional food styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARYiHayggL4sTH7-2t1iNcdXjwFFjc4fddHr8kD2PC3-EpblCbW85FZLnsyNliXuZ8CnDQ9zx84QF5Kp78-EvoOzuT4Ece4XA1q88Gsthhq5RsF9cXW1HkdMSBqPnhsz0uY30wJWX4YVwlG32_iug9vHLAgOUkD0hfyuRUtoaSj8wGjo0SUw3ruKELGKUfiAlkgMQvkbgO5W6woxO07j5iKdrClomlUuvdJm_3HbYmuZ7DjkSOVAqmhA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-surface/90 backdrop-blur rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors shadow-sm z-10">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="flex gap-2">
+<span class="bg-primary-container/90 text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 backdrop-blur-sm shadow-sm"><span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span> 60 دقيقة</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">شخشوخة بلمسة عصرية</h3>
+</div>
+<p class="text-on-surface-variant font-body-md text-body-md line-clamp-2 mb-4 flex-1">تقديم حديث للطبق التقليدي مع الحفاظ على النكهة الأصيلة للصلصة الحارة والغنية.</p>
+<div class="flex items-center gap-3 pt-4 border-t border-surface-variant/50">
+<span class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-tertiary-container/20 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[14px]" data-icon="restaurant">restaurant</span> طبق رئيسي</span>
+<span class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-tertiary-container/20 px-3 py-1 rounded-full"><span class="material-symbols-outlined text-[14px]" data-icon="whatshot">whatshot</span> حار</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl h-[72px]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">اكتشف</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="kitchen">kitchen</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">المكونات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">مخطط الوجبات</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm-mobile text-primary dark:text-primary-fixed-dim mt-1">حسابي</span>
+</a>
+</nav>
+</body></html>

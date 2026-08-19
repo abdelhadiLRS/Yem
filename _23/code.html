@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لوحة تحكم البث - Culinary Live Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#6bfe9c",
+                        "inverse-primary": "#ffb783",
+                        "on-background": "#1a1c1c",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#e67e22",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#944a00",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#4b6076",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#564337",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#713700",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed": "#ffdcc5",
+                        "primary-fixed-dim": "#ffb783",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-container": "#502600",
+                        "on-tertiary-container": "#1d3347",
+                        "on-secondary-fixed": "#00210c",
+                        "secondary-container": "#6bfe9c",
+                        "background": "#f9f9f9",
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary": "#006d37",
+                        "secondary-fixed-dim": "#4ae183",
+                        "on-surface": "#1a1c1c",
+                        "outline-variant": "#dcc1b1",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#869bb3",
+                        "surface-variant": "#e2e2e2",
+                        "primary": "#944a00",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "on-primary-fixed": "#301400",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005228",
+                        "on-secondary-container": "#00743a",
+                        "tertiary-fixed": "#cfe5ff",
+                        "on-tertiary-fixed": "#051d30",
+                        "outline": "#897365"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "20px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "section-gap": "48px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "body-md": ["\"Be Vietnam Pro\"", "sans-serif"],
+                        "body-lg": ["\"Be Vietnam Pro\"", "sans-serif"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "label-sm": ["\"Be Vietnam Pro\"", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-[100px] pt-[80px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-inverse-surface/70 backdrop-blur-xl shadow-sm flex justify-between items-center px-container-margin py-base h-[72px]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling female chef in a bright, modern kitchen setting. She wears a clean white chef's coat with subtle terracotta accents. The lighting is soft and flattering, highlighting her approachability and expertise. The background is slightly blurred but recognizable as a high-end culinary space, consistent with a premium modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmREOr0WCe8dbhhAItER5KvwXmOvF_K-hKSOvUnvyX-sKjtb1VqsuyNRMNKLb830frCVEA7o472lE0D4iOkYAO4OOraVeLsnZYce7adOMY08m6Zatlbz5jzxIqUKe9973fY4kPjq_YiBOXFt23e6PZCmp2zs9wNwroj6covWf_dgXvuvzC0lA_WoG5kifFhGBxy24nSakX0pMbPMFATqh_mKbwqLlIqqR1IdmXooPetKscXEO_ydZxQQ"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">Culinary Live Studio</h1>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary dark:text-inverse-primary hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+</header>
+<!-- Main Content Grid (Bento Style) -->
+<main class="max-w-[1280px] mx-auto px-container-margin grid grid-cols-1 md:grid-cols-12 gap-gutter mt-6">
+<!-- Live Preview Area (Col span 12 on mobile, 8 on desktop) -->
+<section class="md:col-span-8 flex flex-col gap-gutter">
+<!-- Video Container -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-highest shadow-[0_4px_20px_rgba(230,126,34,0.08)]">
+<img class="w-full h-full object-cover" data-alt="A vibrant, top-down view of a chef preparing a visually stunning summer risotto. The scene features fresh, colorful ingredients like bright red tomatoes, emerald green basil, and golden saffron threads arranged neatly on a pristine marble countertop. The lighting is bright and warm, simulating a high-quality live stream broadcast. The overall aesthetic is clean, modern, and appetizing, emphasizing culinary precision and freshness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhNU5FKUcJSVzjnysGKh5TAWokiWnKhVX-YaC29GFZIhZ8AKJqRtXWS_Egt1xXZFBBp6d2L6_aFIzB4n1L_OeuK3zZGDeLqn9UHYR4Gc69xS6Ij0l7WW8etmFLYgYoguXvN0s1YLZb4Hu-RK3ch0p6CEuGOOUfpZGdVUF7KB6Q_MjU6AvxyxhZKyYPREsDExr9PGePx498yESe1lKfMqvnyjawXRUNxw7_JMEryQvdXk-bg4-2Gw0lQg"/>
+<!-- Overlays -->
+<div class="absolute top-4 left-4 flex gap-2">
+<div class="bg-error text-on-error px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 shadow-md">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                        مباشر
+                    </div>
+<div class="bg-surface/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full font-label-sm text-label-sm shadow-md">
+                        01:24:45
+                    </div>
+</div>
+<!-- Technical Controls Overlay -->
+<div class="absolute bottom-4 right-4 flex gap-2"><button class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:bg-primary transition-colors shadow-md" title="بث مشترك">
+<span class="material-symbols-outlined">group_add</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors shadow-md">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors shadow-md">
+<span class="material-symbols-outlined">cameraswitch</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-surface transition-colors shadow-md">
+<span class="material-symbols-outlined">lightbulb</span>
+</button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between border border-surface-container-high">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person_add</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">حالة المضيف المشارك</p>
+<p class="text-[10px] text-on-surface-variant">لم يتم الاتصال بعد</p>
+</div>
+</div>
+<button class="text-primary font-label-sm text-label-sm hover:underline">دعوة الآن</button>
+</div><div class="grid grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center justify-center gap-1 border border-surface-container-high">
+<span class="material-symbols-outlined text-primary-container text-[28px]">group</span>
+<span class="font-headline-md text-headline-md text-on-surface">1,245</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">المشاهدون (الجلسة المشتركة)</span>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center justify-center gap-1 border border-surface-container-high">
+<span class="material-symbols-outlined text-error text-[28px]">favorite</span>
+<span class="font-headline-md text-headline-md text-on-surface">8.4k</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">إجمالي الإعجابات</span>
+</div>
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center justify-center gap-1 border border-surface-container-high">
+<span class="material-symbols-outlined text-secondary text-[28px]">trending_up</span>
+<span class="font-headline-md text-headline-md text-on-surface">12%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">معدل التفاعل</span>
+</div>
+</div>
+<!-- Session Goal Progress -->
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] border border-surface-container-high">
+<div class="flex justify-between items-end mb-2">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant">هدف الجلسة</h3>
+<p class="font-body-md text-body-md font-semibold text-on-surface">500 متابع جديد</p>
+</div>
+<span class="font-body-md text-body-md text-primary font-bold">342 / 500</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-3 overflow-hidden">
+<div class="bg-primary-container h-3 rounded-full" style="width: 68%"></div>
+</div>
+</div>
+</section>
+<!-- Right Side Panel (Col span 12 on mobile, 4 on desktop) -->
+<section class="md:col-span-4 flex flex-col gap-gutter h-full">
+<!-- AI Moderator Summary -->
+<div class="bg-secondary-fixed-dim/10 p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] border border-secondary-fixed"><div class="flex items-center gap-2 mb-3 text-secondary">
+<span class="material-symbols-outlined">smart_toy</span>
+<h3 class="font-label-sm text-label-sm font-bold">مساعد الذكاء الاصطناعي (بث مشترك)</h3>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-3">
+<div class="bg-surface-container-lowest p-2 rounded-xl shadow-sm">
+<p class="text-[10px] text-on-surface-variant mb-1">تفاعل الشيف سارة:</p>
+<span class="text-secondary font-bold text-[12px]">عالي جداً</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-xl shadow-sm">
+<p class="text-[10px] text-on-surface-variant mb-1">تفاعل الضيف:</p>
+<span class="text-on-surface-variant text-[12px]">في انتظار الانضمام</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">الأسئلة المشتركة الأكثر تكراراً:</p>
+<p class="font-body-md text-body-md text-on-surface">"كيف ينسق المضيفان المكونات؟"</p>
+<button class="mt-2 w-full border-2 border-secondary text-secondary font-label-sm text-label-sm py-1.5 rounded-full hover:bg-secondary/5 transition-colors">
+إظهار الرد المشترك
+</button>
+</div></div>
+<!-- Ingredient Overlay Control -->
+<div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] border border-surface-container-high">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">تراكب المكونات</h3>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] rtl:after:right-[2px] rtl:after:left-auto after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">أرز أربوريو</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">مرق دجاج</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">زعفران</span>
+<span class="bg-surface-container-high px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">بارميزان</span>
+</div>
+</div><div class="bg-surface-container-lowest p-card-padding rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] border border-surface-container-high">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface mb-3">إعدادات البث المشترك</h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">مزامنة الصوت والفيديو</span>
+<span class="material-symbols-outlined text-secondary">sync</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">مشاركة تراكب المكونات</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] rtl:after:right-[2px] rtl:after:left-auto after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Active Chat Feed -->
+<div class="bg-surface-container-lowest rounded-DEFAULT shadow-[0_4px_20px_rgba(230,126,34,0.08)] border border-surface-container-high flex flex-col flex-grow min-h-[300px]">
+<div class="p-4 border-b border-surface-container-high flex justify-between items-center bg-surface-bright rounded-t-DEFAULT">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">الدردشة المباشرة</h3>
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</div>
+<div class="flex-grow p-4 overflow-y-auto flex flex-col gap-3">
+<!-- Chat Message 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Ahmad123</span>
+<span class="text-[10px] text-on-surface-variant">الآن</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container-low p-2 rounded-lg rounded-tr-none">يبدو لذيذاً جداً! سأجربه اليوم.</p>
+</div>
+<!-- Chat Message 2 (Pinned) -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-primary">push_pin</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Chef_Sara</span>
+<span class="text-[10px] text-on-surface-variant">قبل دقيقة</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface bg-primary-fixed/20 p-2 rounded-lg rounded-tr-none border border-primary-fixed">مرحباً بالجميع! وصفة اليوم موجودة في الرابط أسفل الشاشة.</p>
+</div>
+<!-- Chat Message 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Noura_Cooks</span>
+<span class="text-[10px] text-on-surface-variant">قبل دقيقتين</span>
+</div>
+<div class="flex gap-1 opacity-50 hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-error"><span class="material-symbols-outlined text-[16px]">block</span></button>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[16px]">reply</span></button>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container-low p-2 rounded-lg rounded-tr-none">هل يمكن استبدال الزعفران بالكركم؟</p>
+</div>
+<!-- Chat Message 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Yousef_M</span>
+<span class="text-[10px] text-on-surface-variant">قبل 3 دقائق</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container-low p-2 rounded-lg rounded-tr-none">ريحة الأكل واصلة لعندي هههه</p>
+</div>
+</div>
+<!-- Chat Input (Disabled for Broadcaster view, but visually present) -->
+<div class="p-3 border-t border-surface-container-high bg-surface-bright rounded-b-DEFAULT">
+<div class="relative">
+<input class="w-full bg-surface-container-low border border-surface-container-high rounded-full py-2 px-4 rtl:pr-4 rtl:pl-10 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container" disabled="" placeholder="اكتب رسالة للجمهور..." type="text"/>
+<button class="absolute left-2 top-1/2 -translate-y-1/2 text-primary-container opacity-50" disabled="">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1.5 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="font-label-sm text-label-sm mt-1">Studio</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-sm text-label-sm mt-1">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-1">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">temp_preferences_custom</span>
+<span class="font-label-sm text-label-sm mt-1">Kitchen AI</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant p-2 hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Events</span>
+</button>
+</nav>
+<!-- Desktop Navigation Drawer (Hidden on mobile, represents nav on desktop) -->
+<nav class="hidden md:flex fixed right-0 top-[72px] h-[calc(100vh-72px)] w-64 flex-col py-6 bg-surface-container-low dark:bg-inverse-surface shadow-lg z-40">
+<button class="flex items-center gap-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-bold rounded-full mx-2 px-4 py-3 transition-all duration-300 ease-in-out mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="font-body-lg text-body-lg">Studio</span>
+</button>
+<button class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-fixed-dim/10 rounded-full mx-2 px-4 py-3 transition-all duration-300 ease-in-out mb-2">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-body-lg text-body-lg">Analytics</span>
+</button>
+<button class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-fixed-dim/10 rounded-full mx-2 px-4 py-3 transition-all duration-300 ease-in-out mb-2">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-body-lg text-body-lg">Chat</span>
+</button>
+<button class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-fixed-dim/10 rounded-full mx-2 px-4 py-3 transition-all duration-300 ease-in-out mb-2">
+<span class="material-symbols-outlined">temp_preferences_custom</span>
+<span class="font-body-lg text-body-lg">Kitchen AI</span>
+</button>
+<button class="flex items-center gap-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-primary-fixed-dim/10 rounded-full mx-2 px-4 py-3 transition-all duration-300 ease-in-out mb-2">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-body-lg text-body-lg">Events</span>
+</button>
+</nav>
+<!-- Add padding to main content on desktop to account for side nav -->
+<style>
+        @media (min-width: 768px) {
+            main {
+                padding-right: 280px; /* 64px width + margin */
+            }
+        }
+    </style>
+</body></html>

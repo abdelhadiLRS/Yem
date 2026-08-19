@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yum - تسجيل الدخول</title>
+<!-- Font Setup -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#e67e22',
+            primaryDark: '#d35400',
+            backgroundGradStart: '#fff3e0',
+            backgroundGradEnd: '#ffe0b2',
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="custom-utilities">
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-backgroundGradStart to-backgroundGradEnd min-h-screen flex items-center justify-center p-4 font-sans text-gray-800">
+<!-- BEGIN: Main Login Container -->
+<main class="w-full max-w-md mx-auto h-[844px] max-h-screen relative overflow-hidden rounded-[2.5rem] shadow-2xl bg-gradient-to-b from-orange-100 to-orange-50 flex flex-col items-center pt-16 px-6 pb-8">
+<!-- Header Section with Logo -->
+<header class="flex flex-col items-center mb-8 text-center z-10 w-full">
+<div class="w-24 h-24 bg-white rounded-full p-1 shadow-md mb-4">
+<img alt="Yum Logo" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida/AEtjO1VHhD8X6C9738s6IDuLh8Obe8wQkpXKpC4RuwjkJFJ9JwdoahTBqA_LMh-Ui7oG4DYwyYINWzUt5Zq34QVkiR5XQQ0bV2wZm-ak27WDWKucuKOcMPOp0IqlHXSp1q-ws1_2ZrzHtOrF3OkmIR3wa5VxEIYYEdI9__B3bmzxAlOS1krNPDuqIiKK5fTGr5D2PhP6JwszhPOXqmNYDHp3GVK6VtUmMx4cM5T8hYaSf9brcUS6AO4viACMmWc"/>
+</div>
+<h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome to Yum 👋</h1>
+<p class="text-gray-600 text-sm px-4">اكتشف، اطبخ، تعلم، وشارك عالم الطعام</p>
+</header>
+<!-- BEGIN: Login Form Card -->
+<div class="glass-card w-full rounded-3xl p-6 flex flex-col gap-6 z-10 flex-grow">
+<form class="flex flex-col gap-4">
+<!-- Email Input -->
+<div class="relative">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-gray-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+</svg>
+</div>
+<input class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-2xl focus:ring-primary focus:border-primary block p-3.5 pr-11 text-sm transition-colors placeholder-gray-400" id="email" placeholder="البريد الإلكتروني" required="" type="email"/>
+</div>
+<!-- Password Input -->
+<div class="relative">
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-gray-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<input class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-2xl focus:ring-primary focus:border-primary block p-3.5 pr-11 text-sm transition-colors placeholder-gray-400" id="password" placeholder="كلمة المرور" required="" type="password"/>
+<button class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none" type="button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-start">
+<a class="text-sm font-medium text-primary hover:text-primaryDark" href="#">نسيت كلمة المرور؟</a>
+</div>
+<!-- Sign In Button -->
+<button class="w-full text-white bg-primary hover:bg-primaryDark focus:ring-4 focus:outline-none focus:ring-orange-300 font-bold rounded-full text-base px-5 py-4 text-center transition-colors shadow-lg shadow-orange-500/30 mt-2" type="submit">
+          تسجيل الدخول
+        </button>
+</form>
+<!-- Social Login Separator -->
+<div class="flex items-center w-full mt-2">
+<div class="flex-grow h-px bg-gray-200"></div>
+<span class="flex-shrink-0 text-xs text-gray-400 px-4">أو الاستمرار بواسطة</span>
+<div class="flex-grow h-px bg-gray-200"></div>
+</div>
+<!-- Social Login Buttons -->
+<div class="flex justify-center gap-4">
+<button class="flex items-center justify-center w-14 h-14 bg-white border border-gray-200 rounded-full hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-gray-100 transition-colors shadow-sm" type="button">
+<svg class="w-6 h-6" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+</button>
+<button class="flex items-center justify-center w-14 h-14 bg-white border border-gray-200 rounded-full hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-gray-100 transition-colors shadow-sm" type="button">
+<svg class="w-6 h-6 text-black" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.365 7.112c.767-.93 1.282-2.251 1.142-3.565-1.134.045-2.502.753-3.292 1.705-.625.751-1.242 2.102-1.077 3.393 1.272.098 2.46-.603 3.227-1.533zm-4.321 7.426c-1.34.02-2.73-1.002-3.415-1.002-.705 0-2.127 1.054-3.327 1.025-1.554-.038-2.99-1.066-3.79-2.723-1.63-3.4-.418-8.435 1.173-10.732.784-1.133 1.79-1.859 2.898-1.892 1.357-.042 2.65.892 3.468.892.815 0 2.378-1.127 4.027-.954 1.394.075 2.658.683 3.478 1.83-3.082 1.782-2.583 6.115.342 7.272-.732 2.115-2.022 4.417-3.666 4.382h-.188z"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- END: Login Form Card -->
+<!-- Footer Links -->
+<div class="mt-auto pt-6 flex flex-col items-center gap-3 z-10 w-full text-sm">
+<p class="text-gray-600">
+        ليس لديك حساب؟ <a class="font-bold text-primary hover:underline" href="#">سجل الآن</a>
+</p>
+<a class="text-gray-500 hover:text-gray-800 font-medium pb-2 border-b border-transparent hover:border-gray-800 transition-colors" href="#">
+        الاستمرار كضيف
+      </a>
+</div>
+</main>
+<!-- END: Main Login Container -->
+</body></html>

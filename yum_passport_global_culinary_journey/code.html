@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yum Passport</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#6bfe9c",
+                        "outline": "#897365",
+                        "on-secondary-container": "#00743a",
+                        "on-surface": "#1a1c1c",
+                        "primary-container": "#e67e22",
+                        "on-background": "#1a1c1c",
+                        "on-primary-fixed": "#301400",
+                        "surface-variant": "#e2e2e2",
+                        "secondary": "#006d37",
+                        "secondary-fixed-dim": "#4ae183",
+                        "on-tertiary-container": "#1d3347",
+                        "background": "#f9f9f9",
+                        "primary": "#944a00",
+                        "tertiary-container": "#869bb3",
+                        "outline-variant": "#dcc1b1",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "surface": "#f9f9f9",
+                        "tertiary": "#4b6076",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb783",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#ffdcc5",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container": "#eeeeee",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#713700",
+                        "tertiary-fixed": "#cfe5ff",
+                        "on-surface-variant": "#564337",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#944a00",
+                        "on-primary-container": "#502600",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-tertiary-fixed": "#051d30",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "inverse-primary": "#ffb783",
+                        "secondary-fixed": "#6bfe9c",
+                        "inverse-surface": "#2f3131",
+                        "surface-dim": "#dadada",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005228",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "20px",
+                        "section-gap": "48px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "body-md": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "label-sm": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\"", "sans-serif"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\"", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .glass-card {
+            background: rgba(249, 249, 249, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(230, 126, 34, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 shadow-sm">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-200"><img alt="Yum Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VHhD8X6C9738s6IDuLh8Obe8wQkpXKpC4RuwjkJFJ9JwdoahTBqA_LMh-Ui7oG4DYwyYINWzUt5Zq34QVkiR5XQQ0bV2wZm-ak27WDWKucuKOcMPOp0IqlHXSp1q-ws1_2ZrzHtOrF3OkmIR3wa5VxEIYYEdI9__B3bmzxAlOS1krNPDuqIiKK5fTGr5D2PhP6JwszhPOXqmNYDHp3GVK6VtUmMx4cM5T8hYaSf9brcUS6AO4viACMmWc"/></button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Yum Passport</h1>
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-200">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small circular avatar of a home chef wearing a white apron with a subtle gold medal badge in the corner. The image should be warm, well-lit, and focus on a friendly, welcoming expression, fitting a premium culinary app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWBDzo1FNpyibebCEuGZwyYMeV_B43sqtYN1RP8YFV37Ztlxfdayzs82i6pU3jkj3idzttYg0pzJ5rXMJfJtVr1rGCNXUZzHPsjJI4vqwpKp1VX5LwCrSSX_Ow6Gblj7LPi8RjaXk__4Ob8iovuHFAmnmv7VRU6uiPSLXUfibK679TsbPTeAaxk0ltJJgzdr2IBJiXw7NnZ6FMUNNeU_lA5BV1wkTYH3J5j6FxKWlaL-h5_QswMg3kvw"/>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-24 px-container-margin max-w-7xl mx-auto space-y-section-gap">
+<!-- Header Section -->
+<section class="text-center mt-8">
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-4">جواز سفر Yum</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                استكشفت 23 مطبخاً عالمياً
+            </p>
+</section>
+<!-- Bento Grid: Achievements & Stats -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Badges Card -->
+<div class="glass-card rounded-xl p-card-padding md:col-span-2 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4" style="color: #e67e22;">الشارات الرقمية</h3>
+<div class="flex flex-wrap gap-4">
+<div class="flex flex-col items-center p-4 bg-surface-container-lowest rounded-lg shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-primary mb-2" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label-sm text-label-sm text-on-surface">Master Chef</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-container-lowest rounded-lg shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="font-label-sm text-label-sm text-on-surface">Heritage Guardian</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-container-lowest rounded-lg shadow-sm border border-outline-variant opacity-50">
+<span class="material-symbols-outlined text-4xl text-outline mb-2">emoji_events</span>
+<span class="font-label-sm text-label-sm text-on-surface">Spice Master</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="glass-card rounded-xl p-card-padding flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-6xl text-primary-container mb-4">public</span>
+<h3 class="font-headline-xl text-headline-xl text-on-background mb-2">23</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">دولة مكتشفة</p>
+<div class="w-full bg-surface-container-high rounded-full h-2 mt-6">
+<div class="bg-primary-container h-2 rounded-full" style="width: 45%; background-color: #e67e22;"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-right w-full">الهدف القادم: 50</p>
+</div>
+</section>
+<!-- Culinary Passport Map -->
+<section class="glass-card rounded-xl overflow-hidden relative" style="min-height: 400px;">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80" data-alt="A stylized, premium digital world map serving as a 'Culinary Passport'. The map should use a warm terracotta and sage green palette on a soft, parchment-like background. Several colorful, highly detailed passport stamps representing different cuisines (like Italian pasta, Algerian tajine, Japanese sushi) should be scattered across the continents. The overall aesthetic is modern, clean, and inspiring for food lovers." data-location="World Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDETMCP0_uE8YMR4DEHO_XRm6TN3BYNR7OtqUPuuIRjXpHUKKK61cn5Yyuma_mLBkyDcVfAbOUmpVZx4U6qGhefvMbDM-1wtV3tl8o58PbEP1MWUnMo5wKM3Wd10PDK2aT_9A3Dzo7lo3jd6SxqLpTHpkN8qqhS3gyvAsTQUK56LNqmTHHAz654ZmSLfEW9JX1aPiQ8UEtBgopxuQ7-pKdts50EsGKj9AKWv4FZuQPg3xikIYb8eVtJgA"/>
+</div>
+<div class="relative z-10 p-card-padding flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface bg-surface-container-lowest/80 backdrop-blur-sm px-4 py-2 rounded-lg">جواز السفر الطهوي</h3>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-6 py-2 rounded-full shadow-sm hover:bg-primary-container transition-colors" style="background-color: #e67e22;">
+                    عرض التفاصيل
+                </button>
+</div>
+<!-- Floating Stamps (Simulated) -->
+<div class="absolute bottom-8 right-8 z-10">
+<div class="flex flex-col items-center bg-surface-container-lowest/90 backdrop-blur-sm p-3 rounded-lg shadow-md border-2 border-primary-container transform rotate-3">
+<span class="font-headline-md text-headline-md text-primary-container mb-1">الجزائر</span>
+<span class="font-label-sm text-label-sm text-on-surface">تم الزيارة</span>
+</div>
+</div>
+<div class="absolute top-1/3 left-1/4 z-10">
+<div class="flex flex-col items-center bg-surface-container-lowest/90 backdrop-blur-sm p-3 rounded-lg shadow-md border-2 border-secondary transform -rotate-6">
+<span class="font-headline-md text-headline-md text-secondary mb-1">إيطاليا</span>
+<span class="font-label-sm text-label-sm text-on-surface">تم الزيارة</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 shadow-[0_-4px_20px_rgba(230,126,34,0.08)]">
+<div class="flex justify-around items-center px-4 pb-4 pt-2">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-sm text-label-sm mt-1">Challenges</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-sm text-label-sm mt-1">Leaderboard</span>
+</button>
+<!-- Active Tab: Passport -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:text-primary active:scale-90 transition-transform duration-150" style="background-color: #e67e22;">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-sm text-label-sm mt-1">Passport</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

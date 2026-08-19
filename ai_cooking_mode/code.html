@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>وضع الطبخ الذكي بالصوت - تطبيق الطبخ الذكي</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb783",
+                        "surface-container": "#eeeeee",
+                        "tertiary": "#4b6076",
+                        "on-tertiary-container": "#1d3347",
+                        "on-tertiary-fixed": "#051d30",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "tertiary-container": "#869bb3",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e67e22",
+                        "surface-dim": "#dadada",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-container": "#502600",
+                        "primary": "#944a00",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-container": "#6bfe9c",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005228",
+                        "secondary": "#006d37",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "tertiary-fixed": "#cfe5ff",
+                        "background": "#f9f9f9",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#897365",
+                        "on-surface-variant": "#564337",
+                        "on-primary-fixed": "#301400",
+                        "secondary-fixed": "#6bfe9c",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-container": "#00743a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "on-primary-fixed-variant": "#713700",
+                        "outline-variant": "#dcc1b1",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container-high": "#e8e8e8",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#944a00",
+                        "inverse-primary": "#ffb783",
+                        "secondary-fixed-dim": "#4ae183",
+                        "surface": "#f9f9f9",
+                        "primary-fixed": "#ffdcc5",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "base": "8px",
+                        "card-padding": "20px",
+                        "section-gap": "48px",
+                        "container-margin": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["beVietnamPro"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "headline-xl": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "headline-md": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic, ibmPlexSans\""],
+                        "label-sm": ["beVietnamPro"],
+                        "body-md": ["beVietnamPro"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(1.1); }
+        }
+        
+        .timer-circle {
+            transition: stroke-dashoffset 1s linear;
+        }
+        
+        /* Ensure specific RTL handling for icons that should not flip */
+        .material-symbols-outlined {
+            direction: ltr;
+            display: inline-block;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-lg min-h-screen flex flex-col relative overflow-hidden antialiased">
+<!-- Top Navigation App Bar (Suppressed because this is a focused "Cooking Mode" task) -->
+<!-- Navigation Bottom Bar (Suppressed because this is a focused "Cooking Mode" task) -->
+<!-- Main Content Canvas - Focused Cooking Mode -->
+<main class="flex-grow flex flex-col h-screen max-h-screen relative">
+<!-- Background Imagery overlay for immersive feel (dark gradient) -->
+<div class="absolute inset-0 z-0 h-2/5">
+<div class="w-full h-full bg-cover bg-center" data-alt="A top-down view of a modern, rustic kitchen countertop prepared for making an elegant pasta dish. Fresh tomatoes, basil, garlic, and high-quality olive oil are beautifully arranged. The lighting is soft, warm, and inviting, creating a premium culinary atmosphere that matches a smart home cooking application. The image has a subtle dark gradient from bottom to top for text legibility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA55erKNuN0pSSBztHOsgsIcbVzIIUcTgiKQqqt102wkL3_iBXc8lS_VQxye0QC3pV6t36NXZiHwWzuNNSA84C2qCnG7Nmj3DYSImU6jwGcXXug0cEtnKv8XJJt10HMiGM5xfTuM5_v-0ERl6X67rYAl9hVv6xBEFHWnhPJIAzOHEIdPIvbB9ATp1wYwdAhn5Z2AmTJSx6uungazBg4x4N9_XZarZNKm4leozvrbebdoSDuPC0PblFXrg')">
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-surface/80 to-surface"></div>
+</div>
+</div>
+<!-- Header Section -->
+<header class="relative z-10 px-container-margin pt-12 pb-6 flex justify-between items-start text-on-surface">
+<button class="bg-surface/50 backdrop-blur-md text-on-surface p-3 rounded-full hover:bg-surface transition-colors shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+<div class="text-center flex-grow">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-on-surface drop-shadow-md">معكرونة بالصلصة الطازجة</h1>
+<span class="inline-block mt-2 bg-secondary-container/20 text-secondary border border-secondary/30 font-label-sm text-label-sm px-4 py-1 rounded-full backdrop-blur-sm shadow-sm">
+                    مرحلة التحضير
+                </span>
+</div>
+<button class="bg-surface/50 backdrop-blur-md text-primary p-3 rounded-full hover:bg-surface transition-colors shadow-sm flex items-center justify-center relative">
+<span class="material-symbols-outlined pulse-animation" style="font-variation-settings: 'FILL' 1;">mic</span>
+<span class="absolute top-0 right-0 w-3 h-3 bg-secondary rounded-full border-2 border-surface"></span>
+</button>
+</header>
+<!-- Center Content: Step Text and Visual Timer -->
+<section class="relative z-10 flex-grow flex flex-col items-center justify-center px-container-margin py-base w-full max-w-4xl mx-auto">
+<!-- Step Indicator -->
+<div class="text-center mb-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">الخطوة 4 من 9</p>
+<div class="flex gap-2 justify-center mt-2">
+<div class="h-1 w-8 bg-primary rounded-full"></div>
+<div class="h-1 w-8 bg-primary rounded-full"></div>
+<div class="h-1 w-8 bg-primary rounded-full"></div>
+<div class="h-1 w-12 bg-primary-container rounded-full relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/20 w-1/2"></div>
+</div>
+<div class="h-1 w-8 bg-surface-variant rounded-full"></div>
+<div class="h-1 w-8 bg-surface-variant rounded-full"></div>
+<div class="h-1 w-8 bg-surface-variant rounded-full"></div>
+<div class="h-1 w-8 bg-surface-variant rounded-full"></div>
+<div class="h-1 w-8 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+<!-- Large Step Text -->
+<div class="bg-surface-bright/80 backdrop-blur-xl rounded-xl p-8 shadow-[0_12px_30px_rgba(230,126,34,0.08)] border border-surface-variant/50 text-center w-full transform transition-all mb-8">
+<p class="font-headline-md text-headline-md md:font-headline-xl md:text-headline-xl text-on-surface leading-tight">
+                    أضف الطماطم المفرومة والريحان إلى المقلاة. قلب برفق لمدة 5 دقائق حتى تلين الطماطم وتتجانس النكهات.
+                </p>
+</div>
+<!-- Timer Section (Bento Grid layout for multiple timers) -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-gutter mb-auto">
+<!-- Main Timer -->
+<div class="bg-surface-bright/90 backdrop-blur-md rounded-xl p-6 shadow-sm border border-surface-variant/50 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary timer-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-dashoffset="25" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-headline-md text-headline-md font-bold text-primary">03:45</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">طهي الصلصة</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">متبقي 3 دقائق و 45 ثانية</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary/10 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+</div>
+<!-- Secondary Timer (e.g., Pasta boiling) -->
+<div class="bg-surface-bright/60 backdrop-blur-md rounded-xl p-6 shadow-sm border border-surface-variant/30 flex items-center justify-between opacity-80">
+<div class="flex items-center gap-4">
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-tertiary-container timer-circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="100, 100" stroke-dashoffset="60" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-tertiary-container text-sm">water_drop</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface">غلي المعكرونة</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">08:00</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Controls (Large, High Contrast) -->
+<footer class="relative z-20 bg-surface/90 backdrop-blur-2xl border-t border-surface-variant/30 p-container-margin rounded-t-[2rem] shadow-[0_-12px_40px_rgba(230,126,34,0.05)]">
+<div class="max-w-4xl mx-auto flex flex-col gap-6">
+<!-- Main Navigation Buttons -->
+<div class="flex items-center justify-between gap-4">
+<button class="flex-1 bg-surface-container text-on-surface py-4 px-6 rounded-xl font-label-sm text-label-sm font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all shadow-sm">
+<span class="material-symbols-outlined">arrow_forward</span>
+                        السابق
+                    </button>
+<button class="flex-[2] bg-primary-container text-on-primary-container py-5 px-6 rounded-xl font-headline-md text-headline-md font-bold flex items-center justify-center gap-3 shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1),0_8px_16px_rgba(230,126,34,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        التالي
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+</div>
+<!-- Secondary Actions -->
+<div class="flex justify-center gap-6">
+<button class="flex flex-col items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center shadow-sm border border-surface-variant/50">
+<span class="material-symbols-outlined">replay</span>
+</div>
+<span class="font-label-sm text-label-sm">تكرار</span>
+</button>
+<button class="flex flex-col items-center gap-2 text-on-surface-variant hover:text-primary transition-colors relative">
+<div class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center shadow-sm border border-surface-variant/50">
+<span class="material-symbols-outlined text-secondary">smart_toy</span>
+</div>
+<span class="font-label-sm text-label-sm">اسأل الشيف</span>
+<!-- Notification dot -->
+<span class="absolute top-0 right-2 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface-bright"></span>
+</button>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple script to handle timer visual update for demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const timerCircle = document.querySelector('.timer-circle');
+            let offset = 25;
+            
+            setInterval(() => {
+                offset -= 0.5;
+                if (offset < 0) offset = 100;
+                timerCircle.style.strokeDashoffset = offset;
+            }, 1000);
+        });
+    </script>
+</body></html>

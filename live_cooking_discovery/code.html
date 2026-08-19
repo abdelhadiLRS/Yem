@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Culinary Intelligence - Live</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidelines -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f3f3",
+                        "primary": "#944a00",
+                        "secondary-fixed": "#6bfe9c",
+                        "surface-bright": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#564337",
+                        "secondary": "#006d37",
+                        "tertiary-container": "#869bb3",
+                        "on-tertiary-container": "#1d3347",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e8",
+                        "on-secondary-fixed": "#00210c",
+                        "tertiary-fixed": "#cfe5ff",
+                        "on-primary-container": "#502600",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#301400",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#944a00",
+                        "on-primary-fixed-variant": "#713700",
+                        "on-tertiary-fixed": "#051d30",
+                        "on-secondary-container": "#00743a",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#34495e",
+                        "surface-variant": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary-fixed-dim": "#4ae183",
+                        "on-secondary-fixed-variant": "#005228",
+                        "outline": "#897365",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "inverse-primary": "#ffb783",
+                        "on-background": "#1a1c1c",
+                        "secondary-container": "#6bfe9c",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dadada",
+                        "primary-fixed-dim": "#ffb783",
+                        "on-error": "#ffffff",
+                        "tertiary": "#4b6076",
+                        "primary-container": "#e67e22",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "outline-variant": "#dcc1b1",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#b3c9e2",
+                        "primary-fixed": "#ffdcc5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "section-gap": "48px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "card-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "headline-xl": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "headline-md": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "headline-lg": ["\"IBM Plex Sans Arabic\", ibmPlexSans"],
+                        "body-lg": ["beVietnamPro"],
+                        "label-sm": ["beVietnamPro"],
+                        "body-md": ["beVietnamPro"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=IBM+Plex+Sans+Arabic:wght@600;700&display=swap');
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Ambient Shadows */
+        .shadow-ambient-rest {
+            box-shadow: 0 4px 20px rgba(230, 126, 34, 0.08);
+        }
+        .shadow-ambient-active {
+            box-shadow: 0 12px 30px rgba(230, 126, 34, 0.12);
+        }
+        
+        /* Hide scrollbar for horizontal lists */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl shadow-sm bg-surface/70 hidden md:flex">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">Culinary Intelligence</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shadow-ambient-rest">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional chef smiling warmly, wearing a white chef's coat in a bright, modern kitchen with soft, diffused lighting. The style is premium, clean, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUNFpHteyhqEujjd-zrsVbxyZ2A4FrzjyQZnlVNvQfk2UQ5QT_9_pkF1aDpBut8YFQhOS7rT4l3prSRizXqEogEOw242PEJ4TXYTTV7Huw9PxDnYgxvNNB1oMKxDtXV1O0NO1uiHghtWXaSsV0EUmIKV6Wp1IfMxjGa5aTuOeSoetNHg5E3SvXxk9zM3RfNrsxdp73CWQNEOaw4zT8-fjBDeUHSmOOSvgFuMqAXy6akTYn3VSJQ7E9CA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-6 md:pt-28 px-container-margin max-w-7xl mx-auto">
+<!-- Header & Action -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-section-gap">
+<div>
+<h2 class="text-headline-lg-mobile md:text-headline-xl font-headline-lg-mobile md:font-headline-xl text-primary mb-2">استكشف الطبخ المباشر</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">شاهد وتعلم من أفضل الطهاة في الوقت الفعلي.</p>
+</div>
+<button class="bg-primary text-on-primary rounded-full px-6 py-3 flex items-center justify-center gap-2 shadow-ambient-rest hover:shadow-ambient-active active:scale-95 transition-all w-full md:w-auto">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="text-label-sm font-label-sm">ابدأ البث المباشر</span>
+</button>
+</div>
+<!-- Popular Categories Chips -->
+<section class="mb-section-gap">
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<button class="bg-primary text-on-primary rounded-full px-5 py-2.5 text-label-sm font-label-sm whitespace-nowrap shadow-ambient-rest flex-shrink-0">الكل</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full px-5 py-2.5 text-label-sm font-label-sm whitespace-nowrap flex-shrink-0">تقليدي</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full px-5 py-2.5 text-label-sm font-label-sm whitespace-nowrap flex-shrink-0">وجبات سريعة</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full px-5 py-2.5 text-label-sm font-label-sm whitespace-nowrap flex-shrink-0">حلويات</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full px-5 py-2.5 text-label-sm font-label-sm whitespace-nowrap flex-shrink-0">صحي</button>
+<button class="bg-surface-container text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full px-5 py-2.5 text-label-sm font-label-sm whitespace-nowrap flex-shrink-0">مخبوزات</button>
+</div>
+</section>
+<!-- Live Now (Bento Grid Style) -->
+<section class="mb-section-gap">
+<h3 class="text-headline-md font-headline-md text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">sensors</span>
+                يبث الآن
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Live Stream -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-ambient-rest hover:shadow-ambient-active transition-shadow cursor-pointer relative group">
+<div class="relative h-64 md:h-96 w-full">
+<img alt="Live Cooking" class="w-full h-full object-cover" data-alt="A professional culinary live stream setup showing a chef expertly preparing a vibrant, colorful Mediterranean dish. High quality lighting, soft depth of field, bright modern kitchen background. A warm, appetizing color palette dominating the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaz8eFZ3OlVeGO88psRNeznPkkoAcbzjIu0Z_fs8lrcC1CGuYrpCizLntl7rolJbhnHLi3L0NI0YEPWJ7SvWxweTIFn22bOGd2eB_wcH0YmlnWK6IIxvVaAmO64RiK4gdaEThmaQ0RBQJaGaNQVXoe4tOQIvfLMLNhwfv7EhBsoa9cQov1vCbuv2bv4XjBMOUu1C81WWpxDkbdCJZcFVmjKGrxiywuhsYVoIEzU5AoV89wryyJKeYDjg"/>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<!-- Badges -->
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-error text-on-error text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                                مباشر
+                            </span>
+<span class="bg-black/50 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                                1.2K
+                            </span>
+</div>
+<!-- Content -->
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Chef Avatar" class="w-full h-full object-cover" data-alt="A friendly male chef with a neat beard, wearing a black apron over a white shirt, smiling gently in a well-lit studio kitchen environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo67ZKEwkqbXexkEonx5KD-wkRaI7iZE-i-d3Z-LOXm3jAZWB3l4eFs6Dz-LQtlV0Q8lFBowT0q6wN2lnXcOb4LVxYDXSyAxRU2G5Pw2NLsbRPUbtqlnTH9wotBJG2_PtvgI-ZzRnOOiqZkPpU7fx4x_0LHfl6weq5Pt5Ms3cBmr35cF7ssPk3xfMHaBm19iw3YlIYtlPr7LOEsnBDbkWipEJd7mCrHHVY8xkFPXMFa8-KEI6apCPvTg"/>
+</div>
+<div>
+<p class="text-white font-bold text-sm">الشيف أحمد</p>
+<p class="text-white/80 text-xs">مطبخ متوسطي</p>
+</div>
+</div>
+<h4 class="text-white text-headline-md font-headline-md mb-2">أسرار الباييلا الإسبانية الأصيلة</h4>
+</div>
+</div>
+</div>
+<!-- Secondary Live Streams -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Stream 2 -->
+<div class="flex-1 bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-ambient-rest hover:shadow-ambient-active transition-shadow cursor-pointer relative group">
+<div class="relative h-48 md:h-full w-full">
+<img alt="Live Cooking" class="w-full h-full object-cover" data-alt="A close-up shot of hands gently kneading fresh pasta dough on a wooden board lightly dusted with flour. Warm, natural sunlight streaming in, highlighting the texture of the dough. Soft, earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaot9qy7W6atZ16CwgTjPxLYJ1zHWIHEd3xuVJXB0r1bRj_ac9pVrOmLFUpW5bqFlQ9QHrPO7H4d4jVQtd8-YCf278SB99l0cWxziqBCPifWI8KwocH7CGWgVca86zsk1Mg-SSPlDprT06CtT7issdbQ6QQ7CMcduOJlQ92Wd_ybVzoOs4FgHrYvY8LI4M3k7iw7DhHj-10muIO3t8s1Hn54n9fHl5M5E9L8_OfZ7dyVB0ps5SINMMKA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-error text-on-error text-[10px] font-bold px-2 py-0.5 rounded-full">مباشر</span>
+<span class="bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> 850
+                                </span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<h4 class="text-white text-base font-bold mb-1">صنع الباستا الطازجة</h4>
+<p class="text-white/80 text-xs">مع نورة سالم</p>
+</div>
+</div>
+</div>
+<!-- Stream 3 -->
+<div class="flex-1 bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-ambient-rest hover:shadow-ambient-active transition-shadow cursor-pointer relative group">
+<div class="relative h-48 md:h-full w-full">
+<img alt="Live Cooking" class="w-full h-full object-cover" data-alt="A vibrant, fresh vegan salad bowl being assembled with avocado, quinoa, roasted sweet potatoes, and a bright green dressing being drizzled on top. Clean, bright lighting, emphasizing the healthy, appetizing ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD052E2_KpHtw8K1qlEhWGRgrjMeuobFaQmkdogkI0OS9_isQG90ynaLg-Ik11wY0444z47iu5iN5LltWxcKUy6clQ1TtVc-JM3O-xqcrUz3k0IrDbVUihVlwgHGtO9Ktwczjo900TSjuKK1OypXhDiLKlIiI_WtJ2CUH0CFuaG6RRRAa5VfssP-qChTttcAHy_5lFIdylyyH3XdpfPP8DQt7j1cBilsUkiVJQMNwLTQ1tjIziBBhCGWA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-error text-on-error text-[10px] font-bold px-2 py-0.5 rounded-full">مباشر</span>
+<span class="bg-black/50 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> 420
+                                </span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<h4 class="text-white text-base font-bold mb-1">وجبات نباتية سريعة</h4>
+<p class="text-white/80 text-xs">الشيف كريم</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Coming Soon Horizontal List -->
+<section class="mb-section-gap">
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-headline-md font-headline-md text-primary">قريباً</h3>
+<button class="text-primary font-label-sm text-label-sm hover:underline">عرض الكل</button>
+</div>
+<div class="flex gap-6 overflow-x-auto no-scrollbar pb-4 snap-x">
+<!-- Card 1 -->
+<div class="min-w-[280px] w-[280px] snap-start bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-ambient-rest flex flex-col">
+<div class="h-40 w-full relative">
+<img alt="Scheduled Stream" class="w-full h-full object-cover" data-alt="A beautifully decorated layered chocolate cake on a ceramic stand, surrounded by baking tools and ingredients like cocoa powder and fresh berries. Soft, inviting light. Aesthetically pleasing food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALAxRtB1SMa6fwzx9XKxGeXldg2w4Zh4cBVSNMe4dBXHXfrgOIEQOqbv81ZVGgg6q6K8_7QpqC7sV5Zx0DLqg9p74r9tRi17fZv1KwOizIgYsa1NwxKnxZVnAPpZBlldin20OTbPy43xp1yoeIN4lxH-w0F1L8xFN8Ak9H1RjD4hk5AS28Mg0DJcLSdhpF6mSp4qaFlMegub8MYpi9qoachVHTN46jdFsWVbg-Pea0WLLif3JxVzFG9g"/>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm text-primary-fixed-variant text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            اليوم، 8:00 م
+                        </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between bg-surface-bright">
+<div>
+<h4 class="text-on-surface font-bold text-base mb-1 line-clamp-2">تزيين الكيك للمبتدئين</h4>
+<p class="text-on-surface-variant text-sm mb-4">الشيف سارة</p>
+</div>
+<button class="w-full border-2 border-secondary text-secondary hover:bg-secondary/10 transition-colors rounded-full py-2 flex justify-center items-center gap-2 font-label-sm">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                            ذكرني
+                        </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[280px] w-[280px] snap-start bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-ambient-rest flex flex-col">
+<div class="h-40 w-full relative">
+<img alt="Scheduled Stream" class="w-full h-full object-cover" data-alt="A sizzling pan of perfect, golden-brown seared scallops with a rich butter herb sauce. The image captures the dynamic action of cooking with slight steam rising. Warm, dramatic lighting focusing on the pan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0BzhP3ou-6fwiN8nu8-dw0Nx5AnMxrTYYDGwvqrFWwD4Sme7pIE5yaQFDTu0w4SSLgcilD3cFFFyXAGqdFB3j6fFFFNcK8qMMoZMHjPFTDTYX19yZHEWG6ldNmxgli7wxjSQJKf_gcuWdJuPqIzE6zneludinHax2ljHUShozJZqivtJIdu_KI5YjwNCLNDTdhAyIhzr2us8WMuo-vv9rV78kfCB5iN8w0wAHzwEIbVEfgcPTxstCzw"/>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm text-primary-fixed-variant text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            غداً، 5:30 م
+                        </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between bg-surface-bright">
+<div>
+<h4 class="text-on-surface font-bold text-base mb-1 line-clamp-2">أسرار المأكولات البحرية</h4>
+<p class="text-on-surface-variant text-sm mb-4">الشيف طارق</p>
+</div>
+<button class="w-full border-2 border-secondary text-secondary hover:bg-secondary/10 transition-colors rounded-full py-2 flex justify-center items-center gap-2 font-label-sm">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                            ذكرني
+                        </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[280px] w-[280px] snap-start bg-surface-container-lowest rounded-[24px] overflow-hidden shadow-ambient-rest flex flex-col">
+<div class="h-40 w-full relative">
+<img alt="Scheduled Stream" class="w-full h-full object-cover" data-alt="A selection of beautiful, colorful sushi rolls arranged meticulously on a dark slate plate with chopsticks resting nearby. Precision and elegance are the focus of this bright, clean image." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmGO8oueqFurGK-lGcgRJmnvr_pNk3vIC-h7w4sXWJZ060kmm1Pn5LcVh-AyDtTYug0dNM_3YOZMupinxY8WMmNyLYyNKH7BqZCtdMFbhIHcS0czbCQTADtlUOB3Uz9iSXyf1-aTgQv1jjLT81rkO5kaLfhuWx19J6ai1ewzMvfSEqJyeOvTDpNFrmH9mmcsS_PHE272QO4Zr_P7aqr4TQIrVXjq7NlivSQha9R0-U6in4IaITLR75GQ"/>
+<div class="absolute top-3 right-3 bg-surface/90 backdrop-blur-sm text-primary-fixed-variant text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                            الأربعاء، 7:00 م
+                        </div>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between bg-surface-bright">
+<div>
+<h4 class="text-on-surface font-bold text-base mb-1 line-clamp-2">أساسيات السوشي في المنزل</h4>
+<p class="text-on-surface-variant text-sm mb-4">الشيف يوكو</p>
+</div>
+<button class="w-full border-2 border-secondary text-secondary hover:bg-secondary/10 transition-colors rounded-full py-2 flex justify-center items-center gap-2 font-label-sm">
+<span class="material-symbols-outlined text-[18px]">notifications</span>
+                            ذكرني
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] md:hidden">
+<div class="flex justify-around items-center px-4 pb-6 pt-3">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container-high transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-label-sm font-label-sm mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1.5 hover:bg-surface-container-high transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">live_tv</span>
+<span class="text-label-sm font-label-sm mt-1">Live</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container-high transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="text-label-sm font-label-sm mt-1">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container-high transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="text-label-sm font-label-sm mt-1">Kitchen</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container-high transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm mt-1">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Cooking App - Community Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#869bb3",
+                      "secondary-fixed": "#6bfe9c",
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-container": "#1d3347",
+                      "inverse-primary": "#ffb783",
+                      "background": "#f9f9f9",
+                      "inverse-surface": "#2f3131",
+                      "surface-container": "#eeeeee",
+                      "on-surface-variant": "#564337",
+                      "surface-tint": "#944a00",
+                      "surface-bright": "#f9f9f9",
+                      "primary-fixed": "#ffdcc5",
+                      "on-secondary-fixed-variant": "#005228",
+                      "outline": "#897365",
+                      "on-tertiary-fixed": "#051d30",
+                      "surface": "#f9f9f9",
+                      "primary-fixed-dim": "#ffb783",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-dim": "#dadada",
+                      "on-secondary-fixed": "#00210c",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#00743a",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#1a1c1c",
+                      "secondary-container": "#6bfe9c",
+                      "on-primary-fixed-variant": "#713700",
+                      "secondary-fixed-dim": "#4ae183",
+                      "on-background": "#1a1c1c",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#301400",
+                      "error": "#ba1a1a",
+                      "secondary": "#006d37",
+                      "tertiary-fixed-dim": "#b3c9e2",
+                      "tertiary-fixed": "#cfe5ff",
+                      "primary-container": "#e67e22",
+                      "surface-container-low": "#f3f3f3",
+                      "tertiary": "#4b6076",
+                      "surface-container-high": "#e8e8e8",
+                      "primary": "#944a00",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e2e2e2",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#dcc1b1",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#502600"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "card-padding": "20px",
+                      "section-gap": "48px",
+                      "base": "8px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "beVietnamPro"
+                      ],
+                      "label-sm": [
+                              "beVietnamPro"
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .font-ibm { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-ibm pb-24 md:pb-0 pt-16">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-sm flex justify-between items-center px-gutter h-16 max-w-7xl mx-auto">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">المجتمع</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A smiling, warm portrait of a home chef. The user profile photo should convey friendliness and accessibility, lit with soft natural light, against a slightly blurred modern kitchen background. The overall tone is bright and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbgqM09TBDqnB3bskueOMQtFfL57buzYvHIAOB7BhBy7TmzUHXkDoWMsMIG23jS-lj0LKaWXQyLrgytCOEx332tnlq7zZsurQKuRUAQ7ML8rp00vyD_zeamp7N7rK-ObPVHxJdaZ-GNnHe9PeTK3hrDSAdiRzkqP_gEfj0QAu7ibhhMflX9f8CazayIQy2h2I9FW0052cHorI_Jh4ZR96RIGwU-1UQI-XowjsM2P227_8Pg7s9I6YsIw"/>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin md:grid md:grid-cols-12 md:gap-gutter">
+<!-- Mobile Story Highlights -->
+<section class="mt-base mb-6 md:col-span-12 overflow-x-auto pb-4 hide-scrollbar">
+<div class="flex gap-4">
+<!-- Add Story -->
+<div class="flex flex-col items-center gap-2 min-w-[72px]">
+<div class="w-16 h-16 rounded-full border-2 border-dashed border-primary flex items-center justify-center bg-primary-fixed-dim/20 text-primary cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">قصتك</span>
+</div>
+<!-- Story 1 -->
+<div class="flex flex-col items-center gap-2 min-w-[72px] cursor-pointer active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-secondary-fixed">
+<div class="w-full h-full rounded-full border-2 border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of an elegant woman with a serene expression, softly lit by morning sunlight. She is wearing casual yet refined clothing, set against an out-of-focus background of a cozy dining area, reflecting a premium soft minimalism style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEcbof0MtT9_tCaX7lUgrdbXeAywds3UjiSzFrsT4Eb2JN5FKJ_WI3Iz3L23Z1fS5vQHpeIXSLNnXNxyElT4lYYB76HH-fcWWu5y3_X1MtPEtWVv5IohFhpn4z3VW4BvP9MBtzTPw4As1e5Vp1r2uyCqmg34SlXS0EQ0APBSgYTtM99R3_GReOPfL-P-dr9T2GkuqUC5LgJ1S0hg5e_63L5shzMn5SSm5kB6AfYHbADZ79O2Abn3-L4w"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full text-center">أمينة</span>
+</div>
+<!-- Story 2 -->
+<div class="flex flex-col items-center gap-2 min-w-[72px] cursor-pointer active:scale-95 transition-transform">
+<div class="w-16 h-16 rounded-full p-[2px] bg-gradient-to-tr from-primary to-secondary-fixed">
+<div class="w-full h-full rounded-full border-2 border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up profile photo of a young man holding a wooden spoon, smiling. The lighting is warm and inviting, suggesting a passionate home cook in a bright, modern kitchen space. The colors should subtly echo terracotta and sage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt7YQ5tqihSLJ1UmC4fKrAf5MYBOcXVURl3L2rCAtYW8n1l3--VrlPd0Bxcbl23Q-bOWrguyIDo2cBQoFVv1wnHiCL4B1iVRtutIxATHBbucEULZmfsF2s6WQIUAm2-WIzy1r1PBIgBUKmQFbcaDuOTNHbSFPJurH22LNue_KvaK39Astl5UytuMCfpVlNB2uuFhNqgQOX4NW_Arc7EuzvirXwdCqza4Gz1kD7VbVmZfoJWNXXZEZvxg"/>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate w-full text-center">كريم</span>
+</div>
+</div>
+</section>
+<!-- Main Feed Area -->
+<div class="md:col-span-8 md:col-start-3 lg:col-span-6 lg:col-start-4 flex flex-col gap-8">
+<!-- Share CTA -->
+<div class="bg-surface rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex items-center gap-4 cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="User profile photo again, consistent with the top app bar avatar. A friendly home chef in soft natural light, conveying an approachable and warm presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvdPbKi0jCC3fLAVGCscnLu5ENaoitHCIsm0nPfNWwCMiwOJKp-CrRTSOgAuCqAh8423IuxJlBlU_C-fVrWq-H3q5ieAT7hPZLxa8wA0ZJ3dk65B3NWE9g5Lib0zxMsTX5qy_4hRyl8ggPCYSYrPtIf6Ln76S-RO2f16otjLlsNVlN24TaCA1dsdoIvIpWwhS9lXyi4eTVhwZv-SnJQNILBvTr0ZW0ObpyjopQDeWtdmzNfSB-OZSkiA"/>
+</div>
+<div class="flex-grow bg-surface-container-low rounded-full px-6 py-3 text-on-surface-variant font-body-md text-body-md opacity-70">
+                    ماذا طبخت اليوم؟
+                </div>
+<button class="bg-primary-container text-on-primary-container w-12 h-12 rounded-full flex items-center justify-center hover:opacity-80 active:scale-95 transition-all">
+<span class="material-symbols-outlined">image</span>
+</button>
+</div>
+<!-- Feed Post 1 -->
+<article class="bg-surface rounded-[24px] shadow-[0_4px_20px_rgba(230,126,34,0.08)] overflow-hidden flex flex-col">
+<!-- User Header -->
+<div class="p-card-padding flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile photo for a user named Yasmine. She is looking thoughtfully off-camera, bathed in warm sunset light. The background is a beautifully blurred, high-end kitchen with natural wood elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB1nGbEKVNQ6m7IFOhsNgXYZ9Q6r-iFQ2Eg0FnmppSCd9Xbms4cnh06toSMtZi8RwKmjzs4CFLmQhlR-uMAJLODHAjkFO8aMvwfk41yYkAM8vB0K5dTQFKisY06MXlas8zN5zLOtmsFBk2Q5ymhHMV76aHLB5nghWbO8VDDTz5FNGpyb0ZyPNxc-zm3NrQ7OsblEH-zHyLegAHVrx54aLY0aOSENf2OTK4xtp-ahgBdqXu7mfDfTfw3g"/>
+</div>
+<div>
+<h3 class="font-label-sm text-label-sm font-bold text-on-surface">ياسمين</h3>
+<p class="font-body-md text-[12px] text-on-surface-variant">منذ ساعتين</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Image -->
+<div class="w-full aspect-[4/5] bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A stunning, high-quality photograph of a traditional Algerian couscous dish served in an artisanal terracotta bowl. The dish is garnished generously with roasted vegetables, chickpeas, and a perfectly cooked piece of lamb. The lighting is cinematic, casting soft ambient shadows that highlight the textures of the food. The background is a clean, slightly out-of-focus wooden table, fitting the premium soft minimalism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqoK51WtZFKfb_TtGbPCWrI1pVGjQr4eZuy3eneOPOws0oAgHcduHsZU5wFblUyYtlBSJSXytpzg8zhjNsZSuHQ5zRw256v1NKpsTkz5dYvo_lO5uOmBlEIO-aj2xvSCQQWYYLj4uPSZRaRu1zKFfKNuPgUSd8YsnoI_8G0_MxNuAtvgdhCwvzSpPihmTobFXc76cfGV4UiK-wJqMrzJ_xVxLuOn4WjWLnSm7nPzaaVtO1YJxPAOy0Kw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-card-padding">
+<div class="flex gap-2">
+<span class="bg-surface/20 backdrop-blur-md text-white font-label-sm text-label-sm px-3 py-1 rounded-full">#جزائري</span>
+<span class="bg-surface/20 backdrop-blur-md text-white font-label-sm text-label-sm px-3 py-1 rounded-full">#تقليدي</span>
+</div>
+</div>
+</div>
+<!-- Content & Actions -->
+<div class="p-card-padding flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:text-primary active:scale-90 transition-all flex items-center gap-1">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-label-sm">124</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary active:scale-90 transition-all flex items-center gap-1">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-label-sm">18</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold mb-1">كسكسي الجمعة</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                            أخيراً جربت وصفة جدتي للكسكسي بالخضار واللحم. السر كله في التوابل والتحضير البطيء! من يريد الوصفة؟
+                        </p>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm mt-1">اكتشف</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-label-sm text-label-sm mt-1">شيف الذكاء</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">خطط</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">حسابي</span>
+</a>
+</nav>
+</body></html>

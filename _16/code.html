@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kitchen Management &amp; Zero Waste - CulinaryAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e8e8e8",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed-dim": "#76d6d5",
+                    "on-primary-fixed": "#301400",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "background": "#f9f9f9",
+                    "secondary": "#3f5f92",
+                    "surface-container-low": "#f3f3f3",
+                    "primary": "#944a00",
+                    "secondary-container": "#a6c4fe",
+                    "primary-fixed": "#ffdcc5",
+                    "on-surface-variant": "#564337",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary-container": "#502600",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "parchment": "#fdfdfd",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-container": "#003737",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadada",
+                    "primary-container": "#e67e22",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#44a7a7",
+                    "premium-gold": "#d4af37",
+                    "tertiary": "#006a6a",
+                    "surface-variant": "#e2e2e2",
+                    "outline": "#897365",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "terracotta-dark": "#944a00",
+                    "on-secondary-container": "#315183",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#dcc1b1",
+                    "primary-fixed-dim": "#ffb783",
+                    "on-tertiary-fixed": "#002020",
+                    "inverse-primary": "#ffb783",
+                    "surface-tint": "#944a00",
+                    "on-secondary-fixed": "#001b3e",
+                    "secondary-fixed": "#d6e3ff",
+                    "surface-bright": "#f9f9f9",
+                    "secondary-fixed-dim": "#aac7ff",
+                    "tertiary-fixed": "#93f2f2",
+                    "on-primary-fixed-variant": "#713700",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#264779",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "64px",
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "margin-desktop": "40px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "label-sm": [
+                            "IBM Plex Sans"
+                    ],
+                    "label-md": [
+                            "IBM Plex Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "display-lg": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "body-lg": [
+                            "IBM Plex Sans"
+                    ],
+                    "headline-md": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "body-md": [
+                            "IBM Plex Sans"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface/75 dark:bg-surface-dim/75 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-gutter py-unit w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 0;">language</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">CulinaryAI</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+                    Home
+                </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1">public</span>
+                    Discover
+                </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1">smart_toy</span>
+                    AI Chef
+                </a>
+<a class="text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                    Plan
+                </a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 font-label-md text-label-md flex flex-col items-center" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+                    Profile
+                </a>
+</nav>
+<div class="cursor-pointer active:scale-95 transition-transform text-primary dark:text-primary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-gutter md:px-margin-desktop py-margin-mobile md:py-margin-desktop">
+<!-- Header Section -->
+<div class="mb-section-gap flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">Kitchen Management</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Optimize your pantry, reduce waste, and track your budget.</p>
+</div>
+<div class="bg-surface-container-low px-6 py-4 rounded-xl border border-outline-variant shadow-[0_4px_12px_rgba(63,95,146,0.04)] flex items-center gap-4">
+<div class="p-3 bg-secondary-container rounded-full text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Weekly Budget</p>
+<p class="font-headline-md text-headline-md text-on-surface">4,500 <span class="font-body-md text-body-md text-on-surface-variant">DZD</span></p>
+<p class="font-label-md text-label-md text-tertiary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+                        15% under budget
+                    </p>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(180px,auto)]">
+<!-- What's in my Fridge (Spans 8 cols on desktop) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(63,95,146,0.04)] border border-surface-variant overflow-hidden flex flex-col">
+<div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">kitchen</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">What's in my Fridge?</h3>
+</div>
+<span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-3 py-1 rounded-full">12 Detected via AI Vision</span>
+</div>
+<div class="p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 bg-surface-container-lowest flex-grow">
+<!-- Ingredients Grid -->
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-surface-container mb-3 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro studio shot of fresh, bright red cherry tomatoes clustered on a vine against a pristine white background. High-key lighting, crisp details, soft shadows, vibrant and appetizing culinary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG480SpZhkW-4opumEt95EN64K1FFOXPkURyQ2gFOHutmMo7bJ5jCNMLLX4qtoHk6QmFOxnXM2TGtLoEkpZZ1DTe5XrA87HpCZURcq76cERYq9wDKn35fT6XAPB0tEyJELSXsPGxqfKbXUGfKRWNjQi3ykt3oYzx3Fmw6rd3DPz-zH4MyT4wb_oSEOe7XqLTuiF7YPNWwDuBa-Jg7DhNYmVFkoAQd03ubZpS7i8DKbq14K58grMa_5Rg"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Tomatoes</span>
+<span class="font-label-sm text-label-sm text-error mt-1">Expiring Soon</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-surface-container mb-3 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist shot of a glass bottle of fresh whole milk, condensation on the glass, placed on a light grey slate surface. Professional food photography, cool studio lighting, pure and refreshing mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvjTqPze9jc0I9WBuN0A_T1dnWPwuEKC_8AYpeQlijZpXeQF0ebpkgcpftSsIkpehVUqRgPL0PJpKCbnHmZZdbAz3XV5MTPSVBLF6ICxDKCoAmeQxbgfsZQ3TPXMOx9sOwEYVFnCtTnjA9RxOS0JaYZcf77f9p7680vEPq7F053WrTNKHFXNLiYDBnxsDxdyAiY7jQEV4CLknWU1w7N6ORRB8KZ-C8NP5b-RpxrJHPDqP_tnuZRgge6Q"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Milk</span>
+<span class="font-label-sm text-label-sm text-error mt-1">Expiring Soon</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-surface-container mb-3 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A top-down view of fresh, vibrant green spinach leaves loosely piled on a pristine marble countertop. Soft, diffused natural light enhancing the organic textures and rich green hues, elegant culinary composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBePCXPSs18uHDT6tbyQAX_1c37HQSFoPd2ERXpfh6IteTgdZt9F4GWcPjYUVMngOA4YguQmwTCqF3JS9Sff1vfTFt8B9K6PRlOC19AO8RDIQLVfg7rF_Il91GTx4DRiYHN-n2Hd-XqSUfgh5yL1kVIDsaoZSacDns8voNidnY0klkN50rRUUlbUUgQSUGHS2Tl_NEtC6Xh7vVU8t18bl90dHpYFP8fZYN2Di0PV2fMqwuNEvO11dX7fQ"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Spinach</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Fresh</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-surface-container mb-3 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a premium cut of raw salmon fillet, showing distinct marbling, placed on a dark slate board. Dramatic side lighting highlighting the rich orange color and delicate texture, high-end gastronomy style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsMdZem8RYqAXMBePYuFSVKy2e-hjOY9VTfk03LOqcq40dKBbrwISF4PX4wPM0tD6GO2Tmbjbbik5D0BT9ado9RnKsTApJau93uCRkiWg004npFz8XvWvvovDn5XAGy1IXJpJQiOs0PUEZf_R6epDiJEeoI7RhG-fhXhHPHmXViDZvsoMmTXJomhhixG3LPatrVZAYOjQKShnvJIDf0kohB2np7sLAV9qTaN6rM8vi2C9a1LCWCswHxw"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Salmon</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Use in 2 days</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-surface-container mb-3 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[32px]">egg</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Eggs</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Good</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border border-transparent hover:border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-surface-container mb-3 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[32px]">bakery_dining</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface text-center">Bread</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Fresh</span>
+</div>
+</div>
+</div>
+<!-- Zero Waste Alerts (Spans 4 cols on desktop) -->
+<div class="md:col-span-4 bg-error-container rounded-xl shadow-[0_4px_12px_rgba(63,95,146,0.04)] border border-error/20 p-6 flex flex-col relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -right-6 -top-6 text-error opacity-10 transform rotate-12">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex items-center gap-3 mb-4 relative z-10">
+<div class="p-2 bg-error text-on-error rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-error-container">Zero Waste Alert</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-error-container mb-6 relative z-10 leading-snug">
+                    Your <strong>tomatoes</strong> and <strong>milk</strong> are expiring soon. Try these rescue recipes to avoid waste.
+                </p>
+<div class="flex flex-col gap-3 relative z-10 mt-auto">
+<button class="bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md py-3 px-4 rounded-lg flex items-center justify-between shadow-sm transition-all border border-transparent hover:border-outline-variant group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A warm, inviting bowl of creamy tomato soup garnished with a swirl of fresh cream and a sprig of basil. Soft overhead lighting, rustic ceramic bowl on a wooden table, cozy and appetizing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiI_VOQmSuZ8PB9DJQvkLk9hiPrtDFneDNUz8DNDSmGQDQ_Nccs3bI1SUBCmjoRp-WybwzjeT40X7nuHSx32vKa15X_8kL_v0xKBDBlk5lS4XFG0NoFq_C7_iGN85_b_e8CG3z3BeiZKsmdVhDwiy5Cr7ZgQRDfIcESqSJ1LvdAndO0FkrcZV914v9J1OUNqWRBM9vhOi_g_st1Q2j4u0KAqst6QKawLoZv3WVuwRRTQlvFe8ehnz-GA"/>
+</div>
+<span>Creamy Tomato Soup</span>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md py-3 px-4 rounded-lg flex items-center justify-between shadow-sm transition-all border border-transparent hover:border-outline-variant group">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-md bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A slice of savory tomato and cheese quiche showing layers of custard and baked tomatoes. Served on a white plate with a side salad. Bright, even lighting, professional food styling, appealing texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuL91Y5egHY2R1bHZ1g91nnFTnErWfc_jyfe-gFSx-CIZ8OWt5I31QWZmfFXKRBYCMPz2MHiovGmfY5-kb9y0u8MejTUCQCU7d2vgeRN8ifn8G3cq7ySQLJ_Ie65ybO42xhttnWpP0KB3H_xnDxUh3pfIPhJPIvTjueN--Q03ywfZV0nDuJRNN_E1rlqV6zk4NpRpiBSDCLUu17M_cySKIkzUEVezYhTnjX3aNKon_TCyp6Qov9vMURw"/>
+</div>
+<span>Tomato &amp; Milk Quiche</span>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Weekly Grocery List (Spans 12 cols, layout shifts internally) -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(63,95,146,0.04)] border border-surface-variant overflow-hidden flex flex-col md:flex-row">
+<!-- Smart Aggregation Intro -->
+<div class="p-8 md:w-1/3 bg-surface-container-low/50 border-b md:border-b-0 md:border-r border-surface-variant flex flex-col justify-center">
+<div class="mb-4 text-secondary">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Weekly Grocery List</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Smartly aggregated from your planned meals. We've combined duplicate items to save you time.</p>
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 self-start">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        Send to Delivery
+                    </button>
+</div>
+<!-- List Items -->
+<div class="p-6 md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+<!-- Category: Produce -->
+<div class="col-span-1 sm:col-span-2">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3 flex items-center gap-2 border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined text-[18px]">local_florist</span> Produce
+                         </h4>
+</div>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface border-outline rounded focus:ring-primary focus:ring-2" type="checkbox"/>
+<div class="flex-grow flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Tomatoes</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-on-surface-variant">2 kg</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface border-outline rounded focus:ring-primary focus:ring-2" type="checkbox"/>
+<div class="flex-grow flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Onions</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-on-surface-variant">1.5 kg</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface border-outline rounded focus:ring-primary focus:ring-2" type="checkbox"/>
+<div class="flex-grow flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Fresh Basil</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-on-surface-variant">2 bunches</span>
+</div>
+</label>
+<!-- Category: Dairy & Meat -->
+<div class="col-span-1 sm:col-span-2 mt-4">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3 flex items-center gap-2 border-b border-surface-variant pb-2">
+<span class="material-symbols-outlined text-[18px]">set_meal</span> Dairy &amp; Proteins
+                         </h4>
+</div>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface border-outline rounded focus:ring-primary focus:ring-2" type="checkbox"/>
+<div class="flex-grow flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Chicken Breast</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-on-surface-variant">800 g</span>
+</div>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-surface border-outline rounded focus:ring-primary focus:ring-2" type="checkbox"/>
+<div class="flex-grow flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Mozzarella</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-1 rounded text-on-surface-variant">300 g</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 border-t border-outline-variant dark:border-outline/20 bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_12px_rgba(63,95,146,0.04)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+            Home
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined mb-1">public</span>
+            Discover
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined mb-1">smart_toy</span>
+            AI Chef
+        </a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed rounded-xl px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+            Plan
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-200 ease-in-out font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>

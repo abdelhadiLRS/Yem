@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Culinary World Championship - Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#6bfe9c",
+                      "outline": "#897365",
+                      "on-secondary-container": "#00743a",
+                      "on-surface": "#1a1c1c",
+                      "primary-container": "#e67e22",
+                      "on-background": "#1a1c1c",
+                      "on-primary-fixed": "#301400",
+                      "surface-variant": "#e2e2e2",
+                      "secondary": "#006d37",
+                      "secondary-fixed-dim": "#4ae183",
+                      "on-tertiary-container": "#1d3347",
+                      "background": "#f9f9f9",
+                      "primary": "#944a00",
+                      "tertiary-container": "#869bb3",
+                      "outline-variant": "#dcc1b1",
+                      "on-tertiary-fixed-variant": "#34495e",
+                      "surface": "#f9f9f9",
+                      "tertiary": "#4b6076",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed-dim": "#ffb783",
+                      "inverse-on-surface": "#f1f1f1",
+                      "surface-container-high": "#e8e8e8",
+                      "primary-fixed": "#ffdcc5",
+                      "on-secondary-fixed": "#00210c",
+                      "surface-container": "#eeeeee",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#713700",
+                      "tertiary-fixed": "#cfe5ff",
+                      "on-surface-variant": "#564337",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#944a00",
+                      "on-primary-container": "#502600",
+                      "tertiary-fixed-dim": "#b3c9e2",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary-fixed": "#051d30",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-primary": "#ffb783",
+                      "secondary-fixed": "#6bfe9c",
+                      "inverse-surface": "#2f3131",
+                      "surface-dim": "#dadada",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005228",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "20px",
+                      "section-gap": "48px",
+                      "base": "8px",
+                      "gutter": "16px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg-mobile": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "body-md": [
+                              "beVietnamPro"
+                      ],
+                      "headline-lg": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "label-sm": [
+                              "beVietnamPro"
+                      ],
+                      "headline-md": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ],
+                      "headline-xl": [
+                              "\"IBM Plex Sans Arabic\", sans-serif"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-32 pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 shadow-sm flex justify-between items-center px-container-margin py-base max-w-7xl mx-auto transition-all">
+<button class="p-2 text-primary dark:text-primary-fixed hover:bg-surface-container-high transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary dark:text-primary-fixed-dim truncate px-4">
+            Culinary World Championship
+        </h1>
+<button class="w-10 h-10 rounded-full overflow-hidden hover:bg-surface-container-high transition-colors active:scale-95 duration-200 shadow-sm relative">
+<img alt="User Profile with Gold Medal Badge" class="w-full h-full object-cover" data-alt="A profile picture of a cheerful chef wearing a white toque and a subtle gold medal badge pinned to their collar, set against a warm, softly lit professional kitchen background in a premium light mode aesthetic. The color palette emphasizes terracotta and soft greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVzuoDjwD9B4hgBaAKHGrfT94nZuMBIoh3BlhM3wng2ZHKGRY1Iop0Nn6CkrR4ShxOnzAL8YUguXdT0bLC4AJmUWLtUvRreqyJFYraJR6Nq-nVqhExSLb43tNewRaG2KtTsZDZF9rZD_zYnBsQxj5o8-UXwXFrajWj3JqUaIA0ZZGML77WQxn-Hrqk3Y208qYQZys7K3IKOF8OztJcppiHdFvBRrWKo_gni346sdgug3SNAmPCvNvHkg"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-secondary-container rounded-full border-2 border-surface"></div>
+</button>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin md:grid md:grid-cols-12 gap-gutter mt-section-gap">
+<!-- Main Content Area -->
+<div class="col-span-12 md:col-span-8 lg:col-span-9 space-y-section-gap">
+<!-- Filters & Categories -->
+<section class="space-y-6">
+<!-- Top Filters -->
+<div class="flex overflow-x-auto pb-4 gap-4 hide-scrollbar -mx-container-margin px-container-margin md:mx-0 md:px-0">
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container shadow-sm active:scale-95 transition-transform duration-200">
+                        Global
+                    </button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high shadow-sm active:scale-95 transition-transform duration-200">
+                        Regional
+                    </button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high shadow-sm active:scale-95 transition-transform duration-200">
+                        Season
+                    </button>
+</div>
+<!-- Category Tabs -->
+<div class="flex border-b border-surface-variant/50 gap-8">
+<button class="pb-4 font-label-sm text-label-sm text-primary border-b-2 border-primary">
+                        Top Chefs
+                    </button>
+<button class="pb-4 font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+                        Top Creators
+                    </button>
+<button class="pb-4 font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">
+                        Top Home Cooks
+                    </button>
+</div>
+</section>
+<!-- Leaderboard List -->
+<section class="space-y-4">
+<!-- Top 3 Bento Box Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+<!-- Rank 2 -->
+<div class="md:order-1 order-2 bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center justify-center relative mt-8 md:mt-12">
+<div class="absolute -top-6 bg-surface-variant text-on-surface w-8 h-8 rounded-full flex items-center justify-center font-label-sm text-label-sm shadow-sm">2</div>
+<div class="w-20 h-20 rounded-full overflow-hidden border-4 border-surface-variant mb-4 relative">
+<img class="w-full h-full object-cover" data-alt="A portrait of a skilled pastry chef in action, dusting powdered sugar over a beautifully plated dessert. Soft, natural light highlights the terracotta tones of the kitchen tile. The image exudes a premium, calm, and inspiring culinary mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvScNYApTcm17la-Wz-IIboaonu9qVpqf7zkS6_QGiic8pezl3lP-VR9nSUQXsmojvqJWW8whZryMHjnBzVK4JJAr_eSEsujYdI47kewdVW0NTJ9HfD8Rq7A1lmDDbSc6qe8sFy6bCPAMDcX5E-gXcaTyFsAVFdzPCzHll6Ah8iAXzKwi6mgvvNS5C-1j9OSJUMQrNN6dmsgKY6DXyzZzJeVosKUP5c-5D5n0lb43avzofwMmY_ste1A"/>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-center truncate w-full">Elena R.</h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span aria-label="Italy" class="text-lg" role="img">🇮🇹</span>
+<span>Italy</span>
+</div>
+<div class="mt-4 font-body-lg text-body-lg text-primary font-bold">14,200 pts</div>
+</div>
+<!-- Rank 1 -->
+<div class="md:order-2 order-1 bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_12px_30px_rgba(230,126,34,0.15)] flex flex-col items-center justify-center relative transform md:-translate-y-4 border border-primary/20">
+<div class="absolute -top-8 bg-primary-container text-on-primary-container w-12 h-12 rounded-full flex items-center justify-center font-headline-md text-headline-md shadow-md shadow-primary-container/30">
+<span class="material-symbols-outlined fill" data-icon="emoji_events">emoji_events</span>
+</div>
+<div class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary mb-4 relative">
+<img class="w-full h-full object-cover" data-alt="A stunning portrait of a master chef presenting a colorful, avant-garde salad. The lighting is crisp and bright, focusing on the vibrant fresh ingredients. The background is a clean, minimalist professional kitchen with soft warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhYvEo4d_Yis--CB9Uv-OZ_F52QpHdK7tw1osBpti914BIYwoHFgw37aqOPIzZ1_uTuZZaBPThbm87FwqI0VBFpDOEa9cDTTFU5CTGr30ZDWHw-EbT53D1Ri8obWSIt9gWHBmfHRe3sbsoeNbcYXqOV9rj1MINAoMBjrPKJiDSWedqSIVd_ignICpjVpMj4hwIzRXhKHpXCt73Gc9FAZsoO-P7u2B76nfi4iUThEL8fEJZj_UyuWT2Zw"/>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-center truncate w-full">Chef Julian</h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span aria-label="France" class="text-lg" role="img">🇫🇷</span>
+<span>France</span>
+</div>
+<div class="mt-4 font-headline-md text-headline-md text-primary font-bold">15,850 pts</div>
+<div class="flex gap-2 mt-3">
+<span class="material-symbols-outlined text-secondary-container fill text-sm" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container fill text-sm" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container fill text-sm" data-icon="star">star</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="md:order-3 order-3 bg-surface-container-lowest rounded-xl p-card-padding shadow-[0_4px_20px_rgba(230,126,34,0.08)] flex flex-col items-center justify-center relative mt-8 md:mt-16">
+<div class="absolute -top-6 bg-[#CD7F32] text-white w-8 h-8 rounded-full flex items-center justify-center font-label-sm text-label-sm shadow-sm">3</div>
+<div class="w-20 h-20 rounded-full overflow-hidden border-4 border-[#CD7F32]/50 mb-4 relative">
+<img class="w-full h-full object-cover" data-alt="A portrait of an energetic home cook smiling broadly while tossing vegetables in a wok. The kitchen environment is modern, soft, and minimal with sage green accents. The overall feel is warm, inviting, and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrDtnPNZYs8uPv9NAde3IoBjBUVW6cEzXlk4e9D7QIJLgBVhD9KL532pdTbS9a8kEcGY8gul5bsf9k33-iHZUasbGzaPJkStxS-gglDlu7mAySRxy78mfYGqEVoVAMbIrIXEiCAgH5-1pR9_Ga52HlNXc1KHTMATqTdZrgQK0G_uFd2THviVEYKUPcNd00DBUWmaBfrJWPRMjYuQ2ZPlOFbNtah4X1C9SND_FpGdEBkn_5I7OihbTtFg"/>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-center truncate w-full">Kenji W.</h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span aria-label="Japan" class="text-lg" role="img">🇯🇵</span>
+<span>Japan</span>
+</div>
+<div class="mt-4 font-body-lg text-body-lg text-primary font-bold">13,900 pts</div>
+</div>
+</div>
+<!-- List Items (Rank 4+) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(230,126,34,0.08)] overflow-hidden">
+<!-- Rank 4 -->
+<div class="flex items-center px-4 py-4 border-b border-surface-container-high hover:bg-surface-container-low transition-colors group">
+<span class="font-body-md text-body-md text-on-surface-variant w-8 text-center">4</span>
+<div class="w-12 h-12 rounded-full overflow-hidden mx-4 relative">
+<img class="w-full h-full object-cover" data-alt="Profile photo of a young male chef confidently holding a pairing knife. The aesthetic is clean, well-lit, and premium, utilizing soft terracotta and muted sage background colors to ensure visual harmony." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIp1lrujAKnCXLiEAi53STZ21mKaeEGxqQ3tO11gwljviPz72dM7atw8ysQmy0BH3VtTMWd-1rxTryZ310qivH7MiCY6MtOAoZatns9VC5nT08SBXz_fqFonhrhUjSlGBKp-j45_cNk0WVK7G3vij0uQaCtilmtgug8-5eEjS7q57dDjMk5RPltliRm76hirXXAUOhEm8-gxSIKeWalFmnNc_54v_ObvD9BFg6BwniUH2cJI-wuUvJpA"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-body-md text-body-md font-semibold group-hover:text-primary transition-colors">Maria S.</h4>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span aria-label="Spain" class="text-sm" role="img">🇪🇸</span>
+<span>Spain</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-md text-body-md font-bold text-primary">12,450</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">pts</span>
+</div>
+</div>
+<!-- Rank 5 -->
+<div class="flex items-center px-4 py-4 border-b border-surface-container-high hover:bg-surface-container-low transition-colors group">
+<span class="font-body-md text-body-md text-on-surface-variant w-8 text-center">5</span>
+<div class="w-12 h-12 rounded-full overflow-hidden mx-4 relative">
+<img class="w-full h-full object-cover" data-alt="A portrait of a chef carefully assembling a complex minimalist dish using tweezers. The lighting is bright and soft, emphasizing precision and the high-end, organic nature of the food. Warm ambient tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmd8vdLyhEz4Csc5q2CimYGvpHqfIxu4mzEEupWlDxz8M9L7QmvCdjmg8Dziapfn5AxUPpxSu4Njbn4-HXuq3T7wRebzfVqq2r-mOQkWKj0kjgZ1QYYsMAjyksD3y_s8Kgh0rSBvmGfNOst5_fFrvXWZ9Lz8nOKxexUzS7s2Xmn-damp54DuFDx6TrgGpO1MLjxkkIQDczXiQ_-GxObqjTZFxGejBsBEYfr6XcGAI59AMeXtuPWG91JQ"/>
+</div>
+<div class="flex-grow">
+<h4 class="font-body-md text-body-md font-semibold group-hover:text-primary transition-colors">David L.</h4>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span aria-label="UK" class="text-sm" role="img">🇬🇧</span>
+<span>UK</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-md text-body-md font-bold text-primary">11,800</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">pts</span>
+</div>
+</div>
+<!-- Rank 6 -->
+<div class="flex items-center px-4 py-4 hover:bg-surface-container-low transition-colors group">
+<span class="font-body-md text-body-md text-on-surface-variant w-8 text-center">6</span>
+<div class="w-12 h-12 rounded-full overflow-hidden mx-4 relative bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-body-md text-body-md font-semibold group-hover:text-primary transition-colors">Sarah K.</h4>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span aria-label="USA" class="text-sm" role="img">🇺🇸</span>
+<span>USA</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-md text-body-md font-bold text-primary">10,950</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">pts</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar (Desktop only) -->
+<div class="hidden md:block md:col-span-4 lg:col-span-3">
+<!-- Sticky Current User Rank Card (Desktop Sidebar Version) -->
+<div class="sticky top-[100px] bg-primary-container text-on-primary-container rounded-xl p-card-padding shadow-[0_12px_30px_rgba(230,126,34,0.15)]">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md font-bold">Your Rank</h3>
+<div class="bg-surface/20 rounded-full px-3 py-1 font-label-sm text-label-sm backdrop-blur-sm">
+                        Global
+                    </div>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="text-5xl font-bold font-headline-xl">42</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg font-semibold">Master Chef Julian</span>
+<span class="font-label-sm text-label-sm opacity-80">3,450 Season Points</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span>Next Tier: Grandmaster</span>
+<span>850 pts left</span>
+</div>
+<div class="w-full bg-surface/30 rounded-full h-2">
+<div class="bg-surface h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Current User Rank Bar (Mobile Only) -->
+<div class="md:hidden fixed bottom-[88px] left-4 right-4 z-40 bg-primary-container text-on-primary-container rounded-2xl shadow-[0_-8px_30px_rgba(230,126,34,0.2)] p-4 flex items-center justify-between border border-primary/10">
+<div class="flex items-center gap-3">
+<div class="bg-surface/20 w-12 h-12 rounded-full flex items-center justify-center font-headline-md text-headline-md-mobile font-bold backdrop-blur-sm">
+                42
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm opacity-80">Your Rank</span>
+<span class="font-body-md text-body-md font-bold">3,450 pts</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface/50 relative">
+<img class="w-full h-full object-cover" data-alt="A small profile picture of a chef, warmly lit with a terracotta background, ensuring a high-quality minimal and clean visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwQBhbv-EAdXbCq_T2B-MlUzsuJ6HXsAkz1D86w1nyK5L8A-rUuLG_9RcDKJipANMWkl9NER7gY-rH-c1dARy9_wLoyjJTki7L6a8t627yAuqzkcuFSVFx4iL-HivgAlRtc7Z1WLo74NiXUnCuo_wihQZ4YzHJDyrKyGlpdbqXT97gA7SJMrnw4TEkjoPWgKr2jfsxjd_y5oBNQoNbRUkAXxAz0V4wJ1Dtb_wVTpbipjVWsdAxt_LapQ"/>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface/80 backdrop-blur-xl dark:bg-inverse-surface/80 shadow-[0_-4px_20px_rgba(230,126,34,0.08)] rounded-t-xl md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-sm text-label-sm">Challenges</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1 fill" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-sm text-label-sm">Leaderboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Passport</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>
