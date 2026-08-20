@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Yum</string>
+    <string name="app_tagline">Your World of Food</string>
+    <string name="smart_food_smarter_cooking">Smart Food. Smarter Cooking.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_discover">Discover</string>
+    <string name="nav_ai">Yum AI</string>
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_basket">Basket</string>
+    <string name="nav_passport">Passport</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Common Actions -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="search">Search recipes, ingredients...</string>
+    <string name="see_all">See All</string>
+    <string name="start_cooking">Start Cooking</string>
+    <string name="back">Back</string>
+    <string name="settings">Settings</string>
+
+    <!-- Features -->
+    <string name="smart_pantry">Smart Pantry</string>
+    <string name="zero_waste">Zero-Waste Pantry</string>
+    <string name="smart_basket">Smart Basket</string>
+    <string name="yum_passport">Yum Passport</string>
+    <string name="world_map">World Map</string>
+    <string name="culinary_battles">Culinary Battles</string>
+    <string name="live_studio">Live Cooking Studio</string>
+    <string name="ai_cooking_mode">AI Cooking Mode</string>
+    <string name="ai_recipe_generator">AI Recipe Generator</string>
+
+    <!-- Language & Settings -->
+    <string name="language">Language</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="system_default">System Default</string>
+    <string name="notifications">Notifications</string>
+    <string name="account">Account</string>
+    <string name="logout">Log Out</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="guest_login">Continue as Guest</string>
+</resources>

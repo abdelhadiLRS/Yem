@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">يم</string>
+    <string name="app_tagline">عالمك الخاص بالطعام</string>
+    <string name="smart_food_smarter_cooking">طعام ذكي. طهي أذكى.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_discover">استكشف</string>
+    <string name="nav_ai">يم AI</string>
+    <string name="nav_pantry">المؤونة</string>
+    <string name="nav_basket">السلة</string>
+    <string name="nav_passport">جواز السفر</string>
+    <string name="nav_profile">الملف الشخصي</string>
+
+    <!-- Common Actions -->
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="add">إضافة</string>
+    <string name="delete">حذف</string>
+    <string name="edit">تعديل</string>
+    <string name="search">ابحث عن وصفات، مكونات...</string>
+    <string name="see_all">عرض الكل</string>
+    <string name="start_cooking">ابدأ الطهي</string>
+    <string name="back">رجوع</string>
+    <string name="settings">الإعدادات</string>
+
+    <!-- Features -->
+    <string name="smart_pantry">المؤونة الذكية</string>
+    <string name="zero_waste">مؤونة بلا هدر</string>
+    <string name="smart_basket">السلة الذكية</string>
+    <string name="yum_passport">جواز سفر يم</string>
+    <string name="world_map">خريطة العالم</string>
+    <string name="culinary_battles">معارك الطهي</string>
+    <string name="live_studio">استوديو الطهي المباشر</string>
+    <string name="ai_cooking_mode">وضع الطهي بالذكاء الاصطناعي</string>
+    <string name="ai_recipe_generator">مولد الوصفات الذكي</string>
+
+    <!-- Language & Settings -->
+    <string name="language">اللغة</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+    <string name="dark_mode">الوضع الداكن</string>
+    <string name="light_mode">الوضع الفاتح</string>
+    <string name="system_default">افتراضي النظام</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="account">الحساب</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">إنشاء حساب</string>
+    <string name="guest_login">المتابعة كزائر</string>
+</resources>
