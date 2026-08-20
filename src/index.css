@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --yum-orange: #e67e22;
+    --yum-orange-dark: #944a00;
+    --yum-sage: #006d37;
+    --yum-sage-light: #6bfe9c;
+    --yum-charcoal: #1a1c1c;
+    --yum-bg: #f9f9f9;
+    --yum-surface: #ffffff;
+    --yum-card-border: #eeeeee;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', 'IBM Plex Sans Arabic', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f9f9f9;
+    color: #1a1c1c;
+  }
+}
+
+/* Custom Utilities for Yum Soft Minimalist Aesthetic */
+.yum-card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid #f0ece9;
+  box-shadow: 0 4px 20px -2px rgba(230, 126, 34, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.yum-card:hover {
+  border-color: rgba(230, 126, 34, 0.25);
+  box-shadow: 0 12px 30px -4px rgba(230, 126, 34, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
+
+.yum-pill {
+  border-radius: 9999px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.yum-glow {
+  box-shadow: 0 0 25px rgba(230, 126, 34, 0.35);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

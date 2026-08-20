@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Yum</string>
+    <string name="app_tagline">Your World of Food</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="nav_home">Home</string>
+    <string name="nav_discover">Discover</string>
+    <string name="nav_ai_cooking">AI Cooking</string>
+    <string name="nav_pantry">Pantry</string>
+    <string name="nav_basket">Basket</string>
+    <string name="nav_passport">Passport</string>
+    <string name="nav_battles">Battles</string>
+    <string name="nav_studio">Live Studio</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- General Actions -->
+    <string name="search_hint">Search dishes, cuisines, ingredients…</string>
+    <string name="start_cooking">Start AI Cooking</string>
+    <string name="add_to_basket">Add to Basket</string>
+    <string name="save_recipe">Save Recipe</string>
+    <string name="generate_recipe">Generate with AI</string>
+    <string name="rescue_food">Rescue Food</string>
+    <string name="vote_now">Vote Now</string>
+    <string name="join_live">Join Live Stream</string>
+    
+    <!-- Taste DNA & Health -->
+    <string name="taste_dna_match">Taste DNA Match</string>
+    <string name="zero_waste_score">Zero-Waste Score</string>
+    <string name="expiring_soon_alert">%d items expiring soon</string>
+    <string name="pantry_ready">Pantry Ready</string>
+
+    <!-- Headings -->
+    <string name="featured_dishes">Curated For Your Palate</string>
+    <string name="global_cuisines">Explore World Cuisines</string>
+    <string name="culinary_battles_live">Live Culinary Duels</string>
+    <string name="smart_pantry_title">Smart Pantry &amp; Zero-Waste</string>
+    <string name="smart_basket_title">Smart Grocery Basket</string>
+    <string name="passport_title">Yum Culinary Passport</string>
+</resources>

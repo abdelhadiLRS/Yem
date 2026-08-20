@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">يم</string>
+    <string name="app_tagline">عالمك المفضل من النكهات</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_discover">استكشف</string>
+    <string name="nav_ai_cooking">الطهي الذكي</string>
+    <string name="nav_pantry">المؤونة</string>
+    <string name="nav_basket">السلة</string>
+    <string name="nav_passport">الجواز</string>
+    <string name="nav_battles">المعارك</string>
+    <string name="nav_studio">البث الحي</string>
+    <string name="nav_profile">الحساب</string>
+
+    <!-- General Actions -->
+    <string name="search_hint">ابحث عن الأطباق، المطابخ، المكونات…</string>
+    <string name="start_cooking">بدء الطهي بالذكاء الاصطناعي</string>
+    <string name="add_to_basket">إضافة إلى السلة</string>
+    <string name="save_recipe">حفظ الوصفة</string>
+    <string name="generate_recipe">توليد بالذكاء الاصطناعي</string>
+    <string name="rescue_food">إنقاذ المكونات</string>
+    <string name="vote_now">صوّت الآن</string>
+    <string name="join_live">انضم للبث الحي</string>
+    
+    <!-- Taste DNA & Health -->
+    <string name="taste_dna_match">تطابق البصمة الذوقية</string>
+    <string name="zero_waste_score">مؤشر صفر هدر غذائي</string>
+    <string name="expiring_soon_alert">%d مكونات توشك على الانتهاء</string>
+    <string name="pantry_ready">متوفر بالمؤونة</string>
+
+    <!-- Headings -->
+    <string name="featured_dishes">أطباق مختارة لذائقتك</string>
+    <string name="global_cuisines">استكشف مطابخ العالم</string>
+    <string name="culinary_battles_live">نزالات الطهاة المباشرة</string>
+    <string name="smart_pantry_title">المؤونة الذكية وصفر هدر</string>
+    <string name="smart_basket_title">سلة التسوق الذكية</string>
+    <string name="passport_title">جواز سفر نكهات يم</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "Yum – Your World of Food",
+  "description": "An AI-native global culinary ecosystem featuring AI cooking mode, smart pantry zero-waste, interactive world map, culinary battles, live studio, and gamified food discovery.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

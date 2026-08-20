@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Yum Primary Colors -->
+    <color name="yum_primary">#E67E22</color>
+    <color name="yum_primary_variant">#944A00</color>
+    <color name="yum_secondary">#006D37</color>
+    <color name="yum_secondary_variant">#005228</color>
+    <color name="yum_accent">#1D3347</color>
+    <color name="yum_surface_light">#FDFDFD</color>
+    <color name="yum_background_light">#F9F9F9</color>
+    <color name="yum_surface_dark">#1E1C1A</color>
+    <color name="yum_background_dark">#121212</color>
+    <color name="yum_text_primary_light">#1A1C1C</color>
+    <color name="yum_text_secondary_light">#564337</color>
+    <color name="yum_text_primary_dark">#EDE0D4</color>
+    <color name="yum_text_secondary_dark">#D7C2B4</color>
+    <color name="yum_alert">#BA1A1A</color>
+    <color name="yum_success">#006D37</color>
+    <color name="yum_gold">#E5A93B</color>
+</resources>
